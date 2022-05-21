@@ -1,0 +1,99 @@
+@import "mixins";
+
+.portal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.menu-list {
+  @include popover;
+  background: var(--color-background-menu-opaque);
+  border-color: var(--color-border-translucent-strong);
+  box-shadow: var(--shadows-menu);
+  min-width: 160px;
+  overflow: hidden;
+  max-height: 90vh;
+  overflow: auto;
+  padding: 3px 0px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  border-radius: 4px;
+  margin: 2px 5px;
+  > div {
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+  }
+  > span {
+    padding: 0 8px;
+  }
+  .hotkey {
+    color: var(--color-text-translucent-subtle);
+    font-variant: tabular-nums;
+  }
+  .badge {
+    padding: 0 5px;
+    background: var(--color-background-menu-badge);
+    border-radius: 50%;
+    min-width: 16px;
+    min-height: 16px;
+    justify-content: center;
+    font-size: 70%;
+  }
+  &.selected {
+    background: var(--color-background-menu-option-hover);
+    color: var(--color-text-on-accent);
+    .hotkey {
+      color: var(--color-text-on-accent-weak);
+    }
+  }
+  &.separator {
+    padding: 0;
+    margin: 5px 8px;
+    border: 0.5px solid var(--color-border-translucent);
+    border-left: 0;
+    border-right: 0;
+  }
+  &.section-header {
+    padding: 4px 8px;
+    // text-transform: uppercase;
+    color: var(--color-text-translucent-subtle);
+    font-size: 11px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 50vw;
+  }
+  &.disabled {
+    color: var(--color-text-translucent-subtle);
+  }
+
+  svg {
+    font-size: 10px;
+    margin-left: 8px;
+  }
+
+  .left-icon {
+    margin-right: 5px;
+  }
+
+  .aside {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+}

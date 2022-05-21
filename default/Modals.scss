@@ -1,0 +1,32 @@
+.modal-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 15;
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  &:not(.command-bar-modal) {
+    background: var(--color-overlay-modal);
+  }
+}
+
+.modal {
+  margin: 1em auto;
+  background: var(--color-background-elevated);
+  backdrop-filter: blur(16px);
+  flex: 1;
+  max-width: 640px;
+  border-radius: 8px;
+  h3 {
+    margin: 1rem;
+    font-weight: bold;
+    font-size: 24px;
+  }
+}
+
+@import "HotkeysModal";
+@import "PrivacyModal";
+@import "ReportProblemModal";

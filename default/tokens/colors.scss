@@ -1,0 +1,648 @@
+:root {
+  --color-base-gray-dark-10: rgb(22, 22, 22);
+  --color-base-gray-dark-10-rgb: 22, 22, 22;
+  --color-base-gray-dark-20: rgb(28, 28, 28);
+  --color-base-gray-dark-20-rgb: 28, 28, 28;
+  --color-base-gray-dark-30: rgb(35, 35, 35);
+  --color-base-gray-dark-30-rgb: 35, 35, 35;
+  --color-base-gray-dark-40: rgb(40, 40, 40);
+  --color-base-gray-dark-40-rgb: 40, 40, 40;
+  --color-base-gray-dark-50: rgb(46, 46, 46);
+  --color-base-gray-dark-50-rgb: 46, 46, 46;
+  --color-base-gray-dark-60: rgb(52, 52, 52);
+  --color-base-gray-dark-60-rgb: 52, 52, 52;
+  --color-base-gray-dark-70: rgb(62, 62, 62);
+  --color-base-gray-dark-70-rgb: 62, 62, 62;
+  --color-base-gray-dark-80: rgb(80, 80, 80);
+  --color-base-gray-dark-80-rgb: 80, 80, 80;
+  --color-base-gray-dark-85: rgb(94, 94, 94);
+  --color-base-gray-dark-85-rgb: 94, 94, 94;
+  --color-base-gray-dark-90: rgb(112, 112, 112);
+  --color-base-gray-dark-90-rgb: 112, 112, 112;
+  --color-base-gray-dark-100: rgb(126, 126, 126);
+  --color-base-gray-dark-100-rgb: 126, 126, 126;
+  --color-base-gray-dark-110: rgb(173, 173, 173);
+  --color-base-gray-dark-110-rgb: 173, 173, 173;
+  --color-base-gray-dark-120: rgb(237, 237, 237);
+  --color-base-gray-dark-120-rgb: 237, 237, 237;
+  --color-base-gray-light-10: rgb(252, 252, 252);
+  --color-base-gray-light-10-rgb: 252, 252, 252;
+  --color-base-gray-light-20: rgb(248, 248, 248);
+  --color-base-gray-light-20-rgb: 248, 248, 248;
+  --color-base-gray-light-30: rgb(243, 243, 243);
+  --color-base-gray-light-30-rgb: 243, 243, 243;
+  --color-base-gray-light-40: rgb(237, 237, 237);
+  --color-base-gray-light-40-rgb: 237, 237, 237;
+  --color-base-gray-light-50: rgb(232, 232, 232);
+  --color-base-gray-light-50-rgb: 232, 232, 232;
+  --color-base-gray-light-60: rgb(226, 226, 226);
+  --color-base-gray-light-60-rgb: 226, 226, 226;
+  --color-base-gray-light-70: rgb(219, 219, 219);
+  --color-base-gray-light-70-rgb: 219, 219, 219;
+  --color-base-gray-light-80: rgb(199, 199, 199);
+  --color-base-gray-light-80-rgb: 199, 199, 199;
+  --color-base-gray-light-85: rgb(171, 171, 171);
+  --color-base-gray-light-85-rgb: 171, 171, 171;
+  --color-base-gray-light-90: rgb(143, 143, 143);
+  --color-base-gray-light-90-rgb: 143, 143, 143;
+  --color-base-gray-light-100: rgb(133, 133, 133);
+  --color-base-gray-light-100-rgb: 133, 133, 133;
+  --color-base-gray-light-110: rgb(89, 89, 89);
+  --color-base-gray-light-110-rgb: 89, 89, 89;
+  --color-base-gray-light-120: rgb(23, 23, 23);
+  --color-base-gray-light-120-rgb: 23, 23, 23;
+  --color-background-tooltip: var(--color-base-gray-dark-50);
+  --color-background-tooltip-hotkey: var(--color-base-gray-dark-80);
+  --color-base-black: rgb(0, 0, 0);
+  --color-base-black-rgb: 0, 0, 0;
+  --color-base-white: rgb(255, 255, 255);
+  --color-base-white-rgb: 255, 255, 255;
+  --color-border-tooltip: var(--color-base-gray-dark-70);
+  --color-icon-on-accent: rgba(var(--color-base-white-rgb), 0.75);
+  --color-icon-on-accent-strong: rgba(var(--color-base-white-rgb), 0.9);
+  --color-icon-on-accent-weak: rgba(var(--color-base-white-rgb), 0.4);
+  --color-overlay-modal: rgba(var(--color-base-black-rgb), 0.4);
+  --color-text-on-accent: var(--color-base-white);
+  --color-text-on-accent-weak: rgba(var(--color-base-white-rgb), 0.7);
+  --color-text-tooltip: var(--color-base-white);
+
+  --color-base-blue-10: rgb(251, 253, 255);
+  --color-base-blue-10-rgb: 251, 253, 255;
+  --color-base-blue-20: rgb(245, 250, 255);
+  --color-base-blue-20-rgb: 245, 250, 255;
+  --color-base-blue-30: rgb(237, 246, 255);
+  --color-base-blue-30-rgb: 237, 246, 255;
+  --color-base-blue-40: rgb(225, 240, 255);
+  --color-base-blue-40-rgb: 225, 240, 255;
+  --color-base-blue-50: rgb(206, 231, 254);
+  --color-base-blue-50-rgb: 206, 231, 254;
+  --color-base-blue-60: rgb(183, 217, 248);
+  --color-base-blue-60-rgb: 183, 217, 248;
+  --color-base-blue-70: rgb(150, 199, 242);
+  --color-base-blue-70-rgb: 150, 199, 242;
+  --color-base-blue-80: rgb(94, 176, 239);
+  --color-base-blue-80-rgb: 94, 176, 239;
+  --color-base-blue-90: rgb(0, 145, 255);
+  --color-base-blue-90-rgb: 0, 145, 255;
+  --color-base-blue-100: rgb(0, 129, 241);
+  --color-base-blue-100-rgb: 0, 129, 241;
+  --color-base-blue-110: rgb(0, 106, 220);
+  --color-base-blue-110-rgb: 0, 106, 220;
+  --color-base-blue-120: rgb(0, 37, 77);
+  --color-base-blue-120-rgb: 0, 37, 77;
+  --color-base-gray-10: rgb(252, 252, 252);
+  --color-base-gray-10-rgb: 252, 252, 252;
+  --color-base-gray-20: rgb(248, 248, 248);
+  --color-base-gray-20-rgb: 248, 248, 248;
+  --color-base-gray-30: rgb(243, 243, 243);
+  --color-base-gray-30-rgb: 243, 243, 243;
+  --color-base-gray-40: rgb(237, 237, 237);
+  --color-base-gray-40-rgb: 237, 237, 237;
+  --color-base-gray-50: rgb(232, 232, 232);
+  --color-base-gray-50-rgb: 232, 232, 232;
+  --color-base-gray-60: rgb(226, 226, 226);
+  --color-base-gray-60-rgb: 226, 226, 226;
+  --color-base-gray-70: rgb(219, 219, 219);
+  --color-base-gray-70-rgb: 219, 219, 219;
+  --color-base-gray-80: rgb(199, 199, 199);
+  --color-base-gray-80-rgb: 199, 199, 199;
+  --color-base-gray-85: rgb(171, 171, 171);
+  --color-base-gray-85-rgb: 171, 171, 171;
+  --color-base-gray-90: rgb(143, 143, 143);
+  --color-base-gray-90-rgb: 143, 143, 143;
+  --color-base-gray-100: rgb(133, 133, 133);
+  --color-base-gray-100-rgb: 133, 133, 133;
+  --color-base-gray-110: rgb(89, 89, 89);
+  --color-base-gray-110-rgb: 89, 89, 89;
+  --color-base-gray-120: rgb(23, 23, 23);
+  --color-base-gray-120-rgb: 23, 23, 23;
+  --color-base-green-10: rgb(251, 254, 252);
+  --color-base-green-10-rgb: 251, 254, 252;
+  --color-base-green-20: rgb(242, 252, 245);
+  --color-base-green-20-rgb: 242, 252, 245;
+  --color-base-green-30: rgb(233, 249, 238);
+  --color-base-green-30-rgb: 233, 249, 238;
+  --color-base-green-40: rgb(221, 243, 228);
+  --color-base-green-40-rgb: 221, 243, 228;
+  --color-base-green-50: rgb(204, 235, 215);
+  --color-base-green-50-rgb: 204, 235, 215;
+  --color-base-green-60: rgb(180, 223, 196);
+  --color-base-green-60-rgb: 180, 223, 196;
+  --color-base-green-70: rgb(146, 206, 172);
+  --color-base-green-70-rgb: 146, 206, 172;
+  --color-base-green-80: rgb(91, 185, 140);
+  --color-base-green-80-rgb: 91, 185, 140;
+  --color-base-green-90: rgb(48, 164, 108);
+  --color-base-green-90-rgb: 48, 164, 108;
+  --color-base-green-100: rgb(41, 151, 100);
+  --color-base-green-100-rgb: 41, 151, 100;
+  --color-base-green-110: rgb(24, 121, 78);
+  --color-base-green-110-rgb: 24, 121, 78;
+  --color-base-green-120: rgb(21, 50, 38);
+  --color-base-green-120-rgb: 21, 50, 38;
+  --color-base-red-10: rgb(255, 252, 252);
+  --color-base-red-10-rgb: 255, 252, 252;
+  --color-base-red-20: rgb(255, 248, 248);
+  --color-base-red-20-rgb: 255, 248, 248;
+  --color-base-red-30: rgb(255, 239, 239);
+  --color-base-red-30-rgb: 255, 239, 239;
+  --color-base-red-40: rgb(255, 229, 229);
+  --color-base-red-40-rgb: 255, 229, 229;
+  --color-base-red-50: rgb(253, 216, 216);
+  --color-base-red-50-rgb: 253, 216, 216;
+  --color-base-red-60: rgb(249, 198, 198);
+  --color-base-red-60-rgb: 249, 198, 198;
+  --color-base-red-70: rgb(243, 174, 175);
+  --color-base-red-70-rgb: 243, 174, 175;
+  --color-base-red-80: rgb(235, 144, 145);
+  --color-base-red-80-rgb: 235, 144, 145;
+  --color-base-red-90: rgb(229, 72, 77);
+  --color-base-red-90-rgb: 229, 72, 77;
+  --color-base-red-100: rgb(220, 61, 67);
+  --color-base-red-100-rgb: 220, 61, 67;
+  --color-base-red-110: rgb(205, 43, 49);
+  --color-base-red-110-rgb: 205, 43, 49;
+  --color-base-red-120: rgb(56, 19, 22);
+  --color-base-red-120-rgb: 56, 19, 22;
+  --color-base-system-blue-80: rgb(76, 162, 255);
+  --color-base-system-blue-80-rgb: 76, 162, 255;
+  --color-base-system-blue-90: rgb(0, 122, 255);
+  --color-base-system-blue-90-rgb: 0, 122, 255;
+  --color-base-system-blue-100: rgb(0, 115, 240);
+  --color-base-system-blue-100-rgb: 0, 115, 240;
+  --color-base-system-blue-110: rgb(0, 105, 219);
+  --color-base-system-blue-110-rgb: 0, 105, 219;
+  --color-base-yellow-10: rgb(253, 253, 249);
+  --color-base-yellow-10-rgb: 253, 253, 249;
+  --color-base-yellow-20: rgb(255, 252, 232);
+  --color-base-yellow-20-rgb: 255, 252, 232;
+  --color-base-yellow-30: rgb(255, 251, 209);
+  --color-base-yellow-30-rgb: 255, 251, 209;
+  --color-base-yellow-40: rgb(255, 248, 187);
+  --color-base-yellow-40-rgb: 255, 248, 187;
+  --color-base-yellow-50: rgb(254, 242, 164);
+  --color-base-yellow-50-rgb: 254, 242, 164;
+  --color-base-yellow-60: rgb(249, 230, 140);
+  --color-base-yellow-60-rgb: 249, 230, 140;
+  --color-base-yellow-70: rgb(239, 211, 108);
+  --color-base-yellow-70-rgb: 239, 211, 108;
+  --color-base-yellow-80: rgb(235, 188, 0);
+  --color-base-yellow-80-rgb: 235, 188, 0;
+  --color-base-yellow-90: rgb(245, 217, 10);
+  --color-base-yellow-90-rgb: 245, 217, 10;
+  --color-base-yellow-100: rgb(247, 206, 0);
+  --color-base-yellow-100-rgb: 247, 206, 0;
+  --color-base-yellow-110: rgb(148, 104, 0);
+  --color-base-yellow-110-rgb: 148, 104, 0;
+  --color-base-yellow-120: rgb(53, 41, 15);
+  --color-base-yellow-120-rgb: 53, 41, 15;
+  --color-background-app: var(--color-base-white);
+  --color-background-app-weak: var(--color-base-gray-20);
+  --color-background-button-ghost-active: var(
+    --color-background-button-translucent-active
+  );
+  --color-background-button-ghost-hover: var(
+    --color-background-button-translucent
+  );
+  --color-background-button-primary: var(--color-base-system-blue-90);
+  --color-background-button-primary-active: var(--color-base-system-blue-100);
+  --color-background-button-primary-disabled: var(--color-base-system-blue-80);
+  --color-background-button-secondary: var(--color-base-white);
+  --color-background-button-secondary-active: var(--color-base-gray-20);
+  --color-background-button-secondary-disabled: var(--color-base-white);
+  --color-background-button-translucent: rgba(var(--color-base-black-rgb), 0.1);
+  --color-background-button-translucent-active: rgba(
+    var(--color-base-black-rgb),
+    0.15
+  );
+  --color-background-button-translucent-disabled: rgba(
+    var(--color-base-black-rgb),
+    0.05
+  );
+  --color-background-commandbar: rgba(var(--color-base-gray-40-rgb), 0.85);
+  --color-background-commandbar-command-highlighted: rgba(
+    var(--color-base-black-rgb),
+    0.1
+  );
+  --color-background-commandbar-mode: rgba(var(--color-base-white-rgb), 0.3);
+  --color-background-commandbar-opaque: var(--color-base-white);
+  --color-background-elevated: var(--color-base-white);
+  --color-background-elevated-hover: var(--color-base-gray-40);
+  --color-background-grouped: var(--color-base-white);
+  --color-background-grouped-weak: var(--color-base-gray-30);
+  --color-background-header-right: rgba(var(--color-base-white-rgb), 0.9);
+  --color-background-input: var(--color-base-gray-20);
+  --color-background-kbd: rgba(var(--color-base-black-rgb), 0.15);
+  --color-background-menu: rgba(var(--color-base-gray-40-rgb), 0.9);
+  --color-background-menu-badge: rgba(var(--color-base-black-rgb), 0.1);
+  --color-background-menu-opaque: var(--color-base-gray-40);
+  --color-background-menu-option-hover: var(--color-base-system-blue-90);
+  --color-background-message-active: var(--color-base-gray-20);
+  --color-background-message-beacon-pending: var(--color-base-gray-80);
+  --color-background-message-bubble-received: var(--color-base-gray-40);
+  --color-background-object: var(--color-base-gray-30);
+  --color-background-preferences-option-hover: rgba(
+    var(--color-base-black-rgb),
+    0.1
+  );
+  --color-background-preferences-option-selected: var(
+    --color-background-selected-primary
+  );
+  --color-background-scrollbar: rgba(var(--color-base-black-rgb), 0.3);
+  --color-background-scrollbar-hover: rgba(var(--color-base-black-rgb), 0.5);
+  --color-background-segmentedcontrol: var(--color-base-gray-30);
+  --color-background-select: var(--color-base-white);
+  --color-background-select-active: var(--color-base-gray-20);
+  --color-background-select-disabled: var(--color-base-white);
+  --color-background-selected-primary: var(--color-base-system-blue-90);
+  --color-background-selected-secondary: rgba(var(--color-base-black-rgb), 0.1);
+  --color-background-sidebar-filter-selected: var(
+    --color-background-selected-secondary
+  );
+  --color-background-sidebar-opaque: var(--color-base-gray-30);
+  --color-background-sidebar-thread-focus: rgba(
+    var(--color-base-black-rgb),
+    0.1
+  );
+  --color-background-sidebar-thread-selected: var(
+    --color-background-selected-primary
+  );
+  --color-background-sidebar-thread-selected-unfocused: rgba(
+    var(--color-base-black-rgb),
+    0.15
+  );
+  --color-background-tag: rgba(var(--color-base-black-rgb), 0.1);
+  --color-border-button-secondary: var(--color-base-gray-60);
+  --color-border-button-secondary-disabled: var(--color-base-gray-40);
+  --color-border-input: var(--color-base-gray-60);
+  --color-border-input-active: var(--color-base-gray-80);
+  --color-border-neutrals: var(--color-base-gray-60);
+  --color-border-neutrals-strong: var(--color-base-gray-70);
+  --color-border-neutrals-weak: var(--color-base-gray-40);
+  --color-border-select: var(--color-base-gray-60);
+  --color-border-select-disabled: var(--color-base-gray-40);
+  --color-border-translucent: rgba(var(--color-base-black-rgb), 0.1);
+  --color-border-translucent-strong: rgba(var(--color-base-black-rgb), 0.15);
+  --color-border-translucent-strongest: rgba(var(--color-base-black-rgb), 0.5);
+  --color-border-translucent-weak: rgba(var(--color-base-black-rgb), 0.05);
+  --color-error-background: var(--color-base-red-30);
+  --color-error-background-active: var(--color-base-red-50);
+  --color-error-background-hover: var(--color-base-red-40);
+  --color-error-background-solid: var(--color-base-red-90);
+  --color-error-background-solid-active: var(--color-base-red-100);
+  --color-error-border: var(--color-base-red-70);
+  --color-error-border-hover: var(--color-base-red-80);
+  --color-error-icon: var(--color-base-red-110);
+  --color-error-text: var(--color-base-red-110);
+  --color-error-text-active: var(--color-base-red-100);
+  --color-error-text-disabled: var(--color-base-red-80);
+  --color-icon-neutrals: var(--color-base-gray-110);
+  --color-icon-neutrals-strong: var(--color-base-gray-120);
+  --color-icon-neutrals-weak: var(--color-base-gray-100);
+  --color-icon-translucent: rgba(var(--color-base-black-rgb), 0.6);
+  --color-icon-translucent-strong: rgba(var(--color-base-black-rgb), 0.9);
+  --color-icon-translucent-weak: rgba(var(--color-base-black-rgb), 0.4);
+  --color-info-background: var(--color-base-blue-30);
+  --color-info-background-active: var(--color-base-blue-50);
+  --color-info-background-hover: var(--color-base-blue-40);
+  --color-info-background-solid: var(--color-base-blue-90);
+  --color-info-background-solid-active: var(--color-base-blue-100);
+  --color-info-background-solid-disabled: var(--color-base-blue-80);
+  --color-info-border: var(--color-base-blue-70);
+  --color-info-border-hover: var(--color-base-blue-80);
+  --color-info-icon: var(--color-base-blue-110);
+  --color-info-text: var(--color-base-blue-110);
+  --color-info-text-active: var(--color-base-blue-100);
+  --color-info-text-disabled: var(--color-base-blue-80);
+  --color-success-background: var(--color-base-green-30);
+  --color-success-background-active: var(--color-base-green-50);
+  --color-success-background-hover: var(--color-base-green-40);
+  --color-success-background-solid: var(--color-base-green-90);
+  --color-success-background-solid-active: var(--color-base-green-100);
+  --color-success-border: var(--color-base-green-70);
+  --color-success-border-hover: var(--color-base-green-80);
+  --color-success-icon: var(--color-base-green-110);
+  --color-success-text: var(--color-base-green-110);
+  --color-success-text-active: var(--color-base-green-100);
+  --color-success-text-disabled: var(--color-base-green-80);
+  --color-text-button-secondary: var(--color-base-gray-120);
+  --color-text-button-secondary-disabled: var(--color-base-gray-100);
+  --color-text-link: var(--color-base-system-blue-90);
+  --color-text-link-active: var(--color-base-system-blue-80);
+  --color-text-neutrals: var(--color-base-gray-120);
+  --color-text-neutrals-subtle: var(--color-base-gray-100);
+  --color-text-neutrals-weak: var(--color-base-gray-110);
+  --color-text-select: var(--color-base-gray-120);
+  --color-text-select-disabled: var(--color-base-gray-100);
+  --color-text-translucent: rgba(var(--color-base-black-rgb), 0.9);
+  --color-text-translucent-subtle: rgba(var(--color-base-black-rgb), 0.5);
+  --color-text-translucent-weak: rgba(var(--color-base-black-rgb), 0.7);
+  --color-warning-background: var(--color-base-yellow-30);
+  --color-warning-background-active: var(--color-base-yellow-50);
+  --color-warning-background-hover: var(--color-base-yellow-40);
+  --color-warning-background-solid: var(--color-base-yellow-90);
+  --color-warning-background-solid-active: var(--color-base-yellow-100);
+  --color-warning-border: var(--color-base-yellow-70);
+  --color-warning-border-hover: var(--color-base-yellow-80);
+  --color-warning-icon: var(--color-base-yellow-110);
+  --color-warning-text: var(--color-base-yellow-110);
+  --color-warning-text-active: var(--color-base-yellow-100);
+  --color-warning-text-disabled: var(--color-base-yellow-80);
+}
+:root {
+  @media (prefers-color-scheme: dark) {
+    --color-base-blue-10: rgb(15, 23, 32);
+    --color-base-blue-10-rgb: 15, 23, 32;
+    --color-base-blue-20: rgb(15, 27, 45);
+    --color-base-blue-20-rgb: 15, 27, 45;
+    --color-base-blue-30: rgb(16, 36, 62);
+    --color-base-blue-30-rgb: 16, 36, 62;
+    --color-base-blue-40: rgb(16, 42, 76);
+    --color-base-blue-40-rgb: 16, 42, 76;
+    --color-base-blue-50: rgb(15, 48, 88);
+    --color-base-blue-50-rgb: 15, 48, 88;
+    --color-base-blue-60: rgb(13, 56, 104);
+    --color-base-blue-60-rgb: 13, 56, 104;
+    --color-base-blue-70: rgb(10, 68, 129);
+    --color-base-blue-70-rgb: 10, 68, 129;
+    --color-base-blue-80: rgb(9, 84, 165);
+    --color-base-blue-80-rgb: 9, 84, 165;
+    --color-base-blue-90: rgb(0, 145, 255);
+    --color-base-blue-90-rgb: 0, 145, 255;
+    --color-base-blue-100: rgb(54, 158, 255);
+    --color-base-blue-100-rgb: 54, 158, 255;
+    --color-base-blue-110: rgb(82, 169, 255);
+    --color-base-blue-110-rgb: 82, 169, 255;
+    --color-base-blue-120: rgb(234, 246, 255);
+    --color-base-blue-120-rgb: 234, 246, 255;
+    --color-base-gray-10: rgb(22, 22, 22);
+    --color-base-gray-10-rgb: 22, 22, 22;
+    --color-base-gray-20: rgb(28, 28, 28);
+    --color-base-gray-20-rgb: 28, 28, 28;
+    --color-base-gray-30: rgb(35, 35, 35);
+    --color-base-gray-30-rgb: 35, 35, 35;
+    --color-base-gray-40: rgb(40, 40, 40);
+    --color-base-gray-40-rgb: 40, 40, 40;
+    --color-base-gray-50: rgb(46, 46, 46);
+    --color-base-gray-50-rgb: 46, 46, 46;
+    --color-base-gray-60: rgb(52, 52, 52);
+    --color-base-gray-60-rgb: 52, 52, 52;
+    --color-base-gray-70: rgb(62, 62, 62);
+    --color-base-gray-70-rgb: 62, 62, 62;
+    --color-base-gray-80: rgb(80, 80, 80);
+    --color-base-gray-80-rgb: 80, 80, 80;
+    --color-base-gray-85: rgb(94, 94, 94);
+    --color-base-gray-85-rgb: 94, 94, 94;
+    --color-base-gray-90: rgb(112, 112, 112);
+    --color-base-gray-90-rgb: 112, 112, 112;
+    --color-base-gray-100: rgb(126, 126, 126);
+    --color-base-gray-100-rgb: 126, 126, 126;
+    --color-base-gray-110: rgb(173, 173, 173);
+    --color-base-gray-110-rgb: 173, 173, 173;
+    --color-base-gray-120: rgb(237, 237, 237);
+    --color-base-gray-120-rgb: 237, 237, 237;
+    --color-base-green-10: rgb(13, 25, 18);
+    --color-base-green-10-rgb: 13, 25, 18;
+    --color-base-green-20: rgb(12, 31, 23);
+    --color-base-green-20-rgb: 12, 31, 23;
+    --color-base-green-30: rgb(15, 41, 30);
+    --color-base-green-30-rgb: 15, 41, 30;
+    --color-base-green-40: rgb(17, 49, 35);
+    --color-base-green-40-rgb: 17, 49, 35;
+    --color-base-green-50: rgb(19, 57, 41);
+    --color-base-green-50-rgb: 19, 57, 41;
+    --color-base-green-60: rgb(22, 68, 48);
+    --color-base-green-60-rgb: 22, 68, 48;
+    --color-base-green-70: rgb(27, 84, 58);
+    --color-base-green-70-rgb: 27, 84, 58;
+    --color-base-green-80: rgb(35, 110, 74);
+    --color-base-green-80-rgb: 35, 110, 74;
+    --color-base-green-90: rgb(48, 164, 108);
+    --color-base-green-90-rgb: 48, 164, 108;
+    --color-base-green-100: rgb(60, 177, 121);
+    --color-base-green-100-rgb: 60, 177, 121;
+    --color-base-green-110: rgb(76, 195, 138);
+    --color-base-green-110-rgb: 76, 195, 138;
+    --color-base-green-120: rgb(229, 251, 235);
+    --color-base-green-120-rgb: 229, 251, 235;
+    --color-base-red-10: rgb(31, 19, 21);
+    --color-base-red-10-rgb: 31, 19, 21;
+    --color-base-red-20: rgb(41, 20, 21);
+    --color-base-red-20-rgb: 41, 20, 21;
+    --color-base-red-30: rgb(60, 24, 26);
+    --color-base-red-30-rgb: 60, 24, 26;
+    --color-base-red-40: rgb(72, 26, 29);
+    --color-base-red-40-rgb: 72, 26, 29;
+    --color-base-red-50: rgb(84, 27, 31);
+    --color-base-red-50-rgb: 84, 27, 31;
+    --color-base-red-60: rgb(103, 30, 34);
+    --color-base-red-60-rgb: 103, 30, 34;
+    --color-base-red-70: rgb(130, 32, 37);
+    --color-base-red-70-rgb: 130, 32, 37;
+    --color-base-red-80: rgb(170, 36, 41);
+    --color-base-red-80-rgb: 170, 36, 41;
+    --color-base-red-90: rgb(229, 72, 77);
+    --color-base-red-90-rgb: 229, 72, 77;
+    --color-base-red-100: rgb(242, 85, 90);
+    --color-base-red-100-rgb: 242, 85, 90;
+    --color-base-red-110: rgb(255, 99, 105);
+    --color-base-red-110-rgb: 255, 99, 105;
+    --color-base-red-120: rgb(254, 236, 238);
+    --color-base-red-120-rgb: 254, 236, 238;
+    --color-base-system-blue-80: rgb(0, 91, 184);
+    --color-base-system-blue-80-rgb: 0, 91, 184;
+    --color-base-system-blue-90: rgb(10, 132, 255);
+    --color-base-system-blue-90-rgb: 10, 132, 255;
+    --color-base-system-blue-100: rgb(66, 160, 255);
+    --color-base-system-blue-100-rgb: 66, 160, 255;
+    --color-base-system-blue-110: rgb(92, 173, 255);
+    --color-base-system-blue-110-rgb: 92, 173, 255;
+    --color-base-yellow-10: rgb(28, 21, 0);
+    --color-base-yellow-10-rgb: 28, 21, 0;
+    --color-base-yellow-20: rgb(34, 26, 0);
+    --color-base-yellow-20-rgb: 34, 26, 0;
+    --color-base-yellow-30: rgb(44, 33, 0);
+    --color-base-yellow-30-rgb: 44, 33, 0;
+    --color-base-yellow-40: rgb(53, 40, 0);
+    --color-base-yellow-40-rgb: 53, 40, 0;
+    --color-base-yellow-50: rgb(62, 48, 0);
+    --color-base-yellow-50-rgb: 62, 48, 0;
+    --color-base-yellow-60: rgb(73, 60, 0);
+    --color-base-yellow-60-rgb: 73, 60, 0;
+    --color-base-yellow-70: rgb(89, 74, 5);
+    --color-base-yellow-70-rgb: 89, 74, 5;
+    --color-base-yellow-80: rgb(112, 94, 0);
+    --color-base-yellow-80-rgb: 112, 94, 0;
+    --color-base-yellow-90: rgb(245, 217, 10);
+    --color-base-yellow-90-rgb: 245, 217, 10;
+    --color-base-yellow-100: rgb(255, 239, 92);
+    --color-base-yellow-100-rgb: 255, 239, 92;
+    --color-base-yellow-110: rgb(240, 192, 0);
+    --color-base-yellow-110-rgb: 240, 192, 0;
+    --color-base-yellow-120: rgb(255, 250, 209);
+    --color-base-yellow-120-rgb: 255, 250, 209;
+    --color-background-app: var(--color-base-gray-10);
+    --color-background-app-weak: var(--color-base-gray-20);
+    --color-background-button-ghost-active: var(
+      --color-background-button-translucent-active
+    );
+    --color-background-button-ghost-hover: var(
+      --color-background-button-translucent
+    );
+    --color-background-button-primary: var(--color-base-system-blue-90);
+    --color-background-button-primary-active: var(--color-base-system-blue-100);
+    --color-background-button-primary-disabled: var(
+      --color-base-system-blue-80
+    );
+    --color-background-button-secondary: var(--color-base-gray-80);
+    --color-background-button-secondary-active: var(--color-base-gray-90);
+    --color-background-button-secondary-disabled: var(--color-base-gray-70);
+    --color-background-button-translucent: rgba(
+      var(--color-base-white-rgb),
+      0.1
+    );
+    --color-background-button-translucent-active: rgba(
+      var(--color-base-white-rgb),
+      0.15
+    );
+    --color-background-button-translucent-disabled: rgba(
+      var(--color-base-white-rgb),
+      0.05
+    );
+    --color-background-commandbar: rgba(var(--color-base-gray-20-rgb), 0.85);
+    --color-background-commandbar-command-highlighted: rgba(
+      var(--color-base-white-rgb),
+      0.1
+    );
+    --color-background-commandbar-mode: rgba(var(--color-base-white-rgb), 0.1);
+    --color-background-commandbar-opaque: var(--color-base-gray-20);
+    --color-background-elevated: var(--color-base-gray-30);
+    --color-background-elevated-hover: var(--color-base-gray-50);
+    --color-background-grouped: var(--color-base-gray-30);
+    --color-background-grouped-weak: var(--color-base-gray-10);
+    --color-background-header-right: rgba(var(--color-base-gray-10-rgb), 0.9);
+    --color-background-input: var(--color-base-gray-10);
+    --color-background-kbd: rgba(var(--color-base-white-rgb), 0.15);
+    --color-background-menu: rgba(var(--color-base-gray-30-rgb), 0.9);
+    --color-background-menu-badge: rgba(var(--color-base-white-rgb), 0.1);
+    --color-background-menu-opaque: var(--color-base-gray-30);
+    --color-background-menu-option-hover: var(--color-base-system-blue-80);
+    --color-background-message-active: var(--color-base-gray-20);
+    --color-background-message-beacon-pending: var(--color-base-gray-80);
+    --color-background-message-bubble-received: var(--color-base-gray-40);
+    --color-background-object: var(--color-base-gray-30);
+    --color-background-preferences-option-hover: rgba(
+      var(--color-base-white-rgb),
+      0.1
+    );
+    --color-background-preferences-option-selected: var(
+      --color-background-selected-primary
+    );
+    --color-background-scrollbar: rgba(var(--color-base-white-rgb), 0.3);
+    --color-background-scrollbar-hover: rgba(var(--color-base-white-rgb), 0.5);
+    --color-background-segmentedcontrol: var(--color-base-gray-30);
+    --color-background-select: var(--color-base-gray-80);
+    --color-background-select-active: var(--color-base-gray-90);
+    --color-background-select-disabled: var(--color-base-gray-70);
+    --color-background-selected-primary: var(--color-base-system-blue-90);
+    --color-background-selected-secondary: rgba(
+      var(--color-base-white-rgb),
+      0.1
+    );
+    --color-background-sidebar-filter-selected: var(
+      --color-background-selected-secondary
+    );
+    --color-background-sidebar-opaque: var(--color-base-gray-30);
+    --color-background-sidebar-thread-focus: rgba(
+      var(--color-base-white-rgb),
+      0.1
+    );
+    --color-background-sidebar-thread-selected: var(
+      --color-background-selected-primary
+    );
+    --color-background-sidebar-thread-selected-unfocused: rgba(
+      var(--color-base-white-rgb),
+      0.15
+    );
+    --color-background-tag: rgba(var(--color-base-white-rgb), 0.1);
+    --color-border-button-secondary: var(--color-base-transparent);
+    --color-border-button-secondary-disabled: var(--color-base-transparent);
+    --color-border-input: var(--color-base-gray-60);
+    --color-border-input-active: var(--color-base-gray-80);
+    --color-border-neutrals: var(--color-base-gray-60);
+    --color-border-neutrals-strong: var(--color-base-gray-70);
+    --color-border-neutrals-weak: var(--color-base-gray-40);
+    --color-border-select: var(--color-base-transparent);
+    --color-border-select-disabled: var(--color-base-transparent);
+    --color-border-translucent: rgba(var(--color-base-white-rgb), 0.1);
+    --color-border-translucent-strong: rgba(var(--color-base-white-rgb), 0.15);
+    --color-border-translucent-strongest: rgba(
+      var(--color-base-white-rgb),
+      0.5
+    );
+    --color-border-translucent-weak: rgba(var(--color-base-white-rgb), 0.05);
+    --color-error-background: var(--color-base-red-30);
+    --color-error-background-active: var(--color-base-red-50);
+    --color-error-background-hover: var(--color-base-red-40);
+    --color-error-background-solid: var(--color-base-red-90);
+    --color-error-background-solid-active: var(--color-base-red-100);
+    --color-error-border: var(--color-base-red-70);
+    --color-error-border-hover: var(--color-base-red-80);
+    --color-error-icon: var(--color-base-red-110);
+    --color-error-text: var(--color-base-red-110);
+    --color-error-text-active: var(--color-base-red-100);
+    --color-error-text-disabled: var(--color-base-red-80);
+    --color-icon-neutrals: var(--color-base-gray-110);
+    --color-icon-neutrals-strong: var(--color-base-gray-120);
+    --color-icon-neutrals-weak: var(--color-base-gray-100);
+    --color-icon-translucent: rgba(var(--color-base-white-rgb), 0.6);
+    --color-icon-translucent-strong: rgba(var(--color-base-white-rgb), 0.9);
+    --color-icon-translucent-weak: rgba(var(--color-base-white-rgb), 0.4);
+    --color-info-background: var(--color-base-blue-30);
+    --color-info-background-active: var(--color-base-blue-50);
+    --color-info-background-hover: var(--color-base-blue-40);
+    --color-info-background-solid: var(--color-base-blue-90);
+    --color-info-background-solid-active: var(--color-base-blue-100);
+    --color-info-background-solid-disabled: var(--color-base-blue-80);
+    --color-info-border: var(--color-base-blue-70);
+    --color-info-border-hover: var(--color-base-blue-80);
+    --color-info-icon: var(--color-base-blue-110);
+    --color-info-text: var(--color-base-blue-110);
+    --color-info-text-active: var(--color-base-blue-100);
+    --color-info-text-disabled: var(--color-base-blue-80);
+    --color-success-background: var(--color-base-green-30);
+    --color-success-background-active: var(--color-base-green-50);
+    --color-success-background-hover: var(--color-base-green-40);
+    --color-success-background-solid: var(--color-base-green-90);
+    --color-success-background-solid-active: var(--color-base-green-100);
+    --color-success-border: var(--color-base-green-70);
+    --color-success-border-hover: var(--color-base-green-80);
+    --color-success-icon: var(--color-base-green-110);
+    --color-success-text: var(--color-base-green-110);
+    --color-success-text-active: var(--color-base-green-100);
+    --color-success-text-disabled: var(--color-base-green-80);
+    --color-text-button-secondary: var(--color-base-white);
+    --color-text-button-secondary-disabled: var(--color-base-gray-110);
+    --color-text-link: var(--color-base-system-blue-90);
+    --color-text-link-active: var(--color-base-system-blue-80);
+    --color-text-neutrals: var(--color-base-gray-120);
+    --color-text-neutrals-subtle: var(--color-base-gray-100);
+    --color-text-neutrals-weak: var(--color-base-gray-110);
+    --color-text-select: var(--color-base-gray-120);
+    --color-text-select-disabled: var(--color-base-gray-110);
+    --color-text-translucent: rgba(var(--color-base-white-rgb), 0.9);
+    --color-text-translucent-subtle: rgba(var(--color-base-white-rgb), 0.5);
+    --color-text-translucent-weak: rgba(var(--color-base-white-rgb), 0.7);
+    --color-warning-background: var(--color-base-yellow-30);
+    --color-warning-background-active: var(--color-base-yellow-50);
+    --color-warning-background-hover: var(--color-base-yellow-40);
+    --color-warning-background-solid: var(--color-base-yellow-90);
+    --color-warning-background-solid-active: var(--color-base-yellow-100);
+    --color-warning-border: var(--color-base-yellow-70);
+    --color-warning-border-hover: var(--color-base-yellow-80);
+    --color-warning-icon: var(--color-base-yellow-110);
+    --color-warning-text: var(--color-base-yellow-110);
+    --color-warning-text-active: var(--color-base-yellow-100);
+    --color-warning-text-disabled: var(--color-base-yellow-80);
+  }
+}

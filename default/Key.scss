@@ -1,0 +1,75 @@
+.keyboard-key {
+  min-width: 56px;
+  min-height: 56px;
+  position: relative;
+  margin: 0 4px;
+}
+
+.keyboard-key-top {
+  transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: translateY(0px);
+
+  &.pressed {
+    transform: translateY(8px);
+
+    .keyboard-key-top-border {
+      min-height: 48px;
+    }
+  }
+}
+
+.keyboard-key-top-contents {
+  min-width: 54px;
+  min-height: 46px;
+  border-radius: 8px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background: var(--key-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.keyboard-key-top-border {
+  min-width: 56px;
+  min-height: 56px;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--key-border);
+}
+
+.keyboard-key-bottom {
+  background-color: var(--color-key-bottom-bg);
+  border-radius: 8px;
+  min-width: 56px;
+  min-height: 48px;
+  position: absolute;
+  width: 100%;
+  top: 8px;
+  left: 0;
+  box-shadow: inset 0px 4px 9px rgba(0, 0, 0, 0.19),
+    inset 0px -1px 0px rgba(0, 0, 0, 0.05);
+}
+
+.contents-key {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.contents-modifier {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  text-align: right;
+  padding: 0 6px;
+
+  .modifier-name {
+    font-size: 14px;
+  }
+}

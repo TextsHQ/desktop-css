@@ -1,0 +1,219 @@
+@import "mixins";
+@import "constants";
+
+.right-pane-header {
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  background: var(--color-background-app);
+  border-bottom: 1px solid var(--color-border-neutrals-weak);
+  padding: 0 10px;
+  h3 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .platform-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.thread-header {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  width: 100%;
+  .participant-imgs {
+    display: flex;
+  }
+  .participant-img {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+  }
+  .participant-img.multiple {
+    box-shadow: -2px 0 0 var(--color-background-app);
+  }
+  .participant-img.multiple:not(:last-child) {
+    margin-right: -0.5em;
+  }
+  .thread-title {
+    user-select: text;
+    font-weight: 600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    span:not(:last-child):after {
+      content: ", ";
+      margin-right: 5px;
+    }
+    margin-right: 4px;
+  }
+  .participants {
+    opacity: 0.8;
+    a {
+      margin-right: 10px;
+    }
+  }
+  .verified-icon {
+    vertical-align: middle;
+    margin: 0 3px 2px;
+  }
+  .last-active {
+    margin: 0 4px;
+  }
+  .last-active:not(.now) {
+    color: var(--color-text-neutrals-weak);
+  }
+}
+.participants-list {
+  position: absolute;
+  @include popover;
+  top: var(--header-height);
+  padding: 2px 4px;
+  max-height: 90vh;
+  overflow: auto;
+  user-select: text;
+  .participant {
+    display: flex;
+    margin: 2px 0;
+    padding: 4px;
+    border-radius: 4px;
+    &:hover {
+      background: var(--color-background-elevated-hover);
+    }
+  }
+  .user-name:not(:empty) {
+    font-weight: 500;
+    margin-right: 1em;
+  }
+}
+
+.thread-header-left {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+
+  .participant-imgs {
+    .participant-img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+// change opacity for left pane buttons too
+.thread-header-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  .thread-header-right-buttons,
+  a {
+    display: flex;
+  }
+
+  .thread-header-right-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+.toolbar-icon-no-link {
+  margin: 0 4px;
+}
+
+.global-audio-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(var(--color-fg-rgb), 0.1);
+  max-height: 0px;
+  overflow: hidden;
+  animation: reveal-global-controls 0.1s ease-in-out forwards;
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 12px;
+
+    .playback-buttons {
+      display: flex;
+      align-items: center;
+    }
+
+    button {
+      margin-right: 10px;
+      font-size: 14px;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      &:last-child svg {
+        margin-top: 1px;
+      }
+    }
+  }
+
+  .metadata {
+    flex-grow: 1;
+  }
+
+  .global-playback-rate {
+    font-size: 10px !important;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    padding: 2px 4px;
+  }
+
+  .global-progress-bar-container {
+    position: relative;
+    width: 100%;
+
+    input {
+      position: absolute;
+      height: 6px; // Make it easier to aim the mouse at the 2px progress line
+      width: 100%;
+      top: -4px;
+      left: 0;
+      opacity: 0;
+    }
+  }
+
+  .global-progress-bar {
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: all 0.1s ease-in-out;
+    transform: scaleY(1);
+
+    &.scrubbing {
+      transition: none;
+    }
+  }
+
+  &:hover {
+    .global-progress-bar {
+      transform: scaleY(2);
+    }
+  }
+
+  .duration {
+    font-size: 11px;
+    margin-right: 8px;
+  }
+}
+
+@keyframes reveal-global-controls {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 40px;
+  }
+}

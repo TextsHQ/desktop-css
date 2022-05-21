@@ -1,0 +1,32 @@
+.switch {
+  width: 34px;
+  min-width: 34px; // fixes flex bug
+  height: 20px;
+  border-radius: 12px;
+  background: rgba(var(--color-fg-rgb), 0.2);
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .knob {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    border: 0.5px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.15s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: absolute;
+    left: 1px;
+  }
+  &:active:not(.on) .knob {
+    width: 16px;
+  }
+  &.on {
+    background: var(--color-primary);
+    .knob {
+      left: 16px;
+    }
+  }
+}

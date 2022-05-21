@@ -1,0 +1,27 @@
+.build-expired-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h2 {
+    font-size: 36px;
+    margin: 0 1em 20px;
+  }
+  h3 {
+    margin: 0;
+    max-width: 405px;
+    text-align: center;
+  }
+  button {
+    margin: 1em;
+    font-size: 18px;
+    padding: 0.5em 2em;
+  }
+  small {
+    font-size: 14px;
+    bottom: 2em;
+    position: absolute;
+    opacity: 0.8;
+  }
+}

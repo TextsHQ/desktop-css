@@ -1,0 +1,86 @@
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes suspense-icon-transition {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dnd-container-appear {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 33px;
+  }
+}
+@keyframes dnd-icon-appear {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes dnd-text-appear {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -5px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// @keyframes send-message {
+//   from {
+//     transform: translate3d(-40px, 10px, 0) scale(0.75);
+//   } to {
+//     transform: translate3d(0, 0, 0) scale(1);
+//   }
+// }
+
+// @keyframes show-reactions {
+//   from {
+//     transform: translate3d(0, 0, 0) scale(0.9);
+//   } to {
+//     transform: translate3d(0, 0, 0) scale(1);
+//   }
+// }
+
+// @keyframes show-reactions-sender {
+//   from {
+//     transform: translate3d(0, 0, 0) scale(0.9);
+//   } to {
+//     transform: translate3d(0, 0, 0) scale(1);
+//   }
+// }

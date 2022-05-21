@@ -1,0 +1,68 @@
+button.secondary {
+  border-radius: 8px;
+  padding: 7px 10px;
+  position: relative;
+  background: var(--color-background-button-secondary);
+  color: var(--color-text-button-secondary);
+  border: solid 1px var(--color-border-button-secondary);
+  box-shadow: var(--shadows-button-secondary);
+
+  &__sm {
+    padding: 5px 10px;
+  }
+
+  &:active {
+    background: var(--color-background-button-secondary-active);
+    box-shadow: var(--shadows-button-secondary-active);
+    opacity: 1;
+  }
+
+  // &:focus{
+  //   border: solid 1px var(--color-white);
+  // }
+
+  &:disabled {
+    background: var(--color-background-button-secondary-disabled);
+    box-shadow: var(--shadows-button-secondary-disabled);
+    border-color: var(--color-border-button-secondary-disabled);
+    color: var(--color-text-button-secondary-disabled);
+    opacity: 1;
+  }
+}
+
+.toolbar-button {
+  border: 0;
+  background-color: transparent;
+  border-radius: 6px;
+  transition: background 0.1s ease;
+  min-height: 24px;
+  max-height: 26px;
+  height: 26px;
+  padding: 4px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-app-region: no-drag;
+
+  svg {
+    font-size: 21px;
+    color: var(--color-icon-translucent);
+  }
+  span {
+    margin: 0 4px 1px 2px;
+    color: var(--color-text-translucent);
+  }
+  &:hover {
+    background-color: var(--color-background-button-ghost-hover);
+  }
+  &:active,
+  &.highlighted {
+    background-color: var(--color-background-button-ghost-active);
+    svg {
+      color: var(--color-icon-translucent-strong);
+    }
+  }
+  &.no-hover {
+    background-color: transparent;
+  }
+}

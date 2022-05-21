@@ -1,0 +1,14 @@
+// DiceStickersSlotMachine contains 5 stickers.
+.telegram-dice {
+  .message-attachments {
+    position: relative;
+  }
+  .enhanced-img:not(:first-child) {
+    position: absolute;
+  }
+}
+.telegram-video-note {
+  video {
+    border-radius: 50%;
+  }
+}

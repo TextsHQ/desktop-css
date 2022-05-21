@@ -1,0 +1,7 @@
+:root {
+  --shadows-interactive-focus: 0px 0px 0px 1px
+      rgba(var(--color-base-system-blue-110-rgb), 0.3),
+    0px 0px 0px 4px rgba(var(--color-base-system-blue-90-rgb), 0.4);
+  --shadows-menu: 0 2px 8px 0 rgba(0, 0, 0, 0.09),
+    0 8px 24px 6px rgba(0, 0, 0, 0.13);
+}

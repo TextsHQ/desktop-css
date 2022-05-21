@@ -1,0 +1,136 @@
+.grid-view {
+  background: var(--left-pane-bg);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+
+  .thread-contents {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-radius: 8px;
+    display: grid;
+    grid-template-rows: 96px 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "avatar"
+      "thread-info";
+    row-gap: 8px;
+    text-align: center;
+    padding: 12px 6px;
+    position: relative;
+  }
+  .thread {
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &.selected {
+      .thread-contents {
+        background-color: var(--color-primary);
+        color: white;
+      }
+    }
+  }
+  .img {
+    margin: auto;
+    height: 96px;
+    width: 96px;
+    grid-area: avatar;
+  }
+  img {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  }
+  .participant-img {
+    width: 100%;
+    height: 100%;
+  }
+  .img .multiple {
+    height: 64px;
+    width: 64px;
+    position: absolute;
+  }
+  .img .multiple:first-child {
+    margin-top: 24px;
+    margin-left: -48px;
+  }
+  .img .multiple:nth-child(2) {
+    margin-left: -12px;
+    margin-top: -2px;
+  }
+
+  .platform-icon {
+    vertical-align: text-bottom;
+  }
+
+  .title {
+    font-weight: 600;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    grid-area: thread-info;
+    align-self: center;
+  }
+}
+
+.grid-visible {
+  .left,
+  .header-space,
+  .thread-info,
+  .right {
+    display: none;
+  }
+}
+
+.grid-view-threads {
+  display: flex;
+  overflow: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: calc(100% - 64px);
+  padding: 0 8px;
+}
+.grid-view-header {
+  height: 64px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  // border-bottom: 1px solid rgba(var(--color-fg-rgb), 0.1);
+}
+.grid-search {
+  position: relative;
+  color: var(--color-fg);
+  -webkit-app-region: no-drag;
+  margin: auto;
+  input {
+    width: 220px;
+    height: 26px;
+    border-radius: 4px;
+    border: 1px solid rgba(var(--color-fg-rgb), 0.25);
+    background-color: rgba(var(--color-fg-rgb), 0.05);
+    padding-left: 24px;
+    padding-right: 8px;
+    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &:focus {
+      border-color: var(--color-primary);
+    }
+  }
+}
+.grid-search svg {
+  position: absolute;
+  font-size: 12px;
+  left: 10px;
+  top: calc(50% - 6px);
+  opacity: 0.5;
+}
+.grid-exit svg {
+  opacity: 0.5;
+  font-size: 20px;
+  margin: 0 16px;
+}

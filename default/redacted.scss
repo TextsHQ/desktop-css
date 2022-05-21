@@ -1,0 +1,19 @@
+.redacted .redacted-region {
+  canvas,
+  img,
+  video {
+    filter: brightness(0);
+    background: black;
+  }
+  font-family: redacted_regular;
+}
+
+.negate-redacted-region {
+  canvas,
+  img,
+  video {
+    filter: none;
+    background: initial;
+  }
+  font-family: var(--font-family);
+}

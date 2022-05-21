@@ -1,0 +1,85 @@
+/*
+These styles are applied for the "Run with Safari renderer" toggle in macOS
+*/
+.wkwv {
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAQCAYAAAAFzx/vAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAHKADAAQAAAABAAAAEAAAAAChTRmjAAAA0UlEQVQ4EbXTPQrCQBCG4V0QO09g7y3MJSyCnXgIK+/gASSFB7DQo1gK3sHCfn0nMBAXg/szDkx2MyTfE0LiQwhT59yWntFH7/2T1aTIXhDU0jdyL30ow47WurOZW2jkNPRLg1k3Cj4GQ9lWo2Qs6SEmuScFD3IWVTFKzjdM4lcKTjg5yySqbJT7x7Bdj+mBC6vRZMwCzcZq0GKsBK3GclAzLBFtAeP/jFH4/Bo1LHUlYOzrlfC46jB9KFJTUBssEbXFfqD/wSJ0z2u+0mud56xvS/ass5kNRcIAAAAASUVORK5CYII=");
+    background-size: 10px;
+    background-position: calc(100% - 6px) center;
+    background-repeat: no-repeat;
+    background-color: rgba(var(--color-fg-rgb), 0.1);
+    padding: 4px 8px;
+    padding-right: 20px;
+    border: 0;
+  }
+
+  .video-player .video-controls progress {
+    top: calc(50% - 6px);
+  }
+
+  .command-bar {
+    background-color: var(--color-background-commandbar);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .attachment-carousel {
+    background-color: rgba(0, 0, 0, 0.7);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .filters-pane:not(.pinned) {
+    background-color: rgba(var(--color-base-gray-10-rgb), 0.8);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .right-pane-header {
+    background-color: var(--color-background-header-right);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .date {
+    font-variant-numeric: tabular-nums;
+    width: 100px;
+    text-align: center;
+  }
+
+  .restart-and-update {
+    left: 12px;
+    top: 12.75px;
+  }
+
+  .menu-list {
+    background: var(--color-background-menu);
+    backdrop-filter: blur(20px);
+  }
+}
+
+.wkwv,
+.safari {
+  .react-button {
+    font-size: 0.8em;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .message-reaction {
+    font-size: 0.8em;
+  }
+  .message-reactions-list span {
+    font-size: 1em;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .wkwv {
+    select {
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAQCAYAAADnEwSWAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAG6ADAAQAAAABAAAAEAAAAACiF0fSAAAA9UlEQVQ4EWMuKSnhVlFRWaClpZXk7e195OjRox8ZqARKS0vdpKWlZ9rZ2amfOXNmH4O7u/tNoNn/QVhBQeFnRUWFMTXsys3NzeHi4voHMzsxMXE2g5yc3C+YALUszMvLy0a2CGSui4vLHQZfX9+zyJZRaiE2i0BmpqWldTEAvcsODNMn1LAQl0WRkZFbgeZDADUsJMoialhIkkWUWEiWReRYSJFFpFhIFYuIsTA1NXUCej4C6vuPkupgBhFL40qlIIPRMUUWwRxEjIVUsYgYC6lqET4LSbWIEWYYMTQoSF++fLnl6dOnOpqamqvnzJmTR4w+mBoAHeLwyD0XkmcAAAAASUVORK5CYII=");
+    }
+  }
+}

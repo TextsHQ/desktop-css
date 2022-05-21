@@ -1,0 +1,761 @@
+@import "constants";
+
+.sidebar-thread {
+  --thread-children-bg: transparent;
+  --thread-children-text: var(--color-text-translucent);
+  --thread-children-text-weak: var(--color-text-translucent-weak);
+  --thread-children-icon: var(--color-icon-translucent);
+  --thread-children-icon-strong: var(--color-icon-translucent-strong);
+  --thread-children-icon-week: var(--color-icon-translucent-weak);
+  --thread-children-unread-indicator: var(--color-primary);
+  &.selected {
+    --thread-children-bg: var(
+      --color-background-sidebar-thread-selected-unfocused
+    );
+    .muted {
+      --thread-children-unread-indicator: var(--color-icon-translucent-weak);
+    }
+  }
+  &.has-cursor {
+    --thread-children-bg: var(--color-background-sidebar-thread-focus);
+  }
+  .muted {
+    --thread-children-unread-indicator: var(--color-icon-translucent-weak);
+  }
+}
+
+body:not(.window-unfocused) .sidebar-thread.selected {
+  --thread-children-bg: var(--color-primary);
+  --thread-children-text: var(--color-text-on-accent);
+  --thread-children-text-weak: var(--color-text-on-accent-weak);
+  --thread-children-icon-strong: var(--color-icon-on-accent-strong);
+  --thread-children-icon-week: var(--color-icon-on-accent-weak);
+  --thread-children-icon: var(--color-icon-on-accent);
+  --thread-children-unread-indicator: var(--color-icon-on-accent-strong);
+  .muted {
+    --thread-children-unread-indicator: var(--color-icon-on-accent-weak);
+  }
+}
+
+.left {
+  display: flex;
+  width: 100%;
+  min-width: var(--min-sidebar-width);
+  max-width: var(--max-sidebar-width);
+  position: relative;
+  flex-direction: column;
+  background: var(--left-pane-bg);
+  border-right: 1px solid var(--color-border-translucent);
+  transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: translate3d(0, 0, 0);
+
+  &.collapsed {
+    min-width: 75px;
+    max-width: 75px;
+  }
+
+  &.sidebar-hidden {
+    max-width: 0;
+    min-width: 0;
+
+    > *:not(.resize-handle) {
+      // rdev: The performance is going to suffer a lot if we make every child element readjust width for the
+      // duration of the animation, so it's best to just dispose of them all here
+      display: none;
+    }
+
+    .resize-handle {
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border-color: transparent !important;
+    }
+  }
+}
+
+.label-filters {
+  display: flex;
+  margin: 4px 10px 6px;
+  .thread-label {
+    display: inline-flex;
+    align-items: center;
+    svg {
+      margin-left: 2px;
+      margin-top: 1px;
+      font-size: 80%;
+    }
+  }
+}
+
+.sidebar-thread {
+  // position: relative;
+  outline: none;
+  padding: 2px 0;
+  .img {
+    margin-right: 10px;
+    height: 28px;
+    width: 28px;
+    min-width: 28px;
+    position: relative;
+  }
+  .participant-img {
+    width: 100%;
+    height: 100%;
+  }
+  .img .multiple {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+  }
+  .img .multiple:first-child {
+    bottom: 0;
+  }
+  .img .multiple:nth-child(2) {
+    right: 0;
+  }
+  .platform-icon {
+    font-size: 12px;
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+  }
+  .middle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    mask-image: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 600;
+    color: var(--thread-children-text);
+    .tag {
+      font-weight: normal;
+    }
+    svg {
+      width: 14px;
+      height: 14px;
+      margin: 0px 2px;
+      color: var(--thread-children-icon);
+    }
+
+    .verified-icon {
+      color: var(--thread-children-icon-strong);
+    }
+  }
+  .msg-preview {
+    color: var(--thread-children-text-weak);
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &.isDragActive .thread-children {
+    box-shadow: 0 0 0 1px var(--color-border-translucent-strongest);
+  }
+  .timestamp {
+    color: var(--thread-children-text-weak);
+    font-size: 11px;
+    padding-left: 4px;
+    margin: -1px 4px 0 auto;
+  }
+  .verified-icon {
+    margin: 0 3px;
+    font-size: 12px;
+  }
+  .thread-children {
+    display: grid;
+    align-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 38px 1fr auto auto;
+    grid-template-areas: "avatar thread-info timestamp indicators";
+    cursor: default;
+    padding: 0 8px;
+    margin: 0 8px;
+    height: 100%;
+    border-radius: 6px;
+    background: var(--thread-children-bg);
+  }
+
+  .img {
+    grid-area: avatar;
+  }
+  .middle {
+    grid-area: thread-info;
+  }
+  .timestamp {
+    grid-area: timestamp;
+  }
+
+  .indicators {
+    display: flex;
+    align-items: center;
+    grid-area: indicators;
+  }
+}
+
+.thread-selection-mode .thread-children {
+  grid-template-columns: 20px 38px 1fr auto auto;
+  grid-template-areas: "checkbox avatar thread-info timestamp indicators";
+}
+
+.left-pane-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.selection-mode-toggle {
+  margin-top: 32px;
+  margin-right: 14px;
+  opacity: 0.65;
+  align-self: center;
+
+  &.active {
+    color: var(--color-primary);
+    opacity: 1;
+  }
+
+  svg {
+    width: 16px;
+  }
+}
+
+.thread-checkbox {
+  width: 14px;
+  font-size: 18px;
+}
+
+.pinned-threads .thread-checkbox {
+  grid-area: checkbox;
+  margin-top: 10px;
+  margin-right: 4px;
+}
+
+.connecting-spinner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .platform-icon {
+    margin: 1px;
+    font-size: 16px;
+  }
+}
+
+.header-space .header-space-right-buttons {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 8px;
+}
+// change opacity for right pane buttons too
+
+.left.collapsed {
+  .tab-bar-container,
+  .icons,
+  .thread-children .middle,
+  .timestamp {
+    display: none;
+  }
+
+  .app-status {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+
+    .status {
+      display: none;
+    }
+  }
+
+  .thread-children {
+    justify-content: center;
+
+    .img {
+      width: 36px;
+      height: 36px;
+      margin-right: 0;
+    }
+  }
+}
+
+.pinned-threads:not(.compact) {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  padding: 0 7.5px;
+
+  .sidebar-thread {
+    margin: 0 2px;
+  }
+
+  .thread-children {
+    width: 90px;
+    height: 110px;
+    padding: 8px;
+    margin: 0;
+    grid-template-rows: 64px auto;
+    grid-template-columns: auto auto 1fr;
+    grid-template-areas:
+      "avatar avatar avatar"
+      "checkbox indicators thread-info";
+    text-align: center;
+  }
+
+  .timestamp {
+    display: none;
+  }
+
+  .img {
+    width: 64px;
+    height: 64px;
+    justify-self: center;
+    margin: 0;
+  }
+  .img .multiple:first-child {
+    width: 48px;
+    height: 48px;
+    bottom: 0;
+    left: 0;
+  }
+  .img .multiple:nth-child(2) {
+    width: 48px;
+    height: 48px;
+    top: 0;
+    right: 0;
+  }
+
+  .middle {
+    padding-top: 10px;
+    -webkit-mask-image: none;
+  }
+  .indicators {
+    justify-content: space-between;
+    padding-right: 6px;
+    height: 100%;
+    padding-top: 12px;
+  }
+  .platform-icon {
+    font-size: 18px;
+  }
+  .title {
+    font-size: 12px;
+    text-overflow: ellipsis;
+  }
+  .msg-preview {
+    display: none;
+  }
+}
+
+.header-space {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 10;
+  transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: translate3d(0, 0, 0);
+
+  .sidebar-button {
+    display: none;
+  }
+}
+.sidebar-hidden .header-space {
+  .sidebar-button {
+    display: block;
+  }
+}
+
+.tab-bar {
+  display: flex;
+  align-items: center;
+  margin: 0 8px;
+  padding-right: 8px;
+  overflow: auto;
+  white-space: nowrap;
+  font-size: 12px;
+  color: var(--color-text-translucent-subtle);
+  button {
+    background: none;
+    border: 0;
+    padding: 8px;
+  }
+  .selected {
+    color: var(--color-text-translucent);
+  }
+  button:focus {
+    color: var(--color-text-translucent);
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.back-to-inbox {
+    overflow: initial;
+    margin-right: 0;
+    padding-right: 0;
+  }
+}
+.tab-bar-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.tab-bar-container {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: row;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0) 97%
+  );
+  .more {
+    padding: 0;
+    font-size: 24px;
+    color: inherit;
+    display: flex;
+  }
+}
+.filters-panel-pinned .tab-bar-container {
+  margin-top: var(--header-height);
+}
+
+.grid-visible.filters-panel-pinned .filters-pane {
+  display: none;
+}
+.account-filters {
+  cursor: default;
+  margin: 0 8px 4px;
+  .account-filter {
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 4px;
+    }
+  }
+}
+
+.menu-item {
+  .platform-icon {
+    margin-right: 4px;
+  }
+}
+
+.threads {
+  overflow: hidden;
+  flex: 1;
+  transition: 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-property: box-shadow;
+  box-shadow: 0px 0px 0px 0px var(--color-border-translucent);
+
+  > div {
+    height: 100% !important;
+  }
+
+  &.scrolled {
+    box-shadow: 0px -1px 0px 0px var(--color-border-translucent);
+  }
+}
+
+.thread-read-icon {
+  width: 16px;
+  height: 9px;
+  margin-right: 2px;
+  margin-bottom: 1px;
+  vertical-align: middle;
+  // color: var(--color-primary);
+}
+.pending-message-icon {
+  width: 16px;
+  height: 11px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+@mixin indicator {
+  display: block;
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(black, 0.05);
+  margin-left: 2px;
+}
+
+.unread-indicator {
+  @include indicator;
+  background: var(--thread-children-unread-indicator);
+  // position: absolute;
+  // top: 12px;
+  // left: 4px;
+}
+.snoozed-indicator {
+  @include indicator;
+  background: var(--snoozed-indicator-bg);
+  // top: 12px;
+  // left: 38px;
+}
+.error-indicator {
+  @include indicator;
+  background: var(--error-indicator-bg);
+}
+
+.left-pane-footer {
+  display: flex;
+  border-top: 1px solid var(--color-border-translucent);
+  padding: 9px 16px 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  cursor: default;
+  svg {
+    font-size: 24px;
+  }
+  .current-user {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+  }
+  img {
+    width: 28px;
+    height: 28px;
+  }
+  .name {
+    margin-left: 10px;
+  }
+  button {
+    margin: 2px 0;
+    background-color: var(--color-background-button-translucent);
+    color: var(--color-text-translucent-weak);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    &:active {
+      background-color: var(--color-background-button-translucent-active);
+    }
+  }
+}
+.filters-pane .left-pane-footer .name {
+  display: none;
+}
+
+.help-feedback-button {
+  padding: 0.5em 1em;
+  flex: 1;
+  text-align: center;
+}
+
+.app-status > div {
+  margin: 0 8px 4px;
+  border-radius: 6px;
+  padding: 6px 12px;
+  background: var(--color-background-button-translucent);
+  color: var(--color-text-translucent);
+  display: flex;
+  &:active {
+    background: var(--color-background-button-translucent-active);
+  }
+  .platform-icon {
+    margin-right: 3px;
+    margin-top: 3px;
+    vertical-align: text-bottom;
+  }
+  span {
+    margin: 0 3px;
+    display: flex;
+    justify-content: space-between;
+  }
+  span:first-child {
+    margin-left: 0;
+  }
+  .status {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+.app-status button {
+  background: none;
+  border: 1px solid;
+  border-radius: 8px;
+  margin-left: auto;
+  position: relative;
+  padding: 1px 8px;
+  align-self: center;
+  &:active {
+    top: 1px;
+  }
+}
+
+$restart-button-color: #ab3ff4; // #B243AE
+$restart-button-color-active: #732f70;
+
+.restart-and-update {
+  position: fixed;
+  left: 16px;
+  top: 18px;
+  z-index: 100;
+  width: 73px;
+  display: flex;
+  justify-content: flex-end;
+
+  &:hover svg,
+  &:active svg {
+    opacity: 1;
+  }
+
+  button {
+    width: 12px;
+    height: 12px;
+    background-color: $restart-button-color;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.2);
+
+    &:active {
+      background-color: $restart-button-color-active;
+    }
+  }
+
+  svg {
+    opacity: 0;
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.restart-and-update.fullscreened {
+  left: 12px;
+  top: 8px;
+  width: 100px;
+  height: 24px;
+  font-family: var(--font-family);
+
+  button {
+    background-color: transparent;
+    border: 1px solid $restart-button-color;
+    border-radius: 4px;
+    padding: 3px 6px;
+    color: $restart-button-color;
+    width: 100px;
+    height: 24px;
+    font-size: 12px;
+  }
+}
+
+.window-unfocused .restart-and-update button {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.window-unfocused .restart-and-update.fullscreened button {
+  background-color: transparent;
+  border-color: $restart-button-color;
+}
+
+// dark mode unfocused button style
+@media (prefers-color-scheme: dark) {
+  .window-unfocused .restart-and-update button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .window-unfocused .restart-and-update.fullscreened button {
+    background-color: transparent;
+    border-color: $restart-button-color;
+  }
+}
+
+.app-status .retry {
+  display: flex;
+  justify-content: space-between;
+}
+.app-status-closable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3em;
+}
+
+.resize-handle {
+  border-right: 2px solid transparent;
+  width: 6px; // 6px for actual draggable area. 2px is too little for the mouse but 6px is too much for the border
+  height: 100%;
+  cursor: ew-resize;
+  transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: absolute;
+  top: 0;
+  right: 2px;
+  z-index: 50;
+  transform: translate3d(3px, 0, 0);
+  -webkit-app-region: no-drag;
+
+  &.dragging {
+    border-color: var(--color-primary);
+  }
+}
+
+.app-status .do-not-disturb-notice {
+  display: flex;
+  align-items: center;
+  padding: 0px 12px;
+  height: 33px;
+  max-height: 33px;
+  animation: dnd-container-appear 0.2s cubic-bezier(0.165, 0.84, 0.44, 1)
+    forwards;
+
+  svg {
+    color: var(--color-icon-translucent);
+    margin-right: 6px;
+    transform: scale(0);
+    transform-origin: center center;
+    animation: dnd-icon-appear 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s
+      forwards;
+  }
+
+  span {
+    opacity: 0;
+    transform: translate3d(0, -5px, 0);
+    animation: dnd-text-appear 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s
+      forwards;
+  }
+}
+
+.resizing-sidebar {
+  cursor: ew-resize;
+
+  .title .skeleton {
+    width: 100% !important;
+  }
+  .left,
+  .header-space {
+    transition: none;
+  }
+  .skeleton {
+    animation: none !important;
+    background: var(--skeleton-1);
+  }
+}

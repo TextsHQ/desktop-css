@@ -1,0 +1,99 @@
+.audio-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  color: var(--compose-message-accent);
+
+  .recorder {
+    background-color: var(--audio-bar-bg);
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 16px 16px 8px 16px;
+    height: 28px;
+    margin: 1px 8px;
+    padding-left: 4px;
+    padding-right: 8px;
+    color: var(--compose-message-accent);
+    font-size: 12px;
+    border: 2px solid var(--audio-bar-border);
+    &.stopped {
+      border-color: var(--audio-bar-bg);
+    }
+    audio {
+      display: none;
+    }
+  }
+
+  input {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: calc(100% - 4px);
+  }
+  .stopped input {
+    pointer-events: all;
+  }
+
+  .audio-bar-progress {
+    height: 2px;
+    background-color: var(--compose-message-accent);
+    margin: 0 8px;
+    transition: all 0.1s ease;
+  }
+
+  .preview-progress {
+    position: absolute;
+    z-index: 1;
+    background-color: var(--audio-bar-preview-progress);
+    max-width: calc(100% - 16px);
+  }
+
+  button {
+    font-size: 18px;
+    display: flex;
+  }
+  &.suspense-placeholder {
+    height: 30px;
+    svg {
+      width: 100%;
+    }
+  }
+
+  .audio-bar-waveform {
+    width: 100%;
+    flex-grow: 1;
+    margin: 0 6px;
+
+    wave {
+      max-width: 100%;
+    }
+  }
+
+  .audio-bar-time {
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-variant: tabular-nums;
+  }
+
+  .send-button {
+    margin-left: 0;
+  }
+}
+
+.audio-bar-progress-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.stopped .audio-bar-progress-wrapper {
+  justify-content: flex-start;
+}

@@ -1,0 +1,54 @@
+.gif-picker {
+  min-height: 200px;
+
+  .skeleton {
+    margin-right: 4px;
+  }
+}
+
+.gif-search-input {
+  background: var(--color-background-input);
+  color: var(--color-text-neutrals);
+  border: 1px solid var(--color-border-input);
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  border-radius: 16px;
+  &:focus {
+    border-color: var(--color-border-input-active);
+  }
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.gif:first-child {
+  margin-left: 14px;
+}
+
+.gif-carousel {
+  margin: 0 -14px 8px;
+  display: flex;
+  overflow-x: auto;
+  > span {
+    display: flex;
+  }
+  &.empty {
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.gif {
+  margin-right: 4px;
+  animation: gradient 1.2s ease-in-out infinite;
+  flex-shrink: 0;
+  &.selected {
+    outline: solid 4px var(--color-primary);
+    outline-offset: -4px;
+  }
+  // &:focus {
+  //   outline: solid 4px red;
+  //   outline-offset: -4px;
+  // }
+}
