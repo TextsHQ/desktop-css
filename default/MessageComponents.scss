@@ -57,6 +57,13 @@
     margin: 0;
   }
 }
+
+.bubble-mode {
+  .message-container {
+    padding: 1.5px 1em;
+  }
+}
+
 .message-children:before {
   border-radius: 50%;
   width: 6px;
@@ -179,13 +186,13 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
   }
   .binary {
     display: block;
-    border: 1px solid rgba(var(--color-fg-rgb), 0.2);
+    border: 1px solid var(--color-border-neutrals);
     padding: 6px 12px;
     border-radius: 16px 16px 16px 8px;
     svg {
       vertical-align: middle;
       margin-right: 3px;
-      opacity: 0.8;
+      color: var(--color-icon-neutrals);
       font-size: 16px;
     }
   }
@@ -202,7 +209,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
 }
 
 .iframe-block {
-  border: var(--message-bg) 2px solid;
+  border: var(--color-background-message-bubble-received) 2px solid;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -231,7 +238,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
     object-fit: cover;
   }
   .sender-name {
-    opacity: 0.7;
+    color: var(--color-text-neutrals-weak);
     margin: -2px 0 2px 4px;
   }
   .timestamp {
@@ -378,11 +385,11 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
   padding: 5px 12px;
 }
 .linked-sender-name {
-  color: var(--color-primary);
+  color: var(--color-text-info);
 }
 
 .contact-attachment {
-  background-color: var(--message-bg);
+  background-color: var(--color-background-message-bubble-received);
   border-radius: 16px 16px 16px 8px;
   padding: 8px 10px;
   display: flex;
@@ -469,8 +476,8 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
   }
 
   .linked-message {
-    background: var(--color-bg);
-    border: 2px solid var(--message-bg);
+    background: var(--color-background-message-bubble-linked);
+    border: 2px solid var(--color-background-message-bubble-received);
     border-radius: 15px 15px 8px 8px;
     width: 100%;
   }
@@ -531,7 +538,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
     }
     .message-contents {
       margin-left: auto;
-      background: var(--message-sent-bg);
+      background: var(--color-background-message-bubble-sent);
       border-radius: 16px 16px 8px 16px;
     }
     &:not(.type-action):not(.is-deleted) .message-text-container {
@@ -566,7 +573,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
   }
   .is-deleted .message-contents {
     background: none;
-    border: 1px solid var(--message-bg);
+    border: 1px solid var(--color-background-message-bubble-received);
     color: inherit;
   }
   .message-text-container {
@@ -617,7 +624,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
     padding: 0;
 
     a {
-      color: var(--color-primary);
+      color: var(--color-text-info);
     }
   }
 
@@ -649,7 +656,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
 }
 
 .message-link {
-  background: var(--message-bg);
+  background: var(--color-background-message-bubble-received);
   overflow: hidden;
   border-radius: 16px 16px 16px 8px;
   margin: 2px 0;
