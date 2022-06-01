@@ -62,19 +62,19 @@
     font-weight: 500;
   }
 
-  .plan-badge {
-    background: var(--color-primary);
+
+}
+.prefs-user-details .plan-badge, .subview-prefs-about .plan-badge {
+  background: var(--color-primary);
+  color: white;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 12px;
+  &.expired {
+    background: var(--warning-color);
     color: white;
-    border-radius: 4px;
-    padding: 3px 6px;
-    font-size: 12px;
-    &.expired {
-      background: var(--warning-color);
-      color: white;
-    }
   }
 }
-
 .prefs-right-pane {
   background-color: var(--color-background-grouped-weak);
   padding: 1em;
@@ -119,6 +119,7 @@
 .prefs-group.loading button {
   cursor: wait;
 }
+
 .pref-option {
   padding: 8px 12px;
   margin: 4px 0;
@@ -649,6 +650,32 @@
   }
 }
 
+.subview-prefs-about {
+  .pref-option {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--color-fg);
+    text-align: left;
+    border-radius: 0;
+    padding: 0.5em 1em;
+    min-height: 40px;
+    border: none;
+    box-shadow: none;
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--color-border-neutrals-weak);
+    }
+  }
+
+  button.pref-option {
+    &:active {
+      top: 0;
+      opacity: 0.7;
+    }
+  }
+}
+
 .subview-prefs-labels {
   .item {
     margin: 1em;
@@ -793,6 +820,7 @@
   .stat {
     padding: 1em;
     background-color: var(--color-background-grouped);
+    border: 1px solid var(--color-border-neutrals-weak);
     border-radius: 8px;
     margin: 1em;
     display: flex;
@@ -826,6 +854,7 @@
   border-radius: 8px;
   padding: 0;
   background: var(--color-background-grouped);
+  border: 1px solid var(--color-border-neutrals-weak);
   overflow: hidden;
 }
 a.pref-option {
@@ -1027,10 +1056,12 @@ a.pref-option {
 
 .color-circle-wrapper {
   position: absolute;
-  width: 18px;
+  width: 20px;
+  height: 20px;
   display: flex;
-  top: 4px;
-  left: 4px;
+  align-items: center;
+  top: 0px;
+  left: 0px;
 
   .label-circle {
     border: 0;
@@ -1043,16 +1074,26 @@ a.pref-option {
 
   .color-picker-container {
     position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     input,
     span {
       position: absolute;
     }
 
+    // todo: fix color input having too much click area
+
     // It's not possible to hide the color picker datalist's dropdown arrow, so we're using a span as
     // a color display element and placing a transparent input with the same dimensions on top of it to
     // actually handle the color switching.
     input {
+      left: 0;
+      height: 100%;
+      width: 100%;
       opacity: 0;
     }
   }
@@ -1289,16 +1330,16 @@ a.pref-option {
   }
 
   button {
-    height: 32px;
-    padding-left: 12px;
-    padding-right: 12px;
-    background: none;
   }
 }
 
 .quick-reply-main-contents {
   display: flex;
   justify-content: space-between;
+
+  textarea {
+    border-radius: 0;
+  }
 }
 
 .quick-replies-attachments {

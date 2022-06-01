@@ -93,6 +93,30 @@
   --color-base-gray-110-rgb: 89, 89, 89;
   --color-base-gray-120: rgb(23, 23, 23);
   --color-base-gray-120-rgb: 23, 23, 23;
+  --color-base-red-10: rgb(255, 252, 252);
+  --color-base-red-10-rgb: 255, 252, 252;
+  --color-base-red-20: rgb(255, 248, 248);
+  --color-base-red-20-rgb: 255, 248, 248;
+  --color-base-red-30: rgb(255, 239, 239);
+  --color-base-red-30-rgb: 255, 239, 239;
+  --color-base-red-40: rgb(255, 229, 229);
+  --color-base-red-40-rgb: 255, 229, 229;
+  --color-base-red-50: rgb(253, 216, 216);
+  --color-base-red-50-rgb: 253, 216, 216;
+  --color-base-red-60: rgb(249, 198, 198);
+  --color-base-red-60-rgb: 249, 198, 198;
+  --color-base-red-70: rgb(243, 174, 175);
+  --color-base-red-70-rgb: 243, 174, 175;
+  --color-base-red-80: rgb(235, 144, 145);
+  --color-base-red-80-rgb: 235, 144, 145;
+  --color-base-red-90: rgb(229, 72, 77);
+  --color-base-red-90-rgb: 229, 72, 77;
+  --color-base-red-100: rgb(220, 61, 67);
+  --color-base-red-100-rgb: 220, 61, 67;
+  --color-base-red-110: rgb(205, 43, 49);
+  --color-base-red-110-rgb: 205, 43, 49;
+  --color-base-red-120: rgb(56, 19, 22);
+  --color-base-red-120-rgb: 56, 19, 22;
   --color-base-system-blue-80: rgb(76, 162, 255);
   --color-base-system-blue-80-rgb: 76, 162, 255;
   --color-base-system-blue-90: rgb(0, 122, 255);
@@ -103,6 +127,9 @@
   --color-base-system-blue-110-rgb: 0, 105, 219;
   --color-background-app: var(--color-base-white);
   --color-background-app-weak: var(--color-base-gray-20);
+  --color-background-button-danger: var(--color-base-red-90);
+  --color-background-button-danger-active: var(--color-base-red-100);
+  --color-background-button-danger-disabled: var(--color-base-red-80);
   --color-background-button-ghost-active: var(
     --color-background-button-translucent-active
   );
@@ -136,6 +163,7 @@
   --color-background-grouped: var(--color-base-white);
   --color-background-grouped-weak: var(--color-base-gray-30);
   --color-background-header-right: rgba(var(--color-base-white-rgb), 0.9);
+  --color-background-header-right-opaque: var(--color-base-white);
   --color-background-input: var(--color-base-gray-20);
   --color-background-kbd: rgba(var(--color-base-black-rgb), 0.15);
   --color-background-menu: rgba(var(--color-base-gray-40-rgb), 0.9);
@@ -207,7 +235,12 @@
   --color-icon-translucent-weak: rgba(var(--color-base-black-rgb), 0.4);
   --color-text-button-secondary: var(--color-base-gray-120);
   --color-text-button-secondary-disabled: var(--color-base-gray-100);
-  --color-text-info: var(--color-base-system-blue-90);
+  --color-text-danger: var(--color-base-red-110);
+  --color-text-danger-active: rgba(var(--color-base-red-110-rgb), 0.8);
+  --color-text-danger-disabled: rgba(var(--color-base-red-110-rgb), 0.6);
+  --color-text-info: var(--color-base-system-blue-110);
+  --color-text-info-active: rgba(var(--color-base-system-blue-110-rgb), 0.8);
+  --color-text-info-disabled: rgba(var(--color-base-system-blue-110-rgb), 0.6);
   --color-text-message-bubble-suggested: var(--color-text-info);
   --color-text-neutrals: var(--color-base-gray-120);
   --color-text-neutrals-subtle: var(--color-base-gray-100);
@@ -246,6 +279,30 @@
     --color-base-gray-110-rgb: 173, 173, 173;
     --color-base-gray-120: rgb(237, 237, 237);
     --color-base-gray-120-rgb: 237, 237, 237;
+    --color-base-red-10: rgb(31, 19, 21);
+    --color-base-red-10-rgb: 31, 19, 21;
+    --color-base-red-20: rgb(41, 20, 21);
+    --color-base-red-20-rgb: 41, 20, 21;
+    --color-base-red-30: rgb(60, 24, 26);
+    --color-base-red-30-rgb: 60, 24, 26;
+    --color-base-red-40: rgb(72, 26, 29);
+    --color-base-red-40-rgb: 72, 26, 29;
+    --color-base-red-50: rgb(84, 27, 31);
+    --color-base-red-50-rgb: 84, 27, 31;
+    --color-base-red-60: rgb(103, 30, 34);
+    --color-base-red-60-rgb: 103, 30, 34;
+    --color-base-red-70: rgb(130, 32, 37);
+    --color-base-red-70-rgb: 130, 32, 37;
+    --color-base-red-80: rgb(170, 36, 41);
+    --color-base-red-80-rgb: 170, 36, 41;
+    --color-base-red-90: rgb(229, 72, 77);
+    --color-base-red-90-rgb: 229, 72, 77;
+    --color-base-red-100: rgb(242, 85, 90);
+    --color-base-red-100-rgb: 242, 85, 90;
+    --color-base-red-110: rgb(255, 99, 105);
+    --color-base-red-110-rgb: 255, 99, 105;
+    --color-base-red-120: rgb(254, 236, 238);
+    --color-base-red-120-rgb: 254, 236, 238;
     --color-base-system-blue-80: rgb(0, 91, 184);
     --color-base-system-blue-80-rgb: 0, 91, 184;
     --color-base-system-blue-90: rgb(10, 132, 255);
@@ -256,6 +313,9 @@
     --color-base-system-blue-110-rgb: 92, 173, 255;
     --color-background-app: var(--color-base-gray-10);
     --color-background-app-weak: var(--color-base-gray-20);
+    --color-background-button-destructive: var(--color-base-red-90);
+    --color-background-button-destructive-active: var(--color-base-red-100);
+    --color-background-button-destructive-disabled: var(--color-base-red-80);
     --color-background-button-ghost-active: var(
       --color-background-button-translucent-active
     );
@@ -291,9 +351,10 @@
     --color-background-commandbar-opaque: var(--color-base-gray-20);
     --color-background-elevated: var(--color-base-gray-30);
     --color-background-elevated-hover: var(--color-base-gray-50);
-    --color-background-grouped: var(--color-base-gray-30);
+    --color-background-grouped: var(--color-base-gray-20);
     --color-background-grouped-weak: var(--color-base-gray-10);
-    --color-background-header-right: rgba(var(--color-base-gray-10-rgb), 0.9);
+    --color-background-header-right: rgba(var(--color-base-gray-30-rgb), 0.9);
+    --color-background-header-right-opaque: var(--color-base-gray-30);
     --color-background-input: var(--color-base-gray-10);
     --color-background-kbd: rgba(var(--color-base-white-rgb), 0.15);
     --color-background-menu: rgba(var(--color-base-gray-30-rgb), 0.9);
@@ -371,7 +432,15 @@
     --color-icon-translucent-weak: rgba(var(--color-base-white-rgb), 0.4);
     --color-text-button-secondary: var(--color-base-white);
     --color-text-button-secondary-disabled: var(--color-base-gray-110);
+    --color-text-danger: var(--color-base-red-110);
+    --color-text-danger-active: rgba(var(--color-base-red-110-rgb), 0.8);
+    --color-text-danger-disabled: rgba(var(--color-base-red-110-rgb), 0.6);
     --color-text-info: var(--color-base-system-blue-110);
+    --color-text-info-active: rgba(var(--color-base-system-blue-110-rgb), 0.8);
+    --color-text-info-disabled: rgba(
+      var(--color-base-system-blue-110-rgb),
+      0.6
+    );
     --color-text-message-bubble-suggested: var(--color-text-info);
     --color-text-neutrals: var(--color-base-gray-120);
     --color-text-neutrals-subtle: var(--color-base-gray-100);

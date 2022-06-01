@@ -76,13 +76,14 @@
     }
 
     div {
-      background: var(--color-background-object);
+      background: var(--color-background-elevated);
       border-radius: 100px;
       padding: 3px 8px;
       margin: 1em 0 0.5em;
       font-size: 12px;
       font-weight: 500;
       color: var(--color-text-neutrals-weak);
+      border: 1px solid var(--color-border-neutrals-weak);
     }
   }
   img,
@@ -131,11 +132,10 @@
 
 .scroll-to-bottom {
   position: absolute;
-  color: var(--color-icon-neutrals);
-  background: var(--color-background-app);
+  color: var(--color-icon-neutrals-strong);
+  background: var(--color-background-elevated);
   border: 1px solid var(--color-border-neutrals);
-  backdrop-filter: blur(4px);
-  filter: drop-shadow(var(--shadows-base--sm));
+  filter: drop-shadow(var(--shadows-base-sm));
   width: 32px;
   height: 32px;
   margin: 0.5em;
@@ -369,10 +369,11 @@
     order: -1;
   }
   .right-pane-header {
-    border-bottom: none;
+    border-bottom: none !important;
   }
   .compose-message-container {
-    border-bottom: 1px solid rgba(var(--color-fg-rgb), 0.04);
+    background: var(--color-background-header-right-opaque);
+    border-bottom: 1px solid var(--color-border-neutrals-weak);
     margin-top: var(--header-height);
   }
   .date {

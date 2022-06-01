@@ -381,7 +381,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
 
 .linked-message {
   margin: 0 0 -1px;
-  border-left: 2px solid var(--color-primary);
+  border-left: 2px solid var(--color-text-info);
   padding: 5px 12px;
 }
 .linked-sender-name {
@@ -625,6 +625,9 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
 
     a {
       color: var(--color-text-info);
+      &:active {
+        color: var(--color-text-info-active);
+      }
     }
   }
 
@@ -638,6 +641,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
 
   .linked-message {
     padding: 0 4px;
+    padding-left: 8px;
     margin-bottom: 10px;
   }
 

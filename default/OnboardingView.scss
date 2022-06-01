@@ -37,9 +37,6 @@
   button {
     position: relative;
   }
-  button:active {
-    transform: translateY(1px);
-  }
 
   .buttons {
     width: 100%;
@@ -47,21 +44,15 @@
     align-items: center;
     justify-content: center;
   }
-  button.primary {
-    background: linear-gradient(to top, #0a84ff 0%, #3399ff 100%);
-    padding: 12px 16px;
-    border-radius: 6px;
-    min-width: 100px;
-    color: white;
-    font-size: 12px;
-    font-weight: 500;
-    transition: all 0.1s ease-in-out;
-  }
 
   img,
   svg {
     width: 82px;
     height: 82px;
+  }
+
+  .btn-solid {
+    min-width: 110px;
   }
 
   button.initial {
@@ -346,9 +337,6 @@
   button {
     position: relative;
   }
-  button:active {
-    top: 1px;
-  }
 
   .buttons {
     width: 100%;
@@ -447,11 +435,12 @@
   padding: 12px;
 
   .progress-bar-container {
-    background-color: var(--color-background-elevated);
+    background-color: var(--color-background-object);
     border-radius: 20px;
     height: 12px;
     width: 280px;
     padding: 2px;
+    box-shadow: 0 0 0 1px var(--color-border-neutrals-weak);
   }
 
   .progress-bar {
@@ -485,12 +474,8 @@
     margin: 5px 0;
   }
 
-  button.primary {
-    background: #0a84ff;
-    padding: 8px 20px;
-    border-radius: 6px;
+  button.btn-solid {;
     min-width: 110px;
-    color: white;
   }
 
   .preferences {

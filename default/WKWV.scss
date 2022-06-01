@@ -38,6 +38,15 @@ These styles are applied for the "Run with Safari renderer" toggle in macOS
   .right-pane-header {
     background-color: var(--color-background-header-right);
     -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--color-border-translucent-weak);
+  }
+
+  .special-thread-single_thread_search_results,
+  .special-thread-global_search_results {
+    .compose-message-container {
+      border-color: var(--color-border-translucent-weak);
+      background: var(--color-background-header-right);
+    }
   }
 
   .date {

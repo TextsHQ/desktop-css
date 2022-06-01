@@ -132,7 +132,7 @@
     display: inline-flex;
   }
 
-  .left-icon > span {
+  .left-icon span {
     display: flex;
     align-items: center;
   }
@@ -147,7 +147,6 @@
 }
 
 .filters-pane-toggle button {
-  padding: 6px;
   margin: 0;
   margin-left: 6px;
   margin-right: -8px;

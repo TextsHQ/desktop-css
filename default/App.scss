@@ -262,6 +262,7 @@ canvas.loading,
   padding: 2px 5px;
   display: flex;
   align-items: center;
+  max-height: 20px;
 }
 
 .label-circle {
@@ -301,7 +302,7 @@ canvas.loading,
   button {
     -webkit-app-region: no-drag;
   }
-  .toolbar-button svg {
+  .btn-ghost svg {
     font-size: 12px;
   }
 }
@@ -381,23 +382,6 @@ canvas.loading,
 
   button {
     padding: 8px 60px;
-  }
-}
-
-.icon-button {
-  width: 22px;
-  height: 22px;
-  font-size: 18px;
-  margin: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--color-icon-neutrals);
-  transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-
-  svg {
-    font-size: 1em;
   }
 }
 

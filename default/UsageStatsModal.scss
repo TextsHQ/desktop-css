@@ -1,0 +1,45 @@
+.usage-stats-modal {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 480px;
+  min-height: 450px;
+  max-height: 75vh;
+
+  background-color: var(--color-background-elevated);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  max-width: 480px;
+  min-height: 450px;
+  max-height: 75vh;
+  align-items: center;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  right: calc(50% - 240px);
+  top: 10vh;
+
+  .stat {
+    padding: 1em;
+    background-color: var(--color-background-grouped-weak);
+    border-radius: 8px;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+
+    h3 {
+      font-size: 32px;
+      width: 100px;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    h4 {
+      font-size: 110%;
+      margin: 0;
+    }
+  }
+}
