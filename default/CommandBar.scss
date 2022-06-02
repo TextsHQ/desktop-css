@@ -3,8 +3,6 @@
   width: 60vw;
   max-width: 700px;
   margin: auto;
-  // background: var(--command-bar-bg);
-  // backdrop-filter: blur(10px);
   background: var(--color-background-commandbar-opaque);
   color: var(--color-text-translucent);
   border: 1px solid var(--color-border-translucent-strong);
@@ -23,7 +21,7 @@
       font-weight: 500;
     }
     &.footer {
-      border-top: 1px solid rgba(white, 0.1);
+      border-top: 1px solid var(--color-border-translucent);
       padding-top: 10px;
     }
   }
@@ -38,7 +36,8 @@
     font-size: 15px;
   }
   select {
-    // background: rgba(var(--color-fg-rgb), 0.1);
+    // todo: implement select tokens
+    background: var(--color-background-button-translucent);
     border: none;
     color: inherit;
     height: 100%;
@@ -48,7 +47,7 @@
     outline: none;
   }
   select:focus {
-    box-shadow: 0 0 1px 1px var(--color-primary);
+    box-shadow: var(--shadows-interactive-focus);
   }
   .commands {
     margin-bottom: 5px;
