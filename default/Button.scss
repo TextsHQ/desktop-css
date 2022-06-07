@@ -264,8 +264,9 @@ button.btn-icon {
     color: var(--color-icon-translucent);
   }
   span {
-    margin: 0 4px 1px 2px;
+    margin: 0 3px 0px 3px;
     color: var(--color-text-translucent);
+    font-size: 12px;
   }
   &:hover {
     background-color: var(--color-background-button-ghost-hover);
