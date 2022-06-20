@@ -5,6 +5,22 @@
   align-items: flex-start;
   z-index: 100;
 
+  &.position-top-left {
+    left: 0;
+    top: 3rem;
+  }
+
+  &.position-top-center {
+    top: 3rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  &.position-top-right {
+    right: 0;
+    top: 3rem;
+  }
+
   &.position-bottom-left {
     left: 0;
     bottom: 0.5rem;
