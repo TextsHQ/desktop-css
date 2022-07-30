@@ -88,7 +88,7 @@
   --key-bg: linear-gradient(to bottom, #e8e8e8, #d8d8d8);
   --color-key-bottom-bg: #c4c4c4;
 
-  // --prefs-well: #f8f9fa;
+  --prefs-well: rgba(0, 0, 0, .02);
   // --prefs-border: rgba(var(--color-fg-rgb), 0.1);
 }
 
@@ -144,6 +144,6 @@
     --key-bg: linear-gradient(to bottom, #373737, #1b1b1b);
     --color-key-bottom-bg: #2e2e2e;
 
-    // --prefs-well: rgb(9, 9, 9);
+    --prefs-well: rgb(9, 9, 9);
   }
 }
