@@ -28,21 +28,6 @@
   overflow: auto;
 }
 
-.pref-option-hover {
-  background: var(--color-background-preferences-option-hover);
-  position: absolute;
-  left: 0.5em;
-  z-index: 0;
-
-  width: calc(100% - 1em);
-  height: 36px;
-  border-radius: 6px;
-  cursor: default;
-
-  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
-}
-
 .prefs-user-details {
   padding: 1.5em 1em;
   display: flex;
@@ -281,7 +266,8 @@
   padding: 5vh 0;
   position: relative;
 
-  .add-account-contents, .privacy-statement {
+  .add-account-contents,
+  .privacy-statement {
     width: 100%;
     max-width: 480px;
     border-radius: 18px;
@@ -292,7 +278,7 @@
     display: flex;
     justify-content: center;
     margin-top: 1em;
-    padding: .6em 1em;
+    padding: 0.6em 1em;
   }
 
   .add-account-contents {
