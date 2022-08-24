@@ -300,19 +300,6 @@
   }
   display: flex;
 }
-.facetime-links {
-  display: none;
-  margin: 0 1em;
-  svg {
-    vertical-align: text-bottom;
-    margin-right: 6px;
-  }
-}
-.phone:hover {
-  .facetime-links {
-    display: block;
-  }
-}
 
 .contact-pane {
   margin-top: 2px;
