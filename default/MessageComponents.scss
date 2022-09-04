@@ -664,6 +664,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
   overflow: hidden;
   border-radius: 16px 16px 16px 8px;
   margin: 2px 0;
+  position: relative;
   a {
     display: flex;
     flex-direction: column;
@@ -724,11 +725,6 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
     align-items: center;
     justify-content: space-between;
   }
-  svg {
-    margin: 0 16px;
-    min-width: 1em;
-    opacity: 0.6;
-  }
   .favicon {
     border-radius: 2px;
     width: 16px;
@@ -736,6 +732,21 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
     margin-right: 4px;
     vertical-align: text-bottom;
   }
+  .remove-button {
+    position: absolute;
+    padding: 4px 4px 4px 2px;
+    width: 24px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    top: 0;
+    right: 0;
+  }
+}
+.message-link-icon {
+  margin: 0 16px;
+  min-width: 1em;
+  opacity: 0.6;
 }
 .is-sender .message-link {
   border-radius: 16px 16px 8px 16px;
