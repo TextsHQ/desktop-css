@@ -1,0 +1,31 @@
+.tab-bar-container {
+  .filters-pane-toggle {
+    button {
+      background: none !important;
+      border: 1px solid var(--color-border-translucent);
+      margin: 4px;
+      max-height: 25px;
+      svg {
+        font-size: 15px;
+        color: var(--color-text-translucent);
+      }
+    }
+  }
+  .tab-bar {
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    button {
+      background: var(--color-background-tabbar-item);
+      margin: 4px;
+      border-radius: 999px;
+      padding: 6px 11px;
+      color: var(--color-text-tabbar-item);
+      box-shadow: inset 0 0 0 1px var(--color-border-tabbar-item);
+      &.selected {
+        background: var(--color-background-tabbar-item-active);
+        color: var(--color-text-tabbar-item-active);
+        box-shadow: inset 0 0 0 1px var(--color-border-tabbar-item-active);
+      }
+    }
+  }
+}

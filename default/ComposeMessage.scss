@@ -137,7 +137,10 @@
   display: flex;
   overflow: auto;
   align-items: flex-end;
-  .message-link { margin-right: 4px; flex-shrink: 0 }
+  .message-link {
+    margin-right: 4px;
+    flex-shrink: 0;
+  }
 }
 .compose-message {
   width: 100%;

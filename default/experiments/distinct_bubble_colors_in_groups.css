@@ -1,0 +1,91 @@
+:root {
+  --color-background-message-bubble-group-0: var(--color-base-grass-40);
+  --color-background-message-bubble-group-1: var(--color-base-amber-40);
+  --color-background-message-bubble-group-2: var(--color-base-crimson-40);
+  --color-background-message-bubble-group-3: var(--color-base-purple-40);
+  --color-background-message-bubble-group-4: var(--color-base-cyan-40);
+  --color-background-message-bubble-group-5: var(--color-base-pink-40);
+  --color-background-message-bubble-group-6: var(--color-base-indigo-40);
+  --color-background-message-bubble-group-7: var(--color-base-teal-40);
+  --color-text-message-bubble-group-0: var(--color-base-grass-110);
+  --color-text-message-bubble-group-1: var(--color-base-amber-110);
+  --color-text-message-bubble-group-2: var(--color-base-crimson-110);
+  --color-text-message-bubble-group-3: var(--color-base-purple-110);
+  --color-text-message-bubble-group-4: var(--color-base-cyan-110);
+  --color-text-message-bubble-group-5: var(--color-base-pink-110);
+  --color-text-message-bubble-group-6: var(--color-base-indigo-110);
+  --color-text-message-bubble-group-7: var(--color-base-teal-110);
+}
+
+.sender-hash-0 .sender-name {
+  color: var(--color-text-message-bubble-group-0);
+}
+.sender-hash-1 .sender-name {
+  color: var(--color-text-message-bubble-group-1);
+}
+.sender-hash-2 .sender-name {
+  color: var(--color-text-message-bubble-group-2);
+}
+.sender-hash-3 .sender-name {
+  color: var(--color-text-message-bubble-group-3);
+}
+.sender-hash-4 .sender-name {
+  color: var(--color-text-message-bubble-group-4);
+}
+.sender-hash-5 .sender-name {
+  color: var(--color-text-message-bubble-group-5);
+}
+.sender-hash-6 .sender-name {
+  color: var(--color-text-message-bubble-group-6);
+}
+.sender-hash-7 .sender-name {
+  color: var(--color-text-message-bubble-group-7);
+}
+
+.bubble-mode
+  .sender-hash-0:not(.type-action):not(.type-emoji)
+  .message-contents {
+  background: var(--color-background-message-bubble-group-0);
+}
+
+.bubble-mode
+  .sender-hash-1:not(.type-action):not(.type-emoji)
+  .message-contents {
+  background: var(--color-background-message-bubble-group-1);
+}
+
+.bubble-mode
+  .sender-hash-2:not(.type-action):not(.type-emoji)
+  .message-contents {
+  background: var(--color-background-message-bubble-group-2);
+}
+
+.bubble-mode
+  .sender-hash-3:not(.type-action):not(.type-emoji)
+  .message-contents {
+  background: var(--color-background-message-bubble-group-3);
+}
+
+.bubble-mode
+  .sender-hash-4:not(.type-action):not(.type-emoji)
+  .message-contents {
+  background: var(--color-background-message-bubble-group-4);
+}
+
+.bubble-mode
+  .sender-hash-5:not(.type-action):not(.type-emoji)
+  .message-contents {
+  background: var(--color-background-message-bubble-group-5);
+}
+
+.bubble-mode
+  .sender-hash-6:not(.type-action):not(.type-emoji)
+  .message-contents {
+  background: var(--color-background-message-bubble-group-6);
+}
+
+.bubble-mode
+  .sender-hash-7:not(.type-action):not(.type-emoji)
+  .message-contents {
+  background: var(--color-background-message-bubble-group-7);
+}

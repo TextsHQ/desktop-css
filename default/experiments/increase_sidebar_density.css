@@ -1,0 +1,79 @@
+:root {
+  --threads-list-item-height: 64px;
+}
+
+.sidebar-thread .thread-children {
+  grid-template-columns: 20px 0fr auto auto;
+  grid-template-areas: "indicators avatar thread-info timestamp";
+  padding-left: 0px;
+}
+
+.sidebar-thread .indicators {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thread-selection-mode .thread-children {
+  padding-left: 8px;
+}
+.thread-selection-mode .thread-children .indicators {
+  display: none;
+}
+
+.pinned-threads:not(.compact) .indicators {
+  flex-direction: row;
+  padding-top: 10px;
+}
+.pinned-threads:not(.compact) .indicators > div {
+  margin: 0px 1px;
+}
+.error-indicator,
+.snoozed-indicator,
+.unread-indicator {
+  margin: 1px 0px;
+}
+
+.sidebar-thread .img {
+  height: 36px;
+  width: 36px;
+  min-width: 36px;
+}
+
+.sidebar-thread .platform-icon {
+  font-size: 14px;
+}
+
+.sidebar-thread .title {
+  mask-image: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.sidebar-thread .middle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.sidebar-thread .msg-preview {
+  display: -webkit-box;
+  height: 2.6em;
+  line-height: 1.3em;
+  max-width: 100%;
+  margin: 0 auto;
+  line-clamp: 2;
+  box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.sidebar-thread .timestamp {
+  margin: 6.5px 4px 0 auto;
+  align-self: flex-start;
+}

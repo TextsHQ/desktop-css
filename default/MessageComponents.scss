@@ -513,12 +513,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
   :not(.is-sender) .message .timestamp {
     color: var(--color-fg);
   }
-  // .sender-hash-0 .message-contents { background: rgb(250,212,210) }
-  // .sender-hash-1 .message-contents { background: #FFEFD9 }
-  // .sender-hash-2 .message-contents { background: #F9EFDB }
-  // .sender-hash-3 .message-contents { background: #D9EBFF }
-  // .sender-hash-4 .message-contents { background: #E1F7E6 }
-  // .sender-hash-5 .message-contents { background: #E6E6F9 }
+
   .read-more-button {
     padding: 4px 12px 8px;
     border-top: 1px solid rgba(black, 0.1);
