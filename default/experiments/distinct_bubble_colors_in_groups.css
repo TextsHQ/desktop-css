@@ -17,75 +17,51 @@
   --color-text-message-bubble-group-7: var(--color-base-teal-110);
 }
 
-.sender-hash-0 .sender-name {
-  color: var(--color-text-message-bubble-group-0);
+.sender-hash-0 {
+  --sender-text-color: var(--color-text-message-bubble-group-0);
+  --sender-bg-color: var(--color-background-message-bubble-group-0);
 }
-.sender-hash-1 .sender-name {
-  color: var(--color-text-message-bubble-group-1);
+.sender-hash-1 {
+  --sender-text-color: var(--color-text-message-bubble-group-1);
+  --sender-bg-color: var(--color-background-message-bubble-group-1);
 }
-.sender-hash-2 .sender-name {
-  color: var(--color-text-message-bubble-group-2);
+.sender-hash-2 {
+  --sender-text-color: var(--color-text-message-bubble-group-2);
+  --sender-bg-color: var(--color-background-message-bubble-group-2);
 }
-.sender-hash-3 .sender-name {
-  color: var(--color-text-message-bubble-group-3);
+.sender-hash-3 {
+  --sender-text-color: var(--color-text-message-bubble-group-3);
+  --sender-bg-color: var(--color-background-message-bubble-group-3);
 }
-.sender-hash-4 .sender-name {
-  color: var(--color-text-message-bubble-group-4);
+.sender-hash-4 {
+  --sender-text-color: var(--color-text-message-bubble-group-4);
+  --sender-bg-color: var(--color-background-message-bubble-group-4);
 }
-.sender-hash-5 .sender-name {
-  color: var(--color-text-message-bubble-group-5);
+.sender-hash-5 {
+  --sender-text-color: var(--color-text-message-bubble-group-5);
+  --sender-bg-color: var(--color-background-message-bubble-group-5);
 }
-.sender-hash-6 .sender-name {
-  color: var(--color-text-message-bubble-group-6);
+.sender-hash-6 {
+  --sender-text-color: var(--color-text-message-bubble-group-6);
+  --sender-bg-color: var(--color-background-message-bubble-group-6);
 }
-.sender-hash-7 .sender-name {
-  color: var(--color-text-message-bubble-group-7);
+.sender-hash-7 {
+  --sender-text-color: var(--color-text-message-bubble-group-7);
+  --sender-bg-color: var(--color-background-message-bubble-group-7);
+}
+
+.message .sender-name {
+  color: var(--sender-text-color);
+}
+.linked-sender-name.hasSenderHash {
+  color: var(--sender-text-color);
 }
 
 .bubble-mode
-  .sender-hash-0:not(.type-action):not(.type-emoji)
+  .message-container.hasSenderHash:not(.type-action):not(.type-emoji)
   .message-contents {
-  background: var(--color-background-message-bubble-group-0);
+  background: var(--sender-bg-color);
 }
-
-.bubble-mode
-  .sender-hash-1:not(.type-action):not(.type-emoji)
-  .message-contents {
-  background: var(--color-background-message-bubble-group-1);
-}
-
-.bubble-mode
-  .sender-hash-2:not(.type-action):not(.type-emoji)
-  .message-contents {
-  background: var(--color-background-message-bubble-group-2);
-}
-
-.bubble-mode
-  .sender-hash-3:not(.type-action):not(.type-emoji)
-  .message-contents {
-  background: var(--color-background-message-bubble-group-3);
-}
-
-.bubble-mode
-  .sender-hash-4:not(.type-action):not(.type-emoji)
-  .message-contents {
-  background: var(--color-background-message-bubble-group-4);
-}
-
-.bubble-mode
-  .sender-hash-5:not(.type-action):not(.type-emoji)
-  .message-contents {
-  background: var(--color-background-message-bubble-group-5);
-}
-
-.bubble-mode
-  .sender-hash-6:not(.type-action):not(.type-emoji)
-  .message-contents {
-  background: var(--color-background-message-bubble-group-6);
-}
-
-.bubble-mode
-  .sender-hash-7:not(.type-action):not(.type-emoji)
-  .message-contents {
-  background: var(--color-background-message-bubble-group-7);
+.bubble-mode .message-container.hasSenderHash .linked-message {
+  border: 2px solid var(--sender-bg-color);
 }
