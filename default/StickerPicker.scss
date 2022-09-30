@@ -1,0 +1,24 @@
+.sticker-picker {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.sticker-packs {
+  display: flex;
+  overflow: auto;
+}
+.sticker-pack {
+  margin: 4px 6px;
+  width: 32px;
+  border-bottom: 2px solid transparent;
+  &.selected { border-color: var(--color-primary) }
+}
+.stickers {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  height: 200px;
+}
+.sticker {
+  margin: 4px;
+}

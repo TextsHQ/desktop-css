@@ -216,14 +216,24 @@
   }
 }
 
-.info-thread-header {
+.thread-title-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .contact-edit-button {
+  .edit-button {
     padding: 0;
     background-color: transparent;
     color: var(--color-fg);
+  }
+}
+.thread-participants {
+  display: flex;
+  flex-direction: column;
+  h4 {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 .editable-contact-name {

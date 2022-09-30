@@ -172,15 +172,19 @@
     }
   }
 
-  &.gif-picker-open {
+  &.gif-picker-open,
+  &.sticker-picker-open {
     textarea,
     .emoji-picker-icon {
       opacity: 0.5;
       pointer-events: none;
     }
-    .send-gif-button svg {
-      color: var(--color-text-info);
-    }
+  }
+  &.gif-picker-open .send-gif-button svg {
+    color: var(--color-text-info);
+  }
+  &.sticker-picker-open .send-sticker-button svg {
+    color: var(--color-text-info);
   }
 
   .emoji-picker-icon {
