@@ -242,11 +242,11 @@
 
 @keyframes revealImage {
   0% {
-    transform: translateY(50px) scale(2);
+    transform: translateY(50px) scale(3);
     opacity: 0;
   }
   50% {
-    transform: translateY(50px) scale(2);
+    transform: translateY(50px) scale(3);
     opacity: 1;
   }
   100% {
@@ -456,68 +456,68 @@
   }
 }
 
-.triage-modal-container {
-  width: 100%;
-  height: 100%;
+// .triage-modal-container {
+//   width: 100%;
+//   height: 100%;
 
-  display: flex;
-  opacity: 0;
-  transition: opacity 0.2s ease-out;
+//   display: flex;
+//   opacity: 0;
+//   transition: opacity 0.2s ease-out;
 
-  .button-group {
-    display: flex;
-    flex-direction: column;
-    margin: 5px 0;
-  }
+//   .button-group {
+//     display: flex;
+//     flex-direction: column;
+//     margin: 5px 0;
+//   }
 
-  button {
-    margin: 5px 0;
-  }
+//   button {
+//     margin: 5px 0;
+//   }
 
-  button.btn-solid {
-    min-width: 110px;
-  }
+//   button.btn-solid {
+//     min-width: 110px;
+//   }
 
-  .preferences {
-    border-top: 1px solid rgba(var(--color-fg-rgb), 0.15);
-    padding-top: 15px;
-  }
+//   .preferences {
+//     border-top: 1px solid rgba(var(--color-fg-rgb), 0.15);
+//     padding-top: 15px;
+//   }
 
-  &.rendered {
-    opacity: 1;
+//   &.rendered {
+//     opacity: 1;
 
-    .triage-modal {
-      transform: translateY(0px) scale(1);
-    }
-  }
-}
+//     .triage-modal {
+//       transform: translateY(0px) scale(1);
+//     }
+//   }
+// }
 
-.triage-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  background: var(--color-overlay-modal);
-}
+// .triage-overlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   z-index: 2;
+//   background: var(--color-overlay-modal);
+// }
 
-.triage-modal {
-  background-color: var(--color-background-elevated);
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  max-width: 480px;
-  min-height: 450px;
-  max-height: 75vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  right: calc(50% - 240px);
-  top: 10vh;
-  transform: translateY(-10px) scale(0.9);
-  overflow: auto;
-  z-index: 5;
-}
+// .triage-modal {
+//   background-color: var(--color-background-elevated);
+//   border-radius: 12px;
+//   padding: 40px;
+//   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+//   max-width: 480px;
+//   min-height: 450px;
+//   max-height: 75vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   position: absolute;
+//   transition: all 0.2s ease-out;
+//   right: calc(50% - 240px);
+//   top: 10vh;
+//   transform: translateY(-10px) scale(0.9);
+//   overflow: auto;
+//   z-index: 5;
+// }

@@ -9,9 +9,10 @@
 }
 .sticker-pack {
   margin: 4px 6px;
-  width: 32px;
   border-bottom: 2px solid transparent;
-  &.selected { border-color: var(--color-primary) }
+  &.selected {
+    border-color: var(--color-primary);
+  }
 }
 .stickers {
   display: flex;
