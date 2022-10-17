@@ -3,7 +3,7 @@
   padding: 1em 0 0;
   border-top: 1px dashed var(--color-border-neutrals-weak);
   border-bottom: 1px dashed var(--color-border-neutrals-weak);
-  min-height: 125px;
+  min-height: 128px;
   cursor: default;
 }
 .bubble-mode .autocomplete-option {
@@ -15,4 +15,8 @@
   .message-text-container {
     color: inherit !important;
   }
+}
+
+.message-timestamps.bubble-mode .autocomplete-option {
+  padding-right: $message-timestamp-width+13px;
 }
