@@ -220,6 +220,15 @@
   --color-text-translucent: rgba(var(--color-base-black-rgb), 0.9);
   --color-text-translucent-subtle: rgba(var(--color-base-black-rgb), 0.5);
   --color-text-translucent-weak: rgba(var(--color-base-black-rgb), 0.7);
+
+  --color-text-message-bubble-group-0: var(--color-base-grass-110);
+  --color-text-message-bubble-group-1: var(--color-base-amber-110);
+  --color-text-message-bubble-group-2: var(--color-base-crimson-110);
+  --color-text-message-bubble-group-3: var(--color-base-purple-110);
+  --color-text-message-bubble-group-4: var(--color-base-cyan-110);
+  --color-text-message-bubble-group-5: var(--color-base-pink-110);
+  --color-text-message-bubble-group-6: var(--color-base-indigo-110);
+  --color-text-message-bubble-group-7: var(--color-base-teal-110);
 }
 :root {
   @media (prefers-color-scheme: dark) {

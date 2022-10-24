@@ -1,6 +1,38 @@
 @import "mixins";
 @import "constants";
 
+.sender-hash-0 {
+  --sender-text-color: var(--color-text-message-bubble-group-0);
+}
+
+.sender-hash-1 {
+  --sender-text-color: var(--color-text-message-bubble-group-1);
+}
+
+.sender-hash-2 {
+  --sender-text-color: var(--color-text-message-bubble-group-2);
+}
+
+.sender-hash-3 {
+  --sender-text-color: var(--color-text-message-bubble-group-3);
+}
+
+.sender-hash-4 {
+  --sender-text-color: var(--color-text-message-bubble-group-4);
+}
+
+.sender-hash-5 {
+  --sender-text-color: var(--color-text-message-bubble-group-5);
+}
+
+.sender-hash-6 {
+  --sender-text-color: var(--color-text-message-bubble-group-6);
+}
+
+.sender-hash-7 {
+  --sender-text-color: var(--color-text-message-bubble-group-7);
+}
+
 .message-container {
   display: flex;
   flex-direction: column;
@@ -238,7 +270,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
     object-fit: cover;
   }
   .sender-name {
-    color: var(--color-text-neutrals-weak);
+    color: var(--sender-text-color);
     margin: -2px 0 2px 4px;
   }
   .timestamp {
@@ -332,13 +364,16 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
     opacity: 0.8;
     margin-left: 4px;
   }
+  &.reacted {
+    border-color: rgba(var(--color-primary-rgb), 1);
+  }
 }
 .message-reactions-list {
   @include popover;
   display: flex;
   flex-direction: column;
   padding: 2px 4px;
-  span {
+  .reaction {
     margin-right: 10px;
     font-size: 18px;
   }
@@ -386,6 +421,9 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
 }
 .linked-sender-name {
   color: var(--color-text-info);
+}
+.linked-sender-name.hasSenderHash {
+  color: var(--sender-text-color);
 }
 
 .contact-attachment {
