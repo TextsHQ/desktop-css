@@ -149,6 +149,7 @@
   max-height: 0px;
   overflow: hidden;
   animation: reveal-global-controls 0.1s ease-in-out forwards;
+  margin-top: var(--header-height);
 
   .controls {
     display: flex;
