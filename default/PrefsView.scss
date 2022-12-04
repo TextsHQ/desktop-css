@@ -239,19 +239,18 @@
     flex-wrap: wrap;
     padding: 0 0.5em;
 
-    .new-account-icon {
-      width: 36px;
-      height: 36px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 6px;
-    }
+  }
+  .new-account-icon {
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6px;
   }
 
   .platform-icon {
-    font-size: 20px;
-    margin: 0 0.5rem;
+    font-size: 28px;
+    margin: 0 6px;
     z-index: 1;
   }
   .platform-icon:hover {
