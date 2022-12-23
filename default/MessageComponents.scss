@@ -614,7 +614,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
     width: 100%;
   }
 }
-.home:not(.bubble-mode) {
+.no-bubble-mode {
   .type-emoji .message-text-container {
     line-height: 1em;
     margin-top: 4px;
@@ -648,8 +648,11 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
   }
 
   .message-main {
-    padding-left: 40px;
     line-height: 1.5em;
+  }
+
+  .message-container:not(.type-action) .message-main {
+    padding-left: 40px;
   }
 
   .message-contents {

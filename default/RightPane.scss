@@ -216,6 +216,53 @@
   }
 }
 
+.thread-info-avatar {
+  display: inline-flex;
+  outline: 0;
+
+  .fs-close-icon {
+    display: none;
+  }
+
+  img {
+    cursor: zoom-in;
+  }
+
+  &.zoomed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+    img {
+      width: unset;
+      height: unset;
+      max-width: 98vw;
+      max-height: 98vh;
+      cursor: zoom-out;
+      border-radius: 0;
+    }
+
+    .fs-close-icon {
+      display: initial;
+      width: 32px;
+      height: 32px;
+      color: white;
+      position: absolute;
+      right: 18px;
+      top: 18px;
+    }
+  }
+}
+
 .thread-title-header {
   display: flex;
   justify-content: space-between;

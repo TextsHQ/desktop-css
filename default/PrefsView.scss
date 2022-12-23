@@ -238,7 +238,6 @@
     display: flex;
     flex-wrap: wrap;
     padding: 0 0.5em;
-
   }
   .new-account-icon {
     height: 32px;
@@ -1049,7 +1048,12 @@ a.pref-option {
   button:not(:first-child) {
     margin-left: 4px;
   }
+  .platform-icon {
+    font-size: 22px;
+    margin-right: 8px;
+  }
   .platform-integration {
+    padding: 0.8em 1em;
     > div {
       display: flex;
       align-items: center;
