@@ -1033,6 +1033,8 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
   display: flex;
   font-size: 16px;
   line-height: 1;
+  max-width: 285px;
+  flex-wrap: wrap;
 }
 
 .react-button {

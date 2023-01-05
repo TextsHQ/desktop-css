@@ -8,9 +8,7 @@
   overflow: auto;
   display: flex;
   align-items: flex-start;
-  &:not(.command-bar-modal) {
-    background: var(--color-overlay-modal);
-  }
+  background: var(--color-overlay-modal);
 }
 
 .modal {

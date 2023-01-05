@@ -1,12 +1,22 @@
-.command-bar {
+.modal-container.command-bar-modal {
+  background: none;
+  padding: 0 1em;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.command-bar, .forward-message-preview {
   border-radius: 8px;
   width: 60vw;
   max-width: 700px;
-  margin: auto;
-  background: var(--color-background-commandbar-opaque);
-  color: var(--color-text-translucent);
   border: 1px solid var(--color-border-translucent-strong);
   box-shadow: var(--shadows-commandbar);
+}
+
+.command-bar {
+  background: var(--color-background-commandbar-opaque);
+  color: var(--color-text-translucent);
   padding-bottom: 4px;
   h3 {
     margin: 0;
@@ -217,7 +227,18 @@
 }
 
 @media (max-width: 800px) {
-  .command-bar {
+  .command-bar, .forward-message-preview {
     width: 80vw;
+  }
+}
+
+.forward-message-preview {
+  background: var(--color-background-app);
+  max-height: 30vh;
+  margin-bottom: .5em;
+  overflow: auto;
+
+  .message .timestamp {
+    display: none;
   }
 }
