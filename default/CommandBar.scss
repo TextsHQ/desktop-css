@@ -6,7 +6,8 @@
   flex-direction: column;
 }
 
-.command-bar, .forward-message-preview {
+.command-bar,
+.forward-message-preview {
   border-radius: 8px;
   width: 60vw;
   max-width: 700px;
@@ -227,7 +228,8 @@
 }
 
 @media (max-width: 800px) {
-  .command-bar, .forward-message-preview {
+  .command-bar,
+  .forward-message-preview {
     width: 80vw;
   }
 }
@@ -235,7 +237,7 @@
 .forward-message-preview {
   background: var(--color-background-app);
   max-height: 30vh;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   overflow: auto;
 
   .message .timestamp {

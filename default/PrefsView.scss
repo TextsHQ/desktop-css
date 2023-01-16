@@ -26,35 +26,16 @@
     font-weight: 500;
   }
   overflow: auto;
+  height: 100%;
 }
 
-.prefs-user-details {
-  padding: 1.5em 1em;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--color-border-neutrals);
-
-  div {
-    display: flex;
-    align-items: center;
-  }
-
-  img {
-    margin-right: 10px;
-  }
-  .name {
-    font-weight: 500;
-  }
-}
-.prefs-user-details .plan-badge,
 .subview-prefs-about .plan-badge {
   background: var(--color-primary);
   color: white;
   border-radius: 4px;
   padding: 3px 6px;
   font-size: 12px;
-  &.expired {
+  &.warning {
     background: var(--warning-color);
     color: white;
   }
@@ -71,8 +52,10 @@
 
 .pref-category {
   padding: 1em 0.5em;
-  border-bottom: 1px solid var(--color-border-neutrals-weak);
   position: relative;
+}
+.pref-category:not(:last-child) {
+  border-bottom: 1px solid var(--color-border-neutrals-weak);
 }
 
 // .prefs-search {

@@ -1,0 +1,176 @@
+@import "mixins";
+
+.subscription-prompt-modal-container-app-hidden {
+   background: rgba(var(--color-base-black-rgb), 1)
+}
+
+.subscription-prompt-view {
+  @include fixed-occupy-fullscreen;
+
+  display: flex;
+
+  .modal {
+    background-color: var(--color-background-elevated);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    min-height: 400px;
+    max-height: 75vh;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: auto;
+    flex-grow: 1;
+    opacity: 1;
+
+    &.fading {
+      animation: fadeOut 0.25s cubic-bezier(0, 0, 0.14, 1) forwards;
+    }
+  }
+
+  button {
+    position: relative;
+    margin-left: 0.5rem;
+  }
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  img,
+  svg {
+    width: 82px;
+    height: 82px;
+  }
+
+  .btn-solid {
+    min-width: 110px;
+  }
+
+  button.initial {
+    opacity: 0;
+    animation: subPromptFadeIn 0.5s cubic-bezier(0, 0, 0.13, 1) 1.5s forwards;
+  }
+
+  .spin-icon {
+    margin: 0 10px;
+    opacity: 0.5;
+    width: 32px;
+    height: 32px;
+    margin-bottom: 32px;
+  }
+
+  .text-blue-500 {
+    color: rgba(59, 130, 246, 1)
+  }
+}
+
+.subscription-prompt-plans {
+  .text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .mb-2 {
+    margin-bottom: 0.5rem;
+  }
+  .mt-1 {
+    margin-top: 0.25rem;
+  }
+  .text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .ml-4 {
+    margin-left: 1rem;
+  }
+  .font-bold {
+    font-weight: 700;
+  }
+  .ml-2 {
+    margin-left: 0.5rem;
+  }
+  .mr-2 {
+    margin-right: 0.5rem;
+  }
+  .period-picker {
+    color: rgba(var(--color-fg-rgb), 0.75);
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .list {
+    color: rgba(243, 244, 246, 1);
+    box-sizing: border-box;
+    margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    text-align: left;
+
+    h1 {
+      opacity: 0;
+      animation: subPromptFadeIn 0.5s cubic-bezier(0, 0, 0.13, 1) forwards;
+    }
+
+    a.plan {
+      display: flex;
+      width: 14rem;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      background-color: var(--color-primary);
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .pricing-info {
+    color: var(--color-text-neutrals-weak);
+  }
+}
+
+@keyframes subPromptFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
