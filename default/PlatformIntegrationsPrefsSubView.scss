@@ -1,0 +1,30 @@
+.subview-prefs-pi {
+  input {
+    width: inherit;
+    flex: 1;
+    margin: 0 8px;
+  }
+  button {
+    align-items: center;
+  }
+  button:not(:first-child) {
+    margin-left: 4px;
+  }
+  .platform-icon {
+    font-size: 22px;
+    margin-right: 8px;
+  }
+  .platform-integration {
+    padding: 0.8em 1em;
+    > div {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .button {
+    padding: 0 6px;
+    margin-right: 8px;
+    border: 1px solid rgba(var(--color-primary-rgb), 0.5);
+    border-radius: 4px;
+  }
+}

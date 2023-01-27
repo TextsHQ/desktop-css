@@ -29,4 +29,7 @@
       left: 16px;
     }
   }
+  &.disabled {
+    opacity: 0.5;
+  }
 }

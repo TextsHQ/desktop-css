@@ -1,0 +1,20 @@
+.subview-prefs-browser-ext {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .prefs-group,
+  h4 {
+    width: 100%;
+  }
+
+  img {
+    vertical-align: middle;
+    margin-right: 0.5em;
+  }
+  a {
+    font-size: 110%;
+    margin: 1em 0;
+    display: block;
+  }
+}
