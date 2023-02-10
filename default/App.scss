@@ -210,6 +210,9 @@ kbd.big {
 .spin-icon {
   animation: spin 1.2s infinite linear;
 }
+.drag-icon {
+  cursor: move;
+}
 
 img.platform-icon {
   width: 1em;

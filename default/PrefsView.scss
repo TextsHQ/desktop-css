@@ -138,65 +138,6 @@
   }
 }
 
-.accounts-list {
-  .tag {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 4px;
-  }
-  .mute-icon,
-  .spin-icon {
-    margin: 0 4px;
-    opacity: 0.5;
-    width: 16px;
-    height: 16px;
-  }
-  .mute-icon.muted {
-    opacity: 1;
-  }
-  .selected .switch.on {
-    background: rgba(black, 0.5);
-  }
-  h4 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  button {
-    margin-left: 10px;
-    transition: transform 0.1s ease-in-out;
-    display: flex;
-    align-items: center;
-  }
-  button.accounts-collapsed {
-    transform: rotate(-90deg);
-  }
-  div {
-    display: flex;
-    align-items: center;
-  }
-}
-.accounts-items {
-  margin: 2px 0;
-  display: flex;
-  flex-direction: column;
-  max-height: 5000px;
-  transition: max-height 0.2s ease-in-out;
-  overflow: hidden;
-
-  .pref-option {
-    width: 100%;
-    margin: 2px 0;
-  }
-  &.accounts-collapsed {
-    max-height: 0;
-  }
-  .switch {
-    z-index: 1;
-  }
-}
-
 .add-account {
   display: flex;
   flex-wrap: wrap;
@@ -237,6 +178,7 @@
   position: relative;
 
   .add-account-contents,
+  .known-issues,
   .privacy-statement {
     width: 100%;
     max-width: 480px;
@@ -244,11 +186,22 @@
     background-color: var(--color-background-grouped);
   }
 
-  .privacy-statement {
+  .known-issues, .privacy-statement {
     display: flex;
     justify-content: center;
     margin-top: 1em;
     padding: 0.6em 1em;
+  }
+
+  .known-issues {
+    padding: 1em;
+    flex-direction: column;
+    > div {
+      display: list-item;
+      list-style-type: decimal;
+      margin-left: 2em;
+    }
+    div + div { margin-top: 1em }
   }
 
   .platform-header {
@@ -827,6 +780,10 @@ a.pref-option {
   padding-top: 0;
   display: inline-block;
   color: var(--color-text-neutrals-weak);
+  &.group {
+    margin-top: 0.5em;
+    display: flex;
+  }
 }
 
 .description-text-no-padding {

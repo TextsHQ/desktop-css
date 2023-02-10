@@ -1,4 +1,4 @@
-.subview-prefs-pi {
+.subview-prefs-installables {
   input {
     width: inherit;
     flex: 1;
@@ -14,7 +14,7 @@
     font-size: 22px;
     margin-right: 8px;
   }
-  .platform-integration {
+  .installable-item {
     padding: 0.8em 1em;
     > div {
       display: flex;

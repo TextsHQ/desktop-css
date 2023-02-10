@@ -136,4 +136,8 @@
       }
     }
   }
+
+  .enhanced-img img {
+    pointer-events: auto !important;
+  }
 }

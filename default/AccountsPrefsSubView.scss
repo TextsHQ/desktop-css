@@ -1,0 +1,55 @@
+.accounts-list {
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+  }
+  .more-icon,
+  .mute-icon,
+  .spin-icon {
+    margin: 0 4px;
+    opacity: 0.5;
+    width: 16px;
+    height: 16px;
+  }
+  .mute-icon.muted {
+    opacity: 1;
+  }
+  .selected .switch.on {
+    background: rgba(black, 0.5);
+  }
+  button {
+    margin-left: 10px;
+    transition: transform 0.1s ease-in-out;
+    display: flex;
+    align-items: center;
+  }
+  .switch {
+    z-index: 1;
+  }
+  .drag-icon {
+    opacity: 0;
+  }
+  .participant-img {
+    width: 32px;
+    height: 32px;
+  }
+  .platform-icon {
+    font-size: 16px;
+    margin: 0 10px -24px -8px;
+    display: flex;
+  }
+  .secondary {
+    opacity: 0.7;
+  }
+}
+.account-list-item {
+  padding: 8px 4px 8px 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &:hover .drag-icon {
+    opacity: 0.5;
+  }
+}
