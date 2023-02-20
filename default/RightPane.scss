@@ -1,4 +1,5 @@
 @import "constants";
+@import "mixins";
 
 .right {
   // padding-top: var(--header-height);
@@ -475,4 +476,20 @@
   position: fixed;
   top: -999px;
   left: -999px;
+}
+
+.hint-view {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex: 1;
+  padding-bottom: 2em;
+  .cta {
+    @include popover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5em 1em;
+  }
+  button { margin-left: 1em }
 }

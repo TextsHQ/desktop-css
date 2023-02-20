@@ -186,7 +186,8 @@
     background-color: var(--color-background-grouped);
   }
 
-  .known-issues, .privacy-statement {
+  .known-issues,
+  .privacy-statement {
     display: flex;
     justify-content: center;
     margin-top: 1em;
@@ -201,7 +202,9 @@
       list-style-type: decimal;
       margin-left: 2em;
     }
-    div + div { margin-top: 1em }
+    div + div {
+      margin-top: 1em;
+    }
   }
 
   .platform-header {

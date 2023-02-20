@@ -35,6 +35,9 @@ body:not(.window-unfocused) .sidebar-thread.selected {
   .muted {
     --thread-children-unread-indicator: var(--color-icon-on-accent-weak);
   }
+  .thread-checkbox {
+    color: white;
+  }
 }
 
 .left {
