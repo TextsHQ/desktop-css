@@ -109,6 +109,7 @@
   display: flex;
   overflow: hidden;
   align-items: center;
+  -webkit-app-region: no-drag;
 
   .participant-imgs {
     .participant-img {
