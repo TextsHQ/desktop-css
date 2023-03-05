@@ -41,6 +41,9 @@
     align-items: center;
     border-bottom: 1px solid var(--color-border-translucent-strong);
   }
+  &.no-command-list {
+    border-bottom: none;
+  }
   input {
     width: 100%;
     padding: 1em;
@@ -160,6 +163,10 @@
       text-overflow: ellipsis;
       overflow: hidden;
       justify-content: flex-start;
+    }
+    .hotkey {
+      color: inherit;
+      opacity: 0.8;
     }
   }
 }

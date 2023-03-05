@@ -16,9 +16,15 @@
   margin-top: 30px;
 }
 
+.prefs-left-pane-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 240px;
+  max-width: 400px;
+}
+
 .prefs-left-pane {
   border-right: 1px solid var(--color-border-neutrals);
-  min-width: 300px;
   h4 {
     color: var(--color-text-neutrals-weak);
     font-size: 12px;
@@ -178,23 +184,21 @@
   position: relative;
 
   .add-account-contents,
-  .known-issues,
-  .privacy-statement {
+  .known-issues {
     width: 100%;
     max-width: 480px;
     border-radius: 18px;
     background-color: var(--color-background-grouped);
   }
 
-  .known-issues,
   .privacy-statement {
     display: flex;
     justify-content: center;
-    margin-top: 1em;
-    padding: 0.6em 1em;
+    margin-bottom: 1em;
   }
 
   .known-issues {
+    margin-top: 1em;
     padding: 1em;
     flex-direction: column;
     > div {
@@ -211,7 +215,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     font-weight: 700;
     font-size: 22px;
 
