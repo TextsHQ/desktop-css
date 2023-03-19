@@ -518,12 +518,6 @@
   }
 }
 
-.subview-prefs-ui {
-  button {
-    margin-right: 0.5em;
-  }
-}
-
 .platform-header {
   display: flex;
   align-items: center;
@@ -680,10 +674,8 @@ a.pref-option {
   margin-top: 0;
 }
 
-.subview-prefs-secret {
-  button:not(:first-child) {
-    margin-left: 4px;
-  }
+.prefs-action-group button:not(:first-child) {
+  margin-left: 4px;
 }
 
 .new-badge {
