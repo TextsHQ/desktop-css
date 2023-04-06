@@ -292,11 +292,11 @@ body:not(.window-unfocused) .sidebar-thread.selected {
   }
 
   .thread-children {
-    width: 90px;
-    height: 110px;
+    width: var(--pinned-thread-width);
+    height: var(--pinned-thread-height);
     padding: 8px;
     margin: 0;
-    grid-template-rows: 64px auto;
+    grid-template-rows: var(--pinned-thread-base-size) auto;
     grid-template-columns: auto auto 1fr;
     grid-template-areas:
       "avatar avatar avatar"
@@ -309,20 +309,20 @@ body:not(.window-unfocused) .sidebar-thread.selected {
   }
 
   .img {
-    width: 64px;
-    height: 64px;
+    width: var(--pinned-thread-base-size);
+    height: var(--pinned-thread-base-size);
     justify-self: center;
     margin: 0;
   }
   .img .multiple:first-child {
-    width: 48px;
-    height: 48px;
+    width: var(--pinned-thread-group-img-size);
+    height: var(--pinned-thread-group-img-size);
     bottom: 0;
     left: 0;
   }
   .img .multiple:nth-child(2) {
-    width: 48px;
-    height: 48px;
+    width: var(--pinned-thread-group-img-size);
+    height: var(--pinned-thread-group-img-size);
     top: 0;
     right: 0;
   }
@@ -338,7 +338,7 @@ body:not(.window-unfocused) .sidebar-thread.selected {
     padding-top: 12px;
   }
   .platform-icon {
-    font-size: 18px;
+    font-size: calc(var(--base-size) / 3.5);
   }
   .title {
     font-size: 12px;
