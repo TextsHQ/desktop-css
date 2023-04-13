@@ -299,6 +299,16 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
     padding-left: 5px;
   }
 }
+.markdown {
+  white-space: normal;
+
+  p:first-child {
+    margin-top: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
 .message-main {
   width: 100%;
   display: flex;

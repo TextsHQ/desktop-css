@@ -10,8 +10,12 @@
 
   --pinned-thread-base-size: 64px;
   --pinned-thread-group-img-size: calc(var(--pinned-thread-base-size) / 1.5);
-  --pinned-thread-height: calc(var(--pinned-thread-base-size) + (var(--pinned-thread-base-size) / 1.4));
-  --pinned-thread-width: calc(var(--pinned-thread-base-size) + (var(--pinned-thread-base-size) / 2.5));
+  --pinned-thread-height: calc(
+    var(--pinned-thread-base-size) + (var(--pinned-thread-base-size) / 1.4)
+  );
+  --pinned-thread-width: calc(
+    var(--pinned-thread-base-size) + (var(--pinned-thread-base-size) / 2.5)
+  );
 
   --twitter-color: rgb(29, 161, 242);
   --twitter-color-rgb: 29, 161, 242;

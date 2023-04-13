@@ -1,0 +1,6 @@
+:root {
+  --color-background-message-active: rgba(0, 0, 0, 0.3);
+}
+.right {
+  background: transparent;
+}
