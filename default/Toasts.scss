@@ -44,14 +44,25 @@
   align-items: center;
   background: rgba(black, 0.9);
   margin: 3px 12px;
-  padding: 6px 12px;
+  padding: 0 12px;
   box-shadow: 0 4px 16px rgba(black, 0.1);
   border-radius: 6px;
   color: white;
   white-space: pre-wrap;
   word-break: break-word;
   pointer-events: auto;
+  flex-wrap: wrap;
 
+  span,
+  .buttons {
+    margin: 6px 0;
+    align-items: center;
+  }
+  .buttons {
+    display: flex;
+    justify-self: flex-end;
+    margin-left: auto;
+  }
   &:hover {
     box-shadow: 0 4px 32px 8px rgba(black, 0.1);
   }
