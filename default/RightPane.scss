@@ -504,3 +504,118 @@
     margin-bottom: 10px;
   }
 }
+
+.calendar-pane {
+  padding-top: var(--header-height);
+  max-width: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: var(--color-background-app);
+  border-left: 1px solid var(--color-border-neutrals);
+  user-select: text;
+
+  .pane-container {
+    padding: 12px 12px 0;
+  }
+
+  .fc-button:not(.disabled) {
+    cursor: inherit;
+  }
+
+  .fc-header-toolbar {
+    display: grid;
+    row-gap: 4px;
+  }
+
+  .panes {
+    .fc-toolbar-title {
+      padding-bottom: 4px;
+      font-size: 15px;
+      font-weight: normal;
+    }
+
+    .fc-toolbar-chunk {
+      width: 275px;
+
+      .fc-button-group {
+        float: right;
+      }
+    }
+
+    .fc-scrollgrid {
+      border: 0;
+      max-height: 1000px;
+
+      &-section:nth-of-type(2) {
+        display: none;
+      }
+    }
+
+    .fc-timegrid {
+      margin-bottom: 12px;
+
+      &-divider {
+        display: none;
+      }
+    }
+
+    * .fc-timegrid-slot-label {
+      border: 0;
+    }
+
+    .fc-button-primary,
+    .fc-prev-button,
+    .fc-next-button {
+      background-color: transparent;
+      color: var(--color-text-neutrals-weak);
+      text-transform: uppercase;
+      border: 1px solid rgba(var(--color-fg-rgb), 0.1);
+      transition: all 0.25s;
+      &:disabled {
+        border: 1px dashed rgba(var(--color-fg-rgb), 0.1);
+        // text-decoration: line-through;
+      }
+
+      &:hover:not([disabled]) {
+        background: var(--color-primary-hover);
+        border-color: var(--color-primary-hover);
+      }
+    }
+
+    .fc-prev-button,
+    .fc-next-button {
+      border: 0;
+    }
+
+    .fc-theme-standard td,
+    .fc-theme-standard th {
+      border-color: rgba(var(--color-fg-rgb), 0.1);
+    }
+
+    .fc .fc-list-event:hover td {
+      background-color: var(--color-base-gray-30);
+    }
+
+    .fc .fc-daygrid-day.fc-day-today,
+    .fc-timegrid-slot-lane,
+    .fc-daygrid-day {
+      background-color: var(--color-base-gray-30);
+    }
+
+    .fc-timegrid-event-harness-inset .fc-timegrid-event {
+      box-shadow: none !important;
+    }
+
+    .fc-v-event {
+      border: 0 !important;
+      border-radius: 0 !important;
+      padding: 4px;
+
+      &.fc-timegrid-event-short {
+        padding: 0;
+      }
+    }
+  }
+}
