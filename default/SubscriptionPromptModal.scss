@@ -12,11 +12,10 @@
   .modal {
     background-color: var(--color-background-elevated);
     border-radius: 12px;
-    padding: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    max-width: 700px;
+    // max-width: 700px;
     min-height: 400px;
-    max-height: 75vh;
+    // max-height: 75vh;
     align-self: center;
     justify-self: center;
     display: flex;
@@ -32,10 +31,60 @@
     overflow: auto;
     flex-grow: 1;
     opacity: 1;
+    padding: 20px;
 
     &.fading {
       animation: fadeOut 0.25s cubic-bezier(0, 0, 0.14, 1) forwards;
     }
+
+    .texts-logo {
+      width: 82px;
+      height: 82px;
+    }
+
+    .modal-description {
+      width: 80%;
+    }
+  }
+
+  .modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    padding: 5px 20px;
+    border-top: 1px solid var(--color-border-neutrals-weak);
+    justify-content: space-between;
+    .animate-on-hover:hover {
+      img {
+        margin-left: 2px;
+      }
+    }
+    .talk-to-support {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      img {
+        margin-left: -4px;
+        width: 16px;
+        height: 16px;
+        transition: 0.1s all;
+      }
+      img:first-child {
+        margin-left: 0;
+      }
+
+      img:not(:first-child) {
+        box-shadow: -2px 0 0 var(--right-pane-bg);
+      }
+      .participant-imgs {
+        margin-bottom: -5px;
+      }
+    }
+  }
+
+  .action-buttons {
+    text-align: right;
   }
 
   button {
@@ -43,18 +92,16 @@
     margin-left: 0.5rem;
   }
 
-  .buttons {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1rem;
+  .ml-2 {
+    margin-left: 0.5rem;
   }
 
-  img,
-  svg {
-    width: 82px;
-    height: 82px;
+  .mr-2 {
+    margin-right: 0.5rem;
+  }
+
+  .text-blue-500 {
+    color: rgba(59, 130, 246, 1);
   }
 
   .btn-solid {
@@ -64,18 +111,6 @@
   button.initial {
     opacity: 0;
     animation: subPromptFadeIn 0.5s cubic-bezier(0, 0, 0.13, 1) 1.5s forwards;
-  }
-
-  .spin-icon {
-    margin: 0 10px;
-    opacity: 0.5;
-    width: 32px;
-    height: 32px;
-    margin-bottom: 32px;
-  }
-
-  .text-blue-500 {
-    color: rgba(59, 130, 246, 1);
   }
 }
 
@@ -103,12 +138,9 @@
   .ml-2 {
     margin-left: 0.5rem;
   }
-  .mr-2 {
-    margin-right: 0.5rem;
-  }
   .period-picker {
     color: rgba(var(--color-fg-rgb), 0.75);
-    margin: 1rem;
+    // margin: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,6 +155,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    row-gap: 1rem;
 
     text-align: left;
 
@@ -142,8 +175,6 @@
       padding-right: 1rem;
       background-color: var(--color-primary);
       margin-left: 1rem;
-      margin-right: 1rem;
-      margin-bottom: 1rem;
     }
   }
 
