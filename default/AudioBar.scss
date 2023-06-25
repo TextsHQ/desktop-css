@@ -25,6 +25,14 @@
     audio {
       display: none;
     }
+
+    .recording-waves {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      margin: 0 8px;
+    }
   }
 
   input {
@@ -42,6 +50,7 @@
     background-color: var(--compose-message-accent);
     margin: 0 8px;
     transition: all 0.1s ease;
+    z-index: 11;
   }
 
   .preview-progress {

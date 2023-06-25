@@ -196,8 +196,8 @@
 }
 
 .thread-info-header {
-  // background: rgba(var(--color-fg-rgb), .05);
-  padding: 12px 12px 0;
+  // border-bottom: 1px rgba(var(--color-fg-rgb), .05) solid;
+  padding: 0 12px 0;
   margin-bottom: 2px;
   h3 {
     margin: 0;
@@ -208,8 +208,8 @@
     margin: 4px 0;
   }
   img {
-    width: 56px;
-    height: 56px;
+    width: 80px;
+    height: 80px;
     margin: 8px 0;
   }
   .tag {
@@ -493,6 +493,13 @@
   }
   button {
     margin-left: 1em;
+  }
+}
+
+.stealth-mode {
+  margin: 0.5em auto;
+  span:nth-child(2) {
+    color: var(--color-primary);
   }
 }
 
