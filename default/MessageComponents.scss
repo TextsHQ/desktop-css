@@ -343,6 +343,10 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
   margin: 0 2px;
   opacity: 0.7;
 }
+.message-contents a,
+.tweet-text a {
+  border-bottom: 1px solid;
+}
 .message-reactions {
   display: inline-flex;
   cursor: default;

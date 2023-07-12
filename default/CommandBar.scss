@@ -239,6 +239,15 @@
   .img .multiple:nth-child(2) {
     margin-left: -10px;
   }
+  .user-display-text {
+    opacity: 0.8;
+  }
+  .ts {
+    width: 35px;
+    text-align: right;
+    font-size: 12px;
+    opacity: 0.9;
+  }
 }
 
 .select-account-command {
