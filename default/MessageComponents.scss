@@ -50,7 +50,7 @@
   }
   &.is-selected {
     background: var(--color-background-message-active);
-    // border-left-color: var(--color-primary);
+    border-right-color: var(--color-primary);
     .timestamp {
       opacity: 0.9;
     }
