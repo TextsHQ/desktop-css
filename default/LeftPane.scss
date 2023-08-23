@@ -40,6 +40,12 @@ body:not(.window-unfocused) .sidebar-thread.selected {
   }
 }
 
+.threads-list-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  border-top: 1px solid var(--color-border-translucent);
+}
 .left {
   display: flex;
   width: 100%;
@@ -435,8 +441,6 @@ body:not(.window-unfocused) .sidebar-thread.selected {
   margin: 0 8px 4px;
   .account-filter {
     padding: 0 8px;
-    display: flex;
-    align-items: center;
     img {
       margin-right: 4px;
     }
@@ -745,5 +749,40 @@ $restart-button-color-active: #732f70;
   .skeleton {
     animation: none !important;
     background: var(--skeleton-1);
+  }
+}
+
+.account-switcher {
+  height: 100%;
+  // background: rgba(255, 255, 255, 0.2);
+  // border-radius: 8px;
+  border-right: 1px solid var(--color-border-translucent);
+  flex-direction: column;
+  display: flex;
+
+  button {
+    justify-content: center;
+  }
+
+  .filters-pane-list {
+    display: flex;
+    flex-direction: column;
+    // padding: 0;
+    .platform-icon {
+      font-size: 20px;
+      margin-right: 0;
+    }
+  }
+
+  .left-pane-footer {
+    margin: auto -8px 0;
+    padding: 0;
+    .participant-img {
+      margin: 0 auto;
+    }
+  }
+
+  .current-user {
+    margin: 10px auto 0;
   }
 }

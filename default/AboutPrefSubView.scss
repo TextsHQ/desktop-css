@@ -73,17 +73,4 @@
       color: var(--color-text-info-active);
     }
   }
-
-  .plan-badge {
-    background: var(--color-primary);
-    color: white;
-    border-radius: 4px;
-    padding: 3px 6px;
-    font-size: 12px;
-
-    &.warning {
-      background: var(--warning-color);
-      color: white;
-    }
-  }
 }
