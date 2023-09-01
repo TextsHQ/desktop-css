@@ -193,6 +193,10 @@
   .user-ids span {
     display: block;
   }
+  h4 {
+    color: var(--color-text-neutrals-weak);
+    margin-bottom: 4px;
+  }
 }
 
 .thread-info-header {
@@ -310,6 +314,14 @@
   padding: 0 12px;
   overflow: auto;
 }
+.alt-account-thread {
+  img {
+    font-size: 16px;
+    vertical-align: text-top;
+    margin-right: 2px;
+  }
+  margin: 6px 0;
+}
 
 .thread-desc {
   white-space: pre-wrap;
@@ -371,10 +383,6 @@
   }
   > div > div {
     margin: 0 0 2px;
-  }
-  h4 {
-    color: var(--color-text-neutrals-weak);
-    margin-bottom: 4px;
   }
   .group {
     margin: 16px 0;

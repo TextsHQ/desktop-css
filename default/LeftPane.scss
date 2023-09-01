@@ -754,7 +754,7 @@ $restart-button-color-active: #732f70;
 
 .account-switcher {
   height: 100%;
-  width: 54px;
+  min-width: 54px;
   // background: rgba(255, 255, 255, 0.2);
   // border-radius: 8px;
   border-right: 1px solid var(--color-border-translucent);
