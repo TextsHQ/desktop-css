@@ -1,4 +1,10 @@
-// DiceStickersSlotMachine contains 5 stickers.
+.circular-video {
+  video {
+    border-radius: 50% !important;
+  }
+}
+
+// DiceStickersSlotMachine contains 5 stickers
 .telegram-dice {
   .message-attachments {
     position: relative;
@@ -7,11 +13,7 @@
     position: absolute;
   }
 }
-.telegram-video-note {
-  video {
-    border-radius: 50%;
-  }
-}
+
 .platform-twitter.thread-notifications,
 .platform-linkedin.thread-my-network-notifications {
   .message-contents a {
