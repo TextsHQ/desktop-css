@@ -269,3 +269,12 @@
   margin-bottom: 0.5em;
   overflow: auto;
 }
+
+.time-suggestion {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  span:last-child {
+    font-variant: tabular-nums;
+  }
+}
