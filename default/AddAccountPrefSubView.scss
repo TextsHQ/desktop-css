@@ -23,9 +23,15 @@
     margin-top: 1em;
     padding: 1em;
     flex-direction: column;
+    svg {
+      vertical-align: middle;
+      font-size: 20px;
+    }
+    h4 {
+      margin: 0 10px 10px;
+    }
     > div {
       display: list-item;
-      list-style-type: decimal;
       margin-left: 2em;
     }
     div + div {
