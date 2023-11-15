@@ -8,11 +8,6 @@
   justify-content: space-between;
   flex-direction: column;
   position: relative;
-  button {
-    background: none;
-    border: none;
-    margin-left: 8px;
-  }
   header,
   footer,
   main {
@@ -26,6 +21,11 @@
     justify-content: flex-end;
     position: absolute;
     z-index: 2;
+    button {
+      background: none;
+      border: none;
+      margin-left: 8px;
+    }
   }
   main {
     flex: 1;
@@ -59,22 +59,26 @@
     justify-content: center;
     align-items: center;
   }
-  .prev-button {
+  .prev-button, .next-button {
     position: absolute;
-    left: 6px;
-    top: calc(50% - 18px);
-    height: 36px;
-    width: 36px;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 36px;
     display: flex;
+    button {
+      padding: 8px;
+    }
+    svg {
+      height: 36px;
+      width: 36px;
+      display: block;
+    }
+  }
+  .prev-button {
+    left: 0;
   }
   .next-button {
-    position: absolute;
-    right: 6px;
-    top: calc(50% - 18px);
-    height: 36px;
-    width: 36px;
-    font-size: 36px;
+    right: 0;
   }
   img,
   canvas {
@@ -106,9 +110,6 @@
   }
 
   .video-container {
-    width: 65vw;
-    height: auto;
-
     video {
       width: 100%;
       height: auto;
