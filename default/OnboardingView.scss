@@ -54,6 +54,9 @@
   .btn-solid {
     min-width: 110px;
   }
+  .btn-solid:nth-child(2) {
+    margin-left: 1em;
+  }
 
   button.initial {
     opacity: 0;
@@ -117,57 +120,6 @@
   }
   li:nth-child(3) {
     animation: onboardingFadeIn 0.5s cubic-bezier(0, 0, 0.13, 1) 0.9s forwards;
-  }
-}
-
-.onboarding-notifications {
-  .logo {
-    position: relative;
-    width: 82px;
-    margin: auto;
-  }
-
-  img {
-    animation: onboardingFadeIn 0.3s cubic-bezier(0.42, 0.12, 0.24, 0.97)
-        forwards,
-      shake 0.5s cubic-bezier(0.42, 0.12, 0.24, 0.97) 0.5s forwards;
-  }
-
-  .badge {
-    position: absolute;
-    right: 2px;
-    top: 2px;
-    opacity: 0;
-    transform: scale(0);
-    animation: badge 0.5s cubic-bezier(0, 0, 0.13, 1) 1.2s forwards;
-    background-color: #ff5f57;
-    border: 3px solid var(--color-background-elevated);
-    width: 28px;
-    height: 28px;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-
-    span {
-      opacity: 0;
-      font-weight: 500;
-      animation: onboardingFadeInOpacity 0.5s cubic-bezier(0, 0, 0.13, 1) 1.5s
-        forwards;
-    }
-  }
-
-  h1 {
-    opacity: 0;
-    animation: onboardingFadeIn 0.5s cubic-bezier(0, 0, 0.13, 1) 1.5s forwards;
-  }
-  p {
-    max-width: 80%;
-    margin: auto;
-    color: var(--color-text-neutrals-weak);
-    opacity: 0;
-    animation: onboardingFadeIn 0.5s cubic-bezier(0, 0, 0.13, 1) 1.75s forwards;
   }
 }
 
