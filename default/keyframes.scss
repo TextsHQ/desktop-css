@@ -61,26 +61,100 @@
   }
 }
 
-// @keyframes send-message {
-//   from {
-//     transform: translate3d(-40px, 10px, 0) scale(0.75);
-//   } to {
-//     transform: translate3d(0, 0, 0) scale(1);
-//   }
-// }
+@keyframes onboardingFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
 
-// @keyframes show-reactions {
-//   from {
-//     transform: translate3d(0, 0, 0) scale(0.9);
-//   } to {
-//     transform: translate3d(0, 0, 0) scale(1);
-//   }
-// }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 
-// @keyframes show-reactions-sender {
-//   from {
-//     transform: translate3d(0, 0, 0) scale(0.9);
-//   } to {
-//     transform: translate3d(0, 0, 0) scale(1);
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes revealImage {
+  0% {
+    transform: translateY(50px) scale(20);
+  }
+
+  50% {
+    transform: translateY(50px) scale(20);
+  }
+
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes onboardingFrontContact {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(-8px, 6px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes onboardingBackContact {
+  0% {
+    transform: translate3d(0px, 0px, 0px) scale(1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(10px, -2px, 0px) scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+// @keyframes shake {
+//   0% {
+//     transform: translate(1px, 1px) rotate(0deg);
+//   }
+//   10% {
+//     transform: translate(-1px, -2px) rotate(-2deg);
+//   }
+//   20% {
+//     transform: translate(-3px, 0px) rotate(2deg);
+//   }
+//   30% {
+//     transform: translate(3px, 2px) rotate(0deg);
+//   }
+//   40% {
+//     transform: translate(1px, -1px) rotate(2deg);
+//   }
+//   50% {
+//     transform: translate(-1px, 2px) rotate(-2deg);
+//   }
+//   60% {
+//     transform: translate(-3px, 1px) rotate(0deg);
+//   }
+//   70% {
+//     transform: translate(3px, 1px) rotate(-2deg);
+//   }
+//   80% {
+//     transform: translate(-1px, -1px) rotate(2deg);
+//   }
+//   90% {
+//     transform: translate(1px, 2px) rotate(0deg);
+//   }
+//   100% {
+//     transform: translate(0px, 0px) rotate(0deg);
 //   }
 // }

@@ -21,4 +21,9 @@
     font-size: 18px;
     width: 240px;
   }
+  img {
+    transform: translateY(50px) scale(2);
+    animation: revealImage 0.7s cubic-bezier(0.42, 0.12, 0.24, 0.97) forwards;
+    z-index: 99;
+  }
 }

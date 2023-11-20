@@ -307,15 +307,16 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
 }
 .message-reactions {
   display: inline-flex;
+  flex-wrap: wrap;
   cursor: default;
   line-height: 1;
   font-size: 14px;
-  margin: 2px 0;
   position: relative;
 }
 .message-reaction {
   min-width: 36px;
   border-radius: 28px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -323,7 +324,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
   border: 1px solid rgba(var(--color-fg-rgb), 0.1);
   height: 25px;
   padding: 0 7px;
-  margin: 0 4px;
+  margin: 2px 4px;
   &:first-child {
     margin-left: 0;
   }
