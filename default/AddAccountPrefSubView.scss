@@ -6,7 +6,8 @@
   position: relative;
 
   .add-account-contents,
-  .known-issues {
+  .known-issues,
+  .privacy {
     width: 100%;
     max-width: 480px;
     border-radius: 18px;
@@ -36,6 +37,20 @@
     }
     div + div {
       margin-top: 1em;
+    }
+  }
+
+  .privacy {
+    margin-top: 1em;
+    padding: 1em;
+    display: flex;
+    svg {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+    p {
+      margin: 0;
+      margin-left: 4px;
     }
   }
 

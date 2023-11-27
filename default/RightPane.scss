@@ -313,6 +313,9 @@
 .thread-info-body {
   padding: 0 12px;
   overflow: auto;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 .alt-account-thread {
   img {
@@ -328,8 +331,11 @@
   word-break: break-word;
   margin-bottom: 1em;
 }
+.location {
+  margin-bottom: 1em;
+}
 .thread-note {
-  margin: 1.5em 0;
+  margin: 1em 0;
   textarea {
     width: 100%;
   }
@@ -375,7 +381,6 @@
 }
 
 .contact-pane {
-  margin-top: 2px;
   .social-profiles svg {
     font-size: 16px;
     vertical-align: middle;
@@ -385,7 +390,7 @@
     margin: 0 0 2px;
   }
   .group {
-    margin: 16px 0;
+    margin: 1em 0;
   }
 }
 
@@ -635,6 +640,52 @@
 
     .fc .fc-timegrid-now-indicator-arrow {
       display: none;
+    }
+  }
+}
+
+.authorize-contacts-prompt {
+  display: flex;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(var(--color-fg-rgb), 0.1);
+  background: rgba(var(--color-fg-rgb), 0.05);
+  align-self: flex-end;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 1em;
+  cursor: default;
+  .icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    margin: 0 8px;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 32px;
+      width: 32px;
+      object-fit: contain;
+    }
+
+    .front {
+      animation: contactFrontUserIcon 0.5s cubic-bezier(0, 0, 0.13, 1) forwards;
+    }
+
+    .back {
+      animation: contactBackUserIcon 0.5s cubic-bezier(0, 0, 0.13, 1) forwards;
+    }
+  }
+  p {
+    color: var(--color-text-neutrals-weak);
+    opacity: 0;
+    animation: onboardingFadeIn 0.5s cubic-bezier(0, 0, 0.13, 1) forwards;
+    flex: 1;
+    margin: 0 8px;
+    span {
+      color: var(--color-text-neutrals);
     }
   }
 }
