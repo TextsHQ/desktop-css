@@ -484,6 +484,13 @@ body:not(.window-unfocused) .sidebar-thread.selected {
   width: 16px;
   height: 11px;
 }
+.thread-participant-name {
+  font-weight: 500;
+  color: var(--thread-children-text);
+  &:after {
+    content: ': ';
+  }
+}
 
 @mixin indicator {
   display: block;

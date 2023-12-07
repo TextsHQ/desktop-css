@@ -214,7 +214,6 @@
   img {
     width: 80px;
     height: 80px;
-    margin: 8px 0;
   }
   .tag {
     font-weight: normal;
@@ -222,14 +221,15 @@
 }
 
 .thread-info-avatar {
-  display: inline-flex;
   outline: 0;
+  margin: 8px 0;
 
   .fs-close-icon {
     display: none;
   }
 
   img {
+    display: block;
     cursor: zoom-in;
   }
 
@@ -272,6 +272,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 8px;
   .edit-button {
     padding: 0;
     background-color: transparent;
