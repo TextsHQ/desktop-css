@@ -593,6 +593,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
     text-align: right;
   }
   .sender-name {
+    text-align: left;
     font-size: 12px;
   }
   .is-sms.is-sender .message-contents {

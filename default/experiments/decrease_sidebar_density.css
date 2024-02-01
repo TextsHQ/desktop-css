@@ -61,7 +61,6 @@
 }
 
 .sidebar-thread .msg-preview {
-  display: -webkit-box;
   height: 2.6em;
   line-height: 1.3em;
   max-width: 100%;

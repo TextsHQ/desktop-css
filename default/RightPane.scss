@@ -30,30 +30,36 @@
 .pane-container {
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow: hidden;
   flex: 1;
   outline: 0;
+  padding-top: var(--header-height);
 }
 .panes {
   display: flex;
-  overflow-y: auto;
+  overflow: hidden;
   flex: 1;
   outline: 0;
 }
-.messages-list-container {
+.messages-list-wrapper {
+  position: relative;
+  width: 100%;
+  flex: 1;
+}
+.messages-list-scrolling-container {
   position: relative;
   display: flex;
   flex-direction: column-reverse;
   flex: 1;
   overflow-y: auto;
-  // transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
   .texts-icon {
     min-height: 32px;
     align-self: center;
     width: 100%;
     opacity: 0.1;
     font-size: 32px;
-    margin: calc(16px + var(--header-height)) 0 8px;
+    margin: 64px 0 16px;
   }
 }
 .messages-list {
@@ -66,11 +72,11 @@
     align-self: center;
     position: sticky;
     top: -1px;
-    padding-top: calc(var(--header-height) + 8px);
+    padding-top: 8px;
     z-index: 1;
     transition: opacity 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
     pointer-events: none;
-    margin-top: calc(var(--header-height) * -1 + 8px);
+    margin-top: 8px;
 
     &.pinned {
       opacity: 0;
@@ -100,7 +106,6 @@
 .loading-indicator {
   text-align: center;
   padding: 1em;
-  margin-top: var(--header-height);
 }
 .message-timestamps.bubble-mode {
   .loading-indicator,
@@ -142,7 +147,7 @@
   margin: 0.5em;
   padding: 5px;
   border-radius: 50%;
-  bottom: 50px;
+  bottom: 0;
   right: 10px;
   transition: opacity 0.15s ease-out;
   opacity: 0;
@@ -436,7 +441,6 @@
   .compose-message-container {
     background: var(--color-background-header-right-opaque);
     border-bottom: 1px solid var(--color-border-neutrals-weak);
-    margin-top: var(--header-height);
   }
   .date {
     padding-top: 0;
@@ -527,19 +531,13 @@
 }
 
 .calendar-pane {
-  padding-top: var(--header-height);
+  padding: calc(var(--header-height) + 12px) 12px 0;
   max-width: 300px;
   overflow-y: auto;
   display: flex;
-  flex-direction: column;
-  flex: 1;
   background: var(--color-background-app);
   border-left: 1px solid var(--color-border-neutrals);
   user-select: text;
-
-  .pane-container {
-    padding: 12px 12px 0;
-  }
 
   .fc-button:not(.disabled) {
     cursor: inherit;
@@ -550,7 +548,7 @@
     row-gap: 4px;
   }
 
-  .panes {
+  .fc { // Add extra specificity to override library styles
     .fc-toolbar-title {
       padding-bottom: 4px;
       font-size: 15px;
