@@ -124,6 +124,16 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
     flex-direction: row;
   }
 }
+.message-show-replies-button {
+  font-size: 12px;
+  margin: 2px 0 4px 4px;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  &:hover, &:focus {
+    opacity: 1;
+  }
+}
 .type-emoji .message-text-container {
   font-size: 2.5em;
 }
@@ -390,17 +400,36 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
 .linked-message {
   margin: 0 0 -1px;
   border-left: 2px solid var(--color-text-info);
+  display: flex;
+  justify-content: space-between;
+}
+.linked-message-content {
   padding: 5px 12px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  column-gap: 10px;
 }
 .linked-sender-name {
   color: var(--color-text-info);
-  margin-right: 10px;
 }
 .linked-sender-name.hasSenderHash {
   color: var(--sender-text-color);
+}
+.show-reply-thread {
+  display: flex;
+  margin-left: -10px;
+  opacity: 0.5;
+  &:hover, &:focus {
+    opacity: 1;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 32px;
+  }
 }
 
 .contact-attachment {
@@ -645,6 +674,10 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
     margin-left: 0;
   }
 
+  .message .message-show-replies-button {
+    margin: 4px 0;
+  }
+
   .message .timestamp {
     margin-left: 6px;
   }
@@ -681,11 +714,6 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
     padding: 0 4px;
     padding-left: 8px;
     margin-bottom: 10px;
-  }
-
-  .linked-sender-name {
-    line-height: 1em;
-    margin-bottom: 6px;
   }
 }
 

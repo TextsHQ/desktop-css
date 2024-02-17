@@ -99,6 +99,69 @@
   }
 }
 
+.reply-thread {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  visibility: hidden;
+  display: flex;
+  padding-top: unquote('max(14vh, 80px)');
+  backdrop-filter: opacity(0.5);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background: var(--color-background-app);
+    transition-property: opacity;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  transition-property: visibility;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  .reply-thread-messages {
+    width: 100%;
+    display: flex;
+    background: var(--color-background-app);
+    border-top: 1px solid var(--color-border-neutrals-weak);
+    transform: translate3d(0, 100%, 0);
+    box-shadow: var(--shadows-base-3xl);
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .message-show-replies-button, .linked-message {
+    display: none;
+  }
+
+  .stealth-mode {
+    height: 0;
+    visibility: hidden;
+  }
+
+  &.is-visible {
+    visibility: visible;
+    &:before {
+      opacity: 0.8;
+    }
+    .reply-thread-messages {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
 .scrolling .date.pinned {
   opacity: 1;
 }

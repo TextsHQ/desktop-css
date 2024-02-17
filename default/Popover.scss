@@ -7,6 +7,10 @@
   bottom: 0;
   left: 0;
   z-index: 99;
+  overflow: hidden;
+  &.nonblocking {
+    pointer-events: none;
+  }
 }
 
 .menu-list {

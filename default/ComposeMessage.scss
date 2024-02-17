@@ -194,17 +194,19 @@
   .emoji-picker {
     // > svg { font-size: 26px; vertical-align: middle; padding: 0 5px; }
     .suspense-placeholder {
-      position: absolute;
       width: 338px;
       height: 426px;
-      bottom: 0;
-      right: 0;
     }
-    z-index: 2;
-  }
-
-  .emoji-mart {
-    position: fixed;
+    .emoji-mart {
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      z-index: 2;
+    }
+    &.popover-below .emoji-mart {
+      bottom: auto;
+      top: 100%;
+    }
   }
 
   .current-user-img {
@@ -222,7 +224,6 @@
     font-size: 20px;
     right: 50px;
     top: -10px;
-    z-index: 2;
     & > div {
       position: absolute;
       display: flex;
