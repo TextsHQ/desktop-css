@@ -5,6 +5,14 @@
   position: fixed;
   top: 0;
 
+  .grid-view-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  .empty-thread {
+    width: 150px;
+    height: 150px;
+  }
   .thread-contents {
     width: 150px;
     height: 150px;
@@ -91,8 +99,8 @@
   overflow: auto;
   flex-wrap: wrap;
   justify-content: center;
-  max-height: calc(100% - 64px);
-  padding: 0 8px;
+  height: calc(100% - 64px);
+  margin: 0 8px;
 }
 .grid-view-header {
   height: 64px;

@@ -42,9 +42,6 @@
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
   overflow: hidden;
-  &:last-child {
-    margin-bottom: 1em;
-  }
   &:hover {
     border-left-color: rgba(var(--color-primary-rgb), 0.5);
   }
@@ -514,6 +511,7 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
   justify-content: flex-end;
   height: 100%;
   padding: 0 4px;
+  align-self: center;
 }
 .message-expiry-icon {
   height: 100%;

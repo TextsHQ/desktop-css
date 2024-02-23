@@ -277,6 +277,7 @@
     width: 64px;
     height: 64px;
     transition: all 80ms ease-out;
+    -webkit-user-drag: none;
   }
 
   @media (max-height: 640px) {
@@ -330,3 +331,43 @@
     vertical-align: text-bottom;
   }
 }
+
+.account-onboarding-window-handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+}
+
+.add-account-modal {
+  animation: fadein 0.1s cubic-bezier(0, 0, 0.13, 1) forwards;
+  animation-fill-mode: both;
+  background: none; // Safari flickers its animations when this element has transparent background
+  .modal {
+    background: var(--color-overlay-modal);
+    backdrop-filter: none;
+    display: flex;
+    height: 100%;
+    max-width: 100%;
+    overflow-y: scroll;
+    margin: 0;
+    padding: var(--header-height) 3vw;
+  }
+  .spin-icon {
+    color: #fff;
+    width: 3em;
+    height: 3em;
+  }
+}
+.add-account-modal-content {
+  animation: onboardingFadeIn 0.3s cubic-bezier(0, 0, 0.13, 1) forwards;
+  animation-fill-mode: both;
+  max-width: 100%;
+  margin: auto;
+  .subview-add-account {
+    padding: 0;
+  }
+}
+
+

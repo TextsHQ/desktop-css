@@ -78,7 +78,7 @@
   }
   .command {
     padding: 0 8px;
-    height: 42px;
+    height: 36px;
     .command-children {
       height: 100%;
       width: 100%;
@@ -104,6 +104,7 @@
     letter-spacing: 0.25px;
     font-weight: 500;
     text-transform: uppercase;
+    height: 34px;
     padding-left: 16px;
     padding-bottom: 4px;
     color: var(--color-text-translucent-subtle);
@@ -268,6 +269,9 @@
   max-height: 30vh;
   margin-bottom: 0.5em;
   overflow: auto;
+  .message-show-replies-button {
+    display: none;
+  }
 }
 
 .time-suggestion {
