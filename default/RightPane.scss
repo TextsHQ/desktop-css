@@ -237,6 +237,9 @@
       opacity: 1;
     }
   }
+  &:not(.is-stuck) {
+    height: auto !important;
+  }
 }
 .sticky-date-slider {
   height: 0;
