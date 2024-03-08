@@ -107,6 +107,29 @@
       animation: fadeOut 0.25s cubic-bezier(0, 0, 0.14, 1) forwards;
     }
   }
+
+  .success-badge {
+    background-color: #32d74b;
+    border-radius: 20px;
+    padding: 4px 16px;
+    display: inline-block;
+    margin: auto;
+    margin-top: 40px;
+    opacity: 0;
+    color: white;
+
+    &.visible {
+      animation: onboardingFadeIn 0.5s cubic-bezier(0, 0, 0.13, 1) 0.5 forwards;
+    }
+
+    span {
+      margin-left: 6px;
+    }
+
+    svg {
+      transform: translateY(1px);
+    }
+  }
 }
 
 .onboarding-keyboard {
@@ -121,6 +144,25 @@
     opacity: 0;
     animation: onboardingFadeIn 0.3s cubic-bezier(0, 0, 0.13, 1) 0.6s forwards;
   }
+  .success-badge {
+    margin: 0;
+    position: relative;
+    top: -2em;
+  }
+
+  .keyboard-key-top {
+    @keyframes pressQuickly {
+      30% { transform: translateY(8px); }
+      70% { transform: translateY(8px); }
+    }
+    animation: pressQuickly 500ms ease-in-out;
+
+  }
+  .keyboard-key:nth-of-type(1) .keyboard-key-top { animation-delay: 800ms; }
+  .keyboard-key:nth-of-type(2) .keyboard-key-top { animation-delay: 875ms; }
+  .keyboard-key:nth-of-type(3) .keyboard-key-top { animation-delay: 950ms; }
+  .keyboard-key:nth-of-type(4) .keyboard-key-top { animation-delay: 1025ms; }
+  .keyboard-key:nth-of-type(5) .keyboard-key-top { animation-delay: 1100ms; }
 }
 
 .onboarding-second-page {
@@ -143,29 +185,6 @@
     margin-top: 20px;
     opacity: 0;
     animation: onboardingFadeIn 0.3s cubic-bezier(0, 0, 0.13, 1) 0.6s forwards;
-  }
-
-  .success-badge {
-    background-color: #32d74b;
-    border-radius: 20px;
-    padding: 4px 8px;
-    width: 120px;
-    margin: auto;
-    margin-top: 40px;
-    opacity: 0;
-    color: white;
-
-    &.visible {
-      animation: onboardingFadeIn 0.5s cubic-bezier(0, 0, 0.13, 1) 0.5 forwards;
-    }
-
-    span {
-      margin-left: 6px;
-    }
-
-    svg {
-      transform: translateY(1px);
-    }
   }
 }
 .onboarding-progress {
@@ -197,6 +216,9 @@
 }
 
 .account-onboarding {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(var(--color-bg-rgb), 0.5);
@@ -204,6 +226,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.account-onboarding-loading {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  color: rgba(var(--color-base-gray-120-rgb), 0.4);
+  font-size: 14px;
+  svg {
+    color: rgba(var(--color-base-gray-120-rgb), 0.6);
+  }
 }
 
 .account-onboarding-header {
