@@ -1,29 +1,191 @@
 .login-page {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  h1 {
-    margin: -20px 1em 20px;
-    font-size: 80px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+
+  background: rgb(0, 13,  80);
+  @keyframes loginBackgroundAppear {
+    0% { background: rgb(16, 16, 16); }
   }
-  .auth-button {
-    margin: 1em;
+
+  &:after {
+    // Purple blur
+    content: '';
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    filter: blur(200px);
+    height: 1244px;
+    width: 1244px;
+    border-radius: 1244px;
+    background: rgb(204, 128, 248);
+    opacity: 0.95;
+    transform: translate(-50%, 0);
+
+    @keyframes loginBlurAppear {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 50%);
+      }
+    }
+  }
+
+  .texts-logo {
+    width: 162px;
+    height: 162px;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -120%);
+    @keyframes loginLogoAppear {
+      0% {
+        transform: translate(-50%, -50%) scale(20%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(100%);
+        opacity: 1;
+      }
+    }
+    @keyframes loginLogoSlideUp {
+      100% { transform: translate(-50%, -120%); }
+    }
+    @keyframes loginLogoDisappear {
+      100% {
+        transform: translate(-50%, -120%) scale(40%);
+        opacity: 0;
+      }
+    }
+  }
+
+  .login-page-content {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 52%;
+    color: rgba(255, 255, 255, 0.9);
     display: flex;
     flex-direction: column;
     align-items: center;
-    span {
-      margin-top: 4px;
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+    @keyframes loginContentAppear {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+    }
+
+    p {
+      opacity: 0.9;
+      margin: 0 0 24px;
+      small {
+        display: block;
+        opacity: 0.6;
+        font-weight: 400;
+      }
     }
   }
-  button {
-    font-size: 18px;
-    width: 240px;
+
+  .auth-button {
+    margin-bottom: 12px;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+      width: 276px;
+      color: rgb(255, 255, 255);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+      background: transparent;
+      padding: 10px 0;
+    }
+    &.provider-google, &.provider-apple {
+      button {
+        background: rgba(255, 255, 255, 0.95);
+        color: rgb(0, 0, 0);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05), 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 18px;
+          height: 18px;
+          margin-right: 8px;
+          margin-top: -0.1em;
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+    &.provider-google button:before { background-image: url('../../../public/img/logo-google.svg'); }
+    &.provider-apple button:before { background-image: url('../../../public/img/logo-apple.svg'); }
+
+    span {
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+      margin-top: 4px;
+      opacity: 0.8;
+    }
   }
-  img {
-    transform: translateY(50px) scale(2);
-    animation: revealImage 0.7s cubic-bezier(0.42, 0.12, 0.24, 0.97) forwards;
-    z-index: 99;
+
+  .login-fine-print {
+    -webkit-app-region: no-drag;
+    position: absolute;
+    z-index: 1;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 276px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 400;
+    a {
+      text-decoration: underline;
+      &:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+
+  &.animate-in {
+    // Most elements animate in together, using these base settings:
+    --animation-settings: 500ms var(--easing-spring) 1600ms both;
+
+    animation: var(--animation-settings) loginBackgroundAppear;
+    &:after { animation: var(--animation-settings) loginBlurAppear; }
+    .login-page-content { animation: var(--animation-settings) loginContentAppear; }
+    .login-fine-print { animation: var(--animation-settings) fadein; }
+
+    .texts-logo {
+      animation:
+        300ms var(--easing-spring) 750ms both loginLogoAppear, // First phase, logo appears
+        var(--animation-settings) loginLogoSlideUp; // Second phase, logo slides up while everything else appears
+    }
+  }
+
+  &.animate-out {
+    // Most elements animate out together with a reverse of their appear animations, using these base settings:
+    --animation-settings: 500ms var(--easing-spring) both reverse;
+    animation:
+      var(--animation-settings) loginBackgroundAppear, // First fade the background to intial color
+      300ms var(--easing-spring) 500ms both reverse fadein; // Then disappear the login page once everything else has animated out
+
+    &:after { animation: var(--animation-settings) loginBlurAppear; }
+    .login-page-content { animation: var(--animation-settings)  loginContentAppear; }
+    .login-fine-print { animation: var(--animation-settings) fadein; }
+    .texts-logo { animation: 600ms var(--easing-spring-reverse) both loginLogoDisappear; }
   }
 }

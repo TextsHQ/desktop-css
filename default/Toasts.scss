@@ -40,7 +40,6 @@
 }
 .toast {
   display: flex;
-  max-width: 50vw;
   align-items: center;
   background: rgba(black, 0.9);
   margin: 3px 12px;
@@ -53,12 +52,17 @@
   pointer-events: auto;
   flex-wrap: wrap;
 
+  @media (min-width: 600px) {
+    max-width: 50vw;
+  }
+
   span,
   .buttons {
     margin: 6px 0;
     align-items: center;
   }
   .buttons {
+    -webkit-app-region: no-drag;
     display: flex;
     justify-self: flex-end;
     margin-left: auto;

@@ -751,10 +751,6 @@ $restart-button-color-active: #732f70;
   .header-space {
     transition: none;
   }
-  .skeleton {
-    animation: none !important;
-    background: var(--skeleton-1);
-  }
 }
 
 .add-account-picker {

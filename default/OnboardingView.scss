@@ -247,7 +247,7 @@
   line-height: 1.1;
   letter-spacing: 0.38px;
   margin: auto 0 4vh;
-  animation: fadein 1s cubic-bezier(0, 0, 0.13, 1) 0.5s backwards;
+  animation: fadein 1s cubic-bezier(0, 0, 0.13, 1) 1s backwards;
 
   h1 {
     font-size: 34px;
@@ -296,7 +296,7 @@
     @for $i from 1 through 10 {
       &:nth-child(#{$i}) {
         .platform-icon, .platform-name {
-          animation-delay: #{$i * 0.05 + 1}s;
+          animation-delay: #{$i * 0.05 + 1.5}s;
         }
       }
     }
@@ -352,7 +352,7 @@
   margin: auto 0 32px;
   color: rgba(var(--color-fg-rgb), 0.6);
 
-  animation: fadein 1s cubic-bezier(0, 0, 0.13, 1) 2s backwards;
+  animation: fadein 1s cubic-bezier(0, 0, 0.13, 1) 2.5s backwards;
 
   button {
     color: rgba(var(--color-fg-rgb), 1);
@@ -376,7 +376,7 @@
 }
 
 .add-account-modal {
-  animation: fadein 0.1s cubic-bezier(0, 0, 0.13, 1) forwards;
+  animation: fadein 0.1s cubic-bezier(0, 0, 0.13, 1) 0.5s forwards;
   animation-fill-mode: both;
   background: none; // Safari flickers its animations when this element has transparent background
   .modal {

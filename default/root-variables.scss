@@ -81,9 +81,6 @@
   // --command-bar-border: rgba(102, 102, 102, 0.25);
   // --command-bar-shadow: 0 12px 50px rgba(0, 0, 0, 0.25);
 
-  --skeleton-1: rgba(var(--color-fg-rgb), 0.1);
-  --skeleton-2: rgba(var(--color-fg-rgb), 0.2);
-
   --compose-message-accent: #7f7f7f;
   --audio-bar-button: #8f939e;
   --audio-bar-preview-progress: #84888e;
@@ -99,6 +96,8 @@
 
   --prefs-well: rgba(0, 0, 0, 0.02);
   // --prefs-border: rgba(var(--color-fg-rgb), 0.1);
+
+  --skeleton-bg: url("../../../public/img/skeleton.svg");
 }
 
 .no-transparency,
@@ -132,9 +131,6 @@
 
     // --right-pane-bg: transparent;
     // --compose-message-bg: transparent;
-
-    --skeleton-1: rgba(var(--color-fg-rgb), 0.2);
-    --skeleton-2: rgba(var(--color-fg-rgb), 0.3);
 
     --compose-message-accent: #d8d8d8;
     --audio-bar-button: #d8d8d8;

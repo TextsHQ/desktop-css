@@ -228,17 +228,13 @@
 
 .sticky-date-container {
   position: absolute;
+  z-index: 1;
   left: 0;
   width: 100%;
+  opacity: 1;
   transition: opacity 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  &.is-stuck {
+  &.hide {
     opacity: 0;
-    .scrolling & {
-      opacity: 1;
-    }
-  }
-  &:not(.is-stuck) {
-    height: auto !important;
   }
 }
 .sticky-date-slider {
@@ -684,6 +680,9 @@
     bottom: 0;
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+  .messages-list-scrolling-container {
+    padding-bottom: 8px;
   }
 }
 
