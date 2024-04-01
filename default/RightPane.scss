@@ -428,16 +428,6 @@
     color: var(--color-fg);
   }
 }
-.thread-participants {
-  display: flex;
-  flex-direction: column;
-  h4 {
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
 .editable-contact-name {
   display: flex;
   flex-direction: column;
@@ -466,6 +456,12 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  h4 {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 .alt-account-thread {
   img {
@@ -807,8 +803,7 @@
   background: rgba(var(--color-fg-rgb), 0.05);
   align-self: flex-end;
   align-items: center;
-  margin-top: auto;
-  margin-bottom: 1em;
+  margin: auto 12px 1em;
   cursor: default;
   .icon {
     position: relative;

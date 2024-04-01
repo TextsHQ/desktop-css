@@ -239,6 +239,10 @@ video.loading,
   background-image: var(--skeleton-bg);
 }
 
+img.errored {
+  background-color: var(--color-base-gray-70);
+}
+
 .enhanced-img {
   position: relative;
 }
