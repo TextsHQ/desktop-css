@@ -121,7 +121,7 @@ body:not(.window-unfocused) .sidebar-thread.selected {
   .img .multiple:nth-child(2) {
     right: 0;
   }
-  .platform-icon {
+  .brand-combined-icon {
     font-size: 12px;
     position: absolute;
     bottom: -1px;
@@ -244,7 +244,7 @@ body:not(.window-unfocused) .sidebar-thread.selected {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .platform-icon {
+  .brand-combined-icon {
     margin: 1px;
     font-size: 16px;
   }
@@ -354,7 +354,7 @@ body:not(.window-unfocused) .sidebar-thread.selected {
       padding-right: 6px;
     }
   }
-  .platform-icon {
+  .brand-combined-icon {
     font-size: calc(var(--base-size) / 3.5);
   }
   .title {
@@ -453,14 +453,14 @@ body:not(.window-unfocused) .sidebar-thread.selected {
   margin: 0 8px 4px;
   .account-filter {
     padding: 0 8px;
-    img {
+    .brand-combined-icon {
       margin-right: 4px;
     }
   }
 }
 
 .menu-item {
-  .platform-icon {
+  .brand-combined-icon {
     margin-right: 4px;
   }
 }
@@ -579,7 +579,7 @@ body:not(.window-unfocused) .sidebar-thread.selected {
   &:active {
     background: var(--color-background-button-translucent-active);
   }
-  .platform-icon {
+  .brand-combined-icon {
     margin-right: 3px;
     margin-top: 3px;
     vertical-align: text-bottom;
@@ -754,7 +754,7 @@ $restart-button-color-active: #732f70;
 }
 
 .add-account-picker {
-  .platform-icon {
+  .brand-combined-icon {
     width: 26px;
     height: 26px;
   }
@@ -781,7 +781,7 @@ $restart-button-color-active: #732f70;
     display: flex;
     flex-direction: column;
     // padding: 0;
-    .platform-icon {
+    .brand-combined-icon {
       font-size: 20px;
       margin-right: 0;
     }

@@ -228,6 +228,12 @@
   align-items: center;
 }
 
+.account-onboarding-continue {
+  font-size: 14px;
+  color: rgba(var(--color-base-gray-120-rgb), 0.4);
+  animation: fadein 1s cubic-bezier(0, 0, 0.13, 1) 2.5s backwards;
+}
+
 .account-onboarding-loading {
   margin: auto;
   display: flex;
@@ -235,9 +241,14 @@
   align-items: center;
   gap: 24px;
   color: rgba(var(--color-base-gray-120-rgb), 0.4);
-  font-size: 14px;
+  font-size: 15px;
   svg {
     color: rgba(var(--color-base-gray-120-rgb), 0.6);
+  }
+  .account-onboarding-go-back {
+    position: absolute;
+    bottom: 32px;
+    font-size: 14px;
   }
 }
 
@@ -246,101 +257,142 @@
   font-size: 18px;
   line-height: 1.1;
   letter-spacing: 0.38px;
-  margin: auto 0 4vh;
+  margin-top: auto;
+  padding-top: 16px;
   animation: fadein 1s cubic-bezier(0, 0, 0.13, 1) 1s backwards;
 
   h1 {
-    font-size: 34px;
+    font-size: 28px;
     margin: 8px 0;
   }
-
-  p {
-    margin: 0;
-  }
-  @media (max-height: 640px), (max-width: 640px) {
+  @media (max-height: 570px), (max-width: 640px) {
     font-size: 16px;
     img {
       width: 64px;
       height: 64px;
     }
     h1 {
-      font-size: 28px;
+      font-size: 24px;
     }
   }
 }
 
 .account-onboarding-platforms {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  gap: 16px;
+
+  width: 100%;
+  max-width: 889px; // 5 buttons (max width) + 4 gaps
+  margin: 3.5vh 0;
 
   button {
-    padding: 20px;
+    width: 100%;
+    max-width: 165px;
+    aspect-ratio: 7 / 5;
+
+    position: relative;
     display: flex;
-    gap: 16px;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    color: var(--color-fg);
+    border: 1px solid var(--color-platform-card-outline);
+    border-radius: 12px;
 
-    transition: all 80ms ease-out;
+    animation: onboardingFadeIn 0.6s cubic-bezier(0, 0, 0.13, 1) backwards;
 
-    font-size: 15px;
-    font-weight: 500;
-    color: rgba(var(--color-fg-rgb), 0.8);
-
-    .platform-icon {
-      animation: onboardingFadeIn 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) backwards;
-    }
-    .platform-name {
-      animation: dnd-text-appear 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) backwards;
-    }
-
-    @for $i from 1 through 10 {
+    @for $i from 1 through 10 {      
       &:nth-child(#{$i}) {
-        .platform-icon, .platform-name {
-          animation-delay: #{$i * 0.05 + 1.5}s;
-        }
+        animation-delay: #{$i * 0.05 + 1.5}s; // Max delay: 10 x 0.05 + 1.5 = 2s
       }
+    }
+
+    &, & > * {
+      transition: all 150ms ease-in-out;
+    }
+
+    // Tooltip
+    &::before {
+      content: attr(data-platform-name);
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 4px 16px;
+      color: var(--color-text-tooltip);
+      background: var(--color-background-tooltip);
+      border: 1px solid var(--color-border-tooltip);
+      border-radius: 8px;
+      font-size: 14px;
+      opacity: 0;
+      z-index: 1;
+      pointer-events: none;
+      transition: all 150ms ease-in-out;
     }
 
     &:hover, &:focus {
-      color: rgba(var(--color-fg-rgb), 1);
-      .platform-icon {
-        transform: scale(1.1);
+      border-color: transparent;
+
+      &::before,
+      .brand-icon,
+      .brand-background {
+        opacity: 1;
+      }
+
+      .brand-icon.is-monochrome {
+        filter: invert(1);
       }
     }
   }
-  .platform-icon {
-    width: 64px;
-    height: 64px;
-    transition: all 80ms ease-out;
-    -webkit-user-drag: none;
+
+  .brand-icon:not(.is-monochrome) {
+    position: absolute;
+    opacity: 0;
   }
 
-  @media (max-height: 640px) {
-    .platform-name { position: absolute; visibility: hidden; }
+  .brand-icon.is-monochrome {
+    filter: invert(0);
+    opacity: 0.7;
   }
-  @media (max-width: 640px) {
-    grid-template-columns: repeat(2, auto);
 
-    button {
-      flex-direction: row;
-      gap: 12px;
-      padding: 12px 16px;
-    }
-    .platform-icon {
-      width: 40px;
-      height: 40px;
+  .brand-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    
+    opacity: 0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .brand-icon.is-monochrome {
+      filter: invert(1);
+      opacity: 1;
     }
   }
-  @media (max-width: 640px) and (max-height: 640px) {
+
+  @media (max-height: 570px), (max-width: 640px) {
     grid-template-columns: repeat(5, auto);
-  }
-  @media (max-height: 500px) {
+    gap: 8px;
+
     button {
-      padding: 12px 16px;
+      height: auto;
+      aspect-ratio: unset;
+      padding: 8px;
+      border-radius: 8px;
     }
-    .platform-icon {
-      width: 40px;
-      height: 40px;
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
     }
   }
 }
@@ -356,7 +408,6 @@
 
   button {
     color: rgba(var(--color-fg-rgb), 1);
-    // TODO: Hover style
     &:hover, &:focus {
       text-decoration: underline;
     }
@@ -364,6 +415,10 @@
 
   svg {
     vertical-align: text-bottom;
+  }
+
+  @media (max-height: 570px) {
+    margin-bottom: 24px;
   }
 }
 

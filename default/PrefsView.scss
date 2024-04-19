@@ -138,7 +138,7 @@
     color: var(--color-icon-on-accent-weak);
   }
 
-  .pref-icon:not(.platform-icon) {
+  .pref-icon:not(.brand-combined-icon) {
     background-color: white !important;
     color: var(--color-primary) !important;
   }
@@ -166,12 +166,12 @@
     margin-bottom: 6px;
   }
 
-  .platform-icon {
+  .brand-combined-icon {
     font-size: 28px;
     margin: 0 6px;
     z-index: 1;
   }
-  .platform-icon:hover {
+  .brand-combined-icon:hover {
     color: var(--color-primary);
   }
 }
@@ -356,7 +356,7 @@
   display: flex;
   align-items: center;
   margin: 6px 0;
-  .platform-icon {
+  .brand-combined-icon {
     font-size: 16px;
     margin-right: 4px;
   }
@@ -606,7 +606,7 @@ a.pref-option {
   padding: 0.8em 1em;
   display: flex;
 
-  .platform-icon {
+  .brand-combined-icon {
     font-size: 18px;
     margin-right: 0.5em;
   }

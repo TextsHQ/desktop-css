@@ -16,7 +16,7 @@
     font-weight: bold;
   }
 
-  .platform-icon {
+  .brand-combined-icon {
     width: 20px;
     height: 20px;
   }
@@ -87,20 +87,24 @@
   @include popover;
   top: var(--header-height);
   padding: 2px 4px;
-  width: 300px;
+  width: 0;
   max-height: 90vh;
   overflow: auto;
   user-select: text;
-  .participant {
-    display: flex;
-    white-space: nowrap;
-    overflow: hidden;
+  transition: min-width 100ms ease-in-out;
+  .participant-wrapper {
     margin: 2px 0;
-    padding: 4px;
     border-radius: 4px;
+    overflow: hidden;
     &:hover {
       background: var(--color-background-elevated-hover);
     }
+  }
+  .participant {
+    padding: 4px;
+    display: inline-flex;
+    white-space: nowrap;
+    overflow: hidden;
   }
   .user-name:not(:empty) {
     font-weight: 500;

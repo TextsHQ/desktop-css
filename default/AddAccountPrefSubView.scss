@@ -62,7 +62,7 @@
     font-weight: 700;
     font-size: 22px;
 
-    img {
+    .brand-combined-icon {
       font-size: 52px;
       margin-bottom: 10px;
       margin-right: 0;
@@ -167,7 +167,7 @@
 
   .auth-or {
     color: rgba(var(--color-fg-rgb), 0.4);
-    border: 1px solid;
+    border: 1px solid rgba(var(--color-fg-rgb), 0.1);
     border-left: 0;
     border-right: 0;
     margin: 1em -5em;

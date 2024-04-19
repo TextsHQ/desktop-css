@@ -124,6 +124,7 @@
   );
   --color-background-commandbar-mode: rgba(var(--color-base-white-rgb), 0.3);
   --color-background-commandbar-opaque: var(--color-base-white);
+  --color-background-emoji-mart: #fff;
   --color-background-elevated: var(--color-base-white);
   --color-background-elevated-hover: var(--color-base-gray-40);
   --color-background-grouped: var(--color-base-white);
@@ -220,6 +221,8 @@
   --color-text-translucent: rgba(var(--color-base-black-rgb), 0.9);
   --color-text-translucent-subtle: rgba(var(--color-base-black-rgb), 0.5);
   --color-text-translucent-weak: rgba(var(--color-base-black-rgb), 0.7);
+
+  --color-platform-card-outline: rgba(var(--color-base-black-rgb), 0.2);
 
   --color-text-message-bubble-group-0: var(--color-base-grass-110);
   --color-text-message-bubble-group-1: var(--color-base-amber-110);
@@ -346,6 +349,7 @@
     );
     --color-background-commandbar-mode: rgba(var(--color-base-white-rgb), 0.1);
     --color-background-commandbar-opaque: var(--color-base-gray-20);
+    --color-background-emoji-mart: #222;
     --color-background-elevated: var(--color-base-gray-30);
     --color-background-elevated-hover: var(--color-base-gray-50);
     --color-background-grouped: var(--color-base-gray-20);
@@ -451,5 +455,7 @@
     --color-text-translucent: rgba(var(--color-base-white-rgb), 0.9);
     --color-text-translucent-subtle: rgba(var(--color-base-white-rgb), 0.5);
     --color-text-translucent-weak: rgba(var(--color-base-white-rgb), 0.7);
+
+    --color-platform-card-outline: rgba(var(--color-base-white-rgb), 0.2);
   }
 }

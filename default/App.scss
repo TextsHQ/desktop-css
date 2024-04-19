@@ -217,7 +217,7 @@ kbd.big {
   cursor: move;
 }
 
-img.platform-icon {
+.brand-combined-icon {
   width: 1em;
   height: 1em;
 }
@@ -395,17 +395,48 @@ img.errored {
 .single-platform-connected {
   .sidebar-thread,
   .select-thread-command {
-    .platform-icon {
+    .brand-combined-icon {
       display: none;
     }
   }
 }
 .single-account-filter-active {
   .sidebar-thread {
-    .platform-icon {
+    .brand-combined-icon {
       display: none;
     }
   }
+}
+
+.brand-combined-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 31.25%; // 5px at 16x16
+  overflow: hidden;
+
+  .is-monochrome {
+    filter: invert(1);
+  }
+  
+  .brand-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.brand-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @import "Switch";
