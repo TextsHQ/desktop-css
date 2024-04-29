@@ -1,0 +1,87 @@
+/*
+# Custom Texts.app style
+This file will be injected as a <style> tag
+Find original styles at https://github.com/TextsHQ/desktop-css
+After making your changes, type "Reload custom CSS" in the command bar
+To open dev tools, open the command bar and type "open console"
+*/
+
+:root {
+  --threads-list-item-height: 40px !important;
+  --min-sidebar-width: 220px !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --threads-list-item-height: 40px !important;
+    --min-sidebar-width: 220px !important;
+  }
+}
+
+.thread-children .timestamp {
+  display: none;
+}
+
+div > div.sidebar-thread.loading {
+  display: none;
+}
+
+div.left-pane-footer {
+  display: none;
+}
+
+span.tooltip-wrapper.timestamp-container {
+  display: none;
+}
+
+div.pane-container {
+  padding-top: 0;
+}
+
+div.right-pane-header.app-region-drag {
+  display: none;
+}
+
+div.date.negate-redacted-region {
+  display: none;
+}
+
+div.message-seen-by {
+  display: none;
+}
+
+div.message-icons {
+  display: none;
+}
+
+span.tooltip-wrapper.filters-pane-toggle {
+  display: none;
+}
+
+div.tab-bar {
+  display: none;
+}
+
+div.left-buttons {
+  display: none;
+}
+
+button.btn-icon.send-button.btn-icon-primary.btn-icon-rounded.send-button-left {
+  display: none;
+}
+
+button.btn-icon.btn-icon-tertiary.send-button-right {
+  display: none;
+}
+
+div.textarea-inner-buttons {
+  display: none;
+}
+
+span.tooltip-wrapper {
+  display: none;
+}
+
+#message-input::placeholder {
+  color: transparent;
+}
