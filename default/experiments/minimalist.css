@@ -85,3 +85,11 @@ span.tooltip-wrapper {
 #message-input::placeholder {
   color: transparent;
 }
+
+.message-container footer {
+  margin-top: 0px !important;
+}
+
+div.message-spacer.is-gapped-1.is-gapped-2:not(.is-diff-sender) {
+  display: none;
+}
