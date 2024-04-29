@@ -24,8 +24,8 @@ div.tab-bar-container {
 }
 
 div.threads-list-container {
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 div.thread-children {
@@ -119,16 +119,12 @@ span.tooltip-wrapper {
 /* hide border in message input */
 textarea#message-input {
   border: 0px;
+  padding-left: 4px;
 }
 
 /* hide placeholder text in message input */
 textarea#message-input::placeholder {
   color: transparent;
-}
-
-/* get rid of unnecessary gap at the bottom of chat */
-div.bottom-of-thread {
-  display: none;
 }
 
 /* annoying footer had a margin even though everything inside it was hidden */
@@ -144,13 +140,6 @@ div.message-spacer.is-gapped-1:not(.is-diff-sender) {
 /* removes unread messages' 'new message' divider line */
 div.unread-divider {
   display: none;
-}
-
-/* mainly for placing reactions on the right side of messages instead of under */
-div.message-children main {
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
 }
 
 /* put a gap between message reactions */
@@ -203,11 +192,6 @@ div.message img.participant-img {
   width: 20px !important;
 }
 
-/* resizing avatars left too big of a gap so decrease padding */
-div.message-main {
-  padding-left: 30px !important;
-}
-
 /* decrease space between senders by half */
 div.message-spacer {
   height: 10px !important;
@@ -227,4 +211,65 @@ div.linked-sender-name {
 div.linked-message-content {
   padding-left: 0;
   padding-right: 0;
+}
+
+/* align sender's avatar to the right */
+div.message-container.is-sender div.message img.sender-img {
+  align-self: flex-end;
+  right: 0;
+  left: auto;
+  margin-right: 0px;
+  margin-left: 8px;
+}
+
+/* align sender's messages to the right */
+div.message-container.is-sender div.message div.message-main div.message-children {
+  justify-content: flex-end;
+}
+
+/* resizing avatars left too big of a gap so decrease padding */
+div.message-container.is-sender div.message div.message-main {
+  padding-left: 0px !important;
+  padding-right: 30px !important;
+}
+
+/* resizing avatars left too big of a gap so decrease padding */
+div.message-container:not(.is-sender) div.message div.message-main {
+  padding-left: 30px !important;
+}
+
+/* mainly for placing reactions on the right side of messages instead of under */
+div.message-container.is-sender div.message div.message-main div.message-children main {
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 8px;
+}
+
+/* mainly for placing reactions on the right side of messages instead of under */
+div.message-container:not(.is-sender) div.message div.message-main div.message-children main {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+/* hide chat messages scrollbar */
+.messages-list-scrolling-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* adjust scroll to bottom button position */
+.scroll-to-bottom {
+  right: 3px;
+}
+
+/* tune style of message input area */
+div.compose-message {
+  border-top: 0.1px solid;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* hide side bar scrollbar */
+div.threads.redacted-region div::-webkit-scrollbar {
+  display: none;
 }
