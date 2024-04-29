@@ -18,12 +18,46 @@ To open dev tools, open the command bar and type "open console"
   }
 }
 
-.thread-children .timestamp {
+/* prevent oversized standalone emojis */
+div.type-emoji {
+  font-size: 12px !important;
+}
+
+/* top left consistent */
+div.tab-bar-container {
+  margin-top: 40px;
+}
+
+div.threads-list-container {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+div.thread-children {
+  grid-template-columns: 30px 1fr auto auto !important;
+}
+
+div.thread-children div.img {
+  height: 20px;
+  width: 20px;
+  min-width: 20px;
+}
+
+img.platform-icon {
+  height: 8px;
+  width: 8px;
+}
+
+div.thread-children .timestamp {
   display: none;
 }
 
 div > div.sidebar-thread.loading {
   display: none;
+}
+
+div.thread-children div.middle div.title {
+  font-weight: 200 !important;
 }
 
 div.left-pane-footer {
@@ -62,38 +96,140 @@ div.tab-bar {
   display: none;
 }
 
+/* hide various actions in message input component */
 div.left-buttons {
   display: none;
 }
 
+/* hide various actions in message input component */
 button.btn-icon.send-button.btn-icon-primary.btn-icon-rounded.send-button-left {
   display: none;
 }
 
+/* hide various actions in message input component */
 button.btn-icon.btn-icon-tertiary.send-button-right {
   display: none;
 }
 
+/* hide various actions in message input component */
 div.textarea-inner-buttons {
   display: none;
 }
 
+/* hide various actions in message input component */
 span.tooltip-wrapper {
   display: none;
 }
 
-#message-input::placeholder {
+/* hide border in message input */
+textarea#message-input {
+  border: 0px;
+}
+
+/* hide placeholder text in message input */
+textarea#message-input::placeholder {
   color: transparent;
 }
 
+/* get rid of unnecessary gap at the bottom of chat */
+div.bottom-of-thread {
+  display: none;
+}
+
+/* annoying footer had a margin even though everything inside it was hidden */
 .message-container footer {
   margin-top: 0px !important;
 }
 
-div.message-spacer.is-gapped-1.is-gapped-2:not(.is-diff-sender) {
+/* get rid of unnecessary gaps in the chat */
+div.message-spacer.is-gapped-1:not(.is-diff-sender) {
   display: none;
 }
 
+/* removes unread messages' 'new message' divider line */
 div.unread-divider {
   display: none;
+}
+
+/* mainly for placing reactions on the right side of messages instead of under */
+div.message-children main {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+/* put a gap between message reactions */
+div.message-reactions {
+  font-size: 10px;
+  gap: 4px;
+}
+
+/* decrease overall size of message reaction */
+div.message-reaction {
+  margin: 0px;
+  padding: 0px 0px;
+  height: 20px;
+  font-size: 10px;
+}
+
+/* multi reaction bubbles have a wider width than single reaction bubbles */
+div.message-reaction:has(> span) {
+  min-width: 34px;
+}
+
+/* single reaction bubbles have smaller width than multi reaction bubbles */
+div.message-reaction:not(:has(> span)) {
+  min-width: 24px;
+}
+
+/* decrease size of number next to multiple reactions in groups */
+div.message-reaction span.count {
+  font-size: 10px;
+}
+
+button.message-show-replies-button {
+  display: none;
+}
+
+/* hide names in chat */
+div.sender-name {
+  display: none !important;
+}
+
+/* make avatars in chat more compact */
+div.message img.sender-img {
+  height: 20px !important;
+  width: 20px !important;
+}
+
+/* make avatars in chat more compact */
+div.message img.participant-img {
+  height: 20px !important;
+  width: 20px !important;
+}
+
+/* resizing avatars left too big of a gap so decrease padding */
+div.message-main {
+  padding-left: 30px !important;
+}
+
+/* decrease space between senders by half */
+div.message-spacer {
+  height: 10px !important;
+}
+
+/* hides link previews like youtube thumbnails */
+div.message-link {
+  display: none;
+}
+
+/* hide sender name on message replies */
+div.linked-sender-name {
+  display: none;
+}
+
+/* remove horizontal padding for message replies */
+div.linked-message-content {
+  padding-left: 0;
+  padding-right: 0;
 }
