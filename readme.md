@@ -12,4 +12,4 @@ A minimalist theme with various features stripped down with the goal of having a
 
 [default/experiments/minimalist.css](default/experiments/minimalist.css)
 
-![alt text](<Screenshot 2024-04-29 at 14.40.39.png>)
+![texts-minimalist-preview](minimalist.png)

@@ -18,11 +18,6 @@ To open dev tools, open the command bar and type "open console"
   }
 }
 
-/* prevent oversized standalone emojis */
-div.type-emoji {
-  font-size: 12px !important;
-}
-
 /* top left consistent */
 div.tab-bar-container {
   margin-top: 40px;
