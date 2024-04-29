@@ -8,13 +8,13 @@ To open dev tools, open the command bar and type "open console"
 
 :root {
   --threads-list-item-height: 40px !important;
-  --min-sidebar-width: 220px !important;
+  --min-sidebar-width: 180px !important;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --threads-list-item-height: 40px !important;
-    --min-sidebar-width: 220px !important;
+    --min-sidebar-width: 180px !important;
   }
 }
 
