@@ -93,3 +93,7 @@ span.tooltip-wrapper {
 div.message-spacer.is-gapped-1.is-gapped-2:not(.is-diff-sender) {
   display: none;
 }
+
+div.unread-divider {
+  display: none;
+}
