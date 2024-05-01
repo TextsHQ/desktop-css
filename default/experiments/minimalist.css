@@ -7,18 +7,85 @@ To open dev tools, open the command bar and type "open console"
 */
 
 :root {
-  --threads-list-item-height: 40px !important;
-  --min-sidebar-width: 180px !important;
+  --font-family: 'Roboto Mono', monospace;
+  --filters-pane-width: 180px;
+  --min-sidebar-width: 220px;
+  --max-sidebar-width: 220px;
+  --threads-list-item-height: 34px;
+  --color-primary: black;
+  --color-primary-rgb: 0, 0, 0;
+  --color-secondary: black;
+  --left-pane-bg: var(--color-bg);
+  --color-background-app: var(--color-bg);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --threads-list-item-height: 40px !important;
-    --min-sidebar-width: 180px !important;
+    --color-primary: rgb(100, 255, 100);
+    --color-primary-rgb: 100, 255, 100;
+    --color-secondary: rgb(100, 255, 100);
+    --color-bg: black;
+    --color-bg-rgb: 0, 0, 0;
+  }
+
+  .compose-message textarea {
+    color: var(--color-secondary);
   }
 }
 
-/* top left consistent */
+/* hide elements */
+div.messages-list-scrolling-container::-webkit-scrollbar,
+button.btn-icon.btn-icon-tertiary.send-button-right,
+button.btn-icon.send-button.btn-icon-primary.btn-icon-rounded.send-button-left,
+button.message-show-replies-button,
+div > div.sidebar-thread.loading,
+div.date.negate-redacted-region,
+div.left-buttons,
+div.left-pane-footer,
+div.linked-sender-name,
+/* hide messages with reels and similar content */
+div.message-container:has(> div > div > div > main > div.message-attachments-container):has(> div > div > div > main > div.message-footer),
+div.message-container:not(.hasSenderHash) div.message img.participant-img,
+div.message-container.type-action:not(.hasSenderHash),
+div.message-icons,
+div.message-link,
+div.message-seen-by,
+div.message-spacer.is-gapped-1:not(.is-diff-sender),
+div.message-spacer.is-next-message-linked:not(.is-diff-sender),
+div.messages-list svg.texts-icon,
+div.right-pane-header.app-region-drag,
+div.tab-bar,
+div.textarea-inner-buttons,
+div.thread-children .timestamp,
+div.threads.redacted-region div::-webkit-scrollbar,
+div.typing-participants,
+div.unread-divider,
+img.platform-icon,
+span.tooltip-wrapper {
+  display: none;
+}
+
+/* hide elements (only worked with !important) */
+div.sender-name {
+  display: none !important;
+}
+
+/* hide border in message input */
+textarea#message-input {
+  border: 0px;
+  padding-left: 4px;
+}
+
+/* hide placeholder text in message input */
+textarea#message-input::placeholder {
+  color: transparent;
+}
+
+/* annoying footer had a margin even though everything inside it was hidden */
+.message-container footer {
+  margin-top: 0px !important;
+}
+
 div.tab-bar-container {
   margin-top: 40px;
 }
@@ -38,108 +105,21 @@ div.thread-children div.img {
   min-width: 20px;
 }
 
-img.platform-icon {
-  height: 8px;
-  width: 8px;
-}
-
-div.thread-children .timestamp {
-  display: none;
-}
-
-div > div.sidebar-thread.loading {
-  display: none;
-}
-
 div.thread-children div.middle div.title {
   font-weight: 200 !important;
 }
 
-div.left-pane-footer {
-  display: none;
-}
-
-span.tooltip-wrapper.timestamp-container {
-  display: none;
+div.sidebar-thread.selected div.thread-children div.middle div.title {
+  color: var(--color-bg);
 }
 
 div.pane-container {
   padding-top: 0;
 }
 
-div.right-pane-header.app-region-drag {
-  display: none;
-}
-
-div.date.negate-redacted-region {
-  display: none;
-}
-
-div.message-seen-by {
-  display: none;
-}
-
-div.message-icons {
-  display: none;
-}
-
-span.tooltip-wrapper.filters-pane-toggle {
-  display: none;
-}
-
-div.tab-bar {
-  display: none;
-}
-
-/* hide various actions in message input component */
-div.left-buttons {
-  display: none;
-}
-
-/* hide various actions in message input component */
-button.btn-icon.send-button.btn-icon-primary.btn-icon-rounded.send-button-left {
-  display: none;
-}
-
-/* hide various actions in message input component */
-button.btn-icon.btn-icon-tertiary.send-button-right {
-  display: none;
-}
-
-/* hide various actions in message input component */
-div.textarea-inner-buttons {
-  display: none;
-}
-
-/* hide various actions in message input component */
-span.tooltip-wrapper {
-  display: none;
-}
-
-/* hide border in message input */
-textarea#message-input {
-  border: 0px;
-  padding-left: 4px;
-}
-
-/* hide placeholder text in message input */
-textarea#message-input::placeholder {
-  color: transparent;
-}
-
-/* annoying footer had a margin even though everything inside it was hidden */
-.message-container footer {
-  margin-top: 0px !important;
-}
-
-/* get rid of unnecessary gaps in the chat */
-div.message-spacer.is-gapped-1:not(.is-diff-sender) {
-  display: none;
-}
-
-/* removes unread messages' 'new message' divider line */
-div.unread-divider {
-  display: none;
+.message-container.is-sender .message {
+  width: 80%;
+  align-self: flex-end;
 }
 
 /* put a gap between message reactions */
@@ -171,46 +151,19 @@ div.message-reaction span.count {
   font-size: 10px;
 }
 
-button.message-show-replies-button {
-  display: none;
-}
-
-/* hide names in chat */
-div.sender-name {
-  display: none !important;
-}
-
-/* make avatars in chat more compact */
-div.message img.sender-img {
-  height: 20px !important;
-  width: 20px !important;
-}
-
-/* make avatars in chat more compact */
-div.message img.participant-img {
-  height: 20px !important;
-  width: 20px !important;
-}
-
 /* decrease space between senders by half */
 div.message-spacer {
   height: 10px !important;
 }
 
-/* hides link previews like youtube thumbnails */
-div.message-link {
-  display: none;
-}
-
-/* hide sender name on message replies */
-div.linked-sender-name {
-  display: none;
-}
-
-/* remove horizontal padding for message replies */
+/* decrease horizontal padding for message replies */
 div.linked-message-content {
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
+}
+
+div.linked-message {
+  margin-bottom: 4px !important;
+  border-left: 2px solid var(--color-secondary);
 }
 
 /* align sender's avatar to the right */
@@ -227,34 +180,37 @@ div.message-container.is-sender div.message div.message-main div.message-childre
   justify-content: flex-end;
 }
 
-/* resizing avatars left too big of a gap so decrease padding */
-div.message-container.is-sender div.message div.message-main {
-  padding-left: 0px !important;
-  padding-right: 30px !important;
-}
-
-/* resizing avatars left too big of a gap so decrease padding */
-div.message-container:not(.is-sender) div.message div.message-main {
-  padding-left: 30px !important;
+div.message-children main {
+  align-items: center;
+  gap: 8px;
 }
 
 /* mainly for placing reactions on the right side of messages instead of under */
 div.message-container.is-sender div.message div.message-main div.message-children main {
   flex-direction: row-reverse;
-  align-items: center;
-  gap: 8px;
 }
 
 /* mainly for placing reactions on the right side of messages instead of under */
 div.message-container:not(.is-sender) div.message div.message-main div.message-children main {
   flex-direction: row;
-  align-items: center;
-  gap: 8px;
 }
 
-/* hide chat messages scrollbar */
-.messages-list-scrolling-container::-webkit-scrollbar {
-  display: none;
+/* better align linked-message text to the right if is-sender */
+div.message-container.is-sender .linked-message {
+  border-left: 0;
+  border-right: 2px solid var(--color-secondary);
+  padding: 0 16px 0 8px;
+  justify-content: flex-end;
+}
+
+div.message-container.is-sender .linked-message,
+div.message-container.is-sender .message-text-container {
+  width: 100%;
+}
+
+div.message-container.is-sender .msg-text,
+div.message-container.is-sender .message-text-container {
+  text-align: right;
 }
 
 /* adjust scroll to bottom button position */
@@ -264,12 +220,35 @@ div.message-container:not(.is-sender) div.message div.message-main div.message-c
 
 /* tune style of message input area */
 div.compose-message {
-  border-top: 0.1px solid;
+  border-top: 1px solid var(--color-border-translucent);
   padding-top: 8px;
   padding-bottom: 8px;
 }
 
-/* hide side bar scrollbar */
-div.threads.redacted-region div::-webkit-scrollbar {
-  display: none;
+div.message-container.is-sender .message-text-container {
+  color: var(--color-secondary);
+}
+
+/* style for avatar of receiver in groups */
+div.message-container.hasSenderHash div.message img.participant-img {
+  height: 20px !important;
+  width: 20px !important;
+}
+
+/* remove padding for messages that had their avatars removed */
+div.message-container:not(.hasSenderHash) div.message div.message-main {
+  padding-left: 0px;
+}
+
+/* add padding for messages that have an avatar */
+div.message-container.hasSenderHash div.message div.message-main {
+  padding-left: 30px;
+}
+
+/* remove left and right borders on message hover or select */
+div.message-container {
+  border-left: 0px;
+  border-right: 0px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
