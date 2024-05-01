@@ -43,7 +43,7 @@ div.date.negate-redacted-region,
 div.left-buttons,
 div.left-pane-footer,
 div.linked-sender-name,
-/* hide messages with reels and similar content */
+/* CHAT_HIDE_REELS_OR_SIMILAR */
 div.message-container:has(> div > div > div > main > div.message-attachments-container):has(> div > div > div > main > div.message-footer),
 div.message-container:not(.hasSenderHash) div.message img.participant-img,
 div.message-container.type-action:not(.hasSenderHash),
