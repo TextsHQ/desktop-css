@@ -60,7 +60,8 @@ div.thread-children .timestamp,
 div.threads.redacted-region div::-webkit-scrollbar,
 div.typing-participants,
 div.unread-divider,
-img.platform-icon,
+/* SIDEBAR_PLATFORM_ICON */
+div.threads img.platform-icon,
 span.tooltip-wrapper {
   display: none;
 }
