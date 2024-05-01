@@ -9,8 +9,8 @@ To open dev tools, open the command bar and type "open console"
 :root {
   --font-family: 'Roboto Mono', monospace;
   --filters-pane-width: 180px;
-  --min-sidebar-width: 220px;
-  --max-sidebar-width: 220px;
+  --min-sidebar-width: 180px;
+  --max-sidebar-width: 180px;
   --threads-list-item-height: 34px;
   --color-primary: black;
   --color-primary-rgb: 0, 0, 0;
