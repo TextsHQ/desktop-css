@@ -492,7 +492,7 @@ body:not(.window-unfocused) .sidebar-thread.selected {
   font-weight: 500;
   color: var(--thread-children-text);
   &:after {
-    content: ': ';
+    content: ": ";
   }
 }
 
@@ -760,7 +760,9 @@ $restart-button-color-active: #732f70;
   }
   .menu-item {
     padding: 4px 10px;
-    > div { padding: 0; }
+    > div {
+      padding: 0;
+    }
   }
 }
 

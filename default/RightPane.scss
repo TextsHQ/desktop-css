@@ -107,7 +107,7 @@
   visibility: hidden;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -138,7 +138,7 @@
     transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
     .messages-list-wrapper {
       background: var(--color-background-app);
-      box-shadow: 0px -40px 60px 0px rgba(0, 0, 0, 0.2)
+      box-shadow: 0px -40px 60px 0px rgba(0, 0, 0, 0.2);
     }
   }
   .reply-thread-header {
@@ -187,7 +187,9 @@
     }
   }
 
-  .message-show-replies-button, .linked-message, .stealth-mode {
+  .message-show-replies-button,
+  .linked-message,
+  .stealth-mode {
     // Hide some elements from Reply Thread views
     display: none;
   }
@@ -256,7 +258,9 @@
   padding: 1em;
 }
 .message-timestamps.bubble-mode {
-  .messages-list-wrapper .date, .texts-icon, .loading-indicator {
+  .messages-list-wrapper .date,
+  .texts-icon,
+  .loading-indicator {
     padding-right: $message-timestamp-width !important;
   }
   .thread-divider {
@@ -660,7 +664,7 @@
 
 .stealth-mode {
   margin: 0 auto;
-  display:flex;
+  display: flex;
   justify-content: center;
   span {
     margin: 0 0.5em;
@@ -700,7 +704,8 @@
     row-gap: 4px;
   }
 
-  .fc { // Add extra specificity to override library styles
+  .fc {
+    // Add extra specificity to override library styles
     .fc-toolbar-title {
       padding-bottom: 4px;
       font-size: 15px;

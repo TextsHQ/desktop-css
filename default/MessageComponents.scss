@@ -127,7 +127,8 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
   display: flex;
   align-items: center;
   opacity: 0.5;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     opacity: 1;
   }
 }
@@ -417,7 +418,8 @@ body:not(.custom-scrollbars) .message-container.is-pending:after {
   display: flex;
   margin-left: -10px;
   opacity: 0.5;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     opacity: 1;
   }
   button {

@@ -6,14 +6,16 @@
   bottom: 0;
   z-index: 10;
 
-  background: rgb(0, 13,  80);
+  background: rgb(0, 13, 80);
   @keyframes loginBackgroundAppear {
-    0% { background: rgb(16, 16, 16); }
+    0% {
+      background: rgb(16, 16, 16);
+    }
   }
 
   &:after {
     // Purple blur
-    content: '';
+    content: "";
     position: absolute;
     top: 55%;
     left: 50%;
@@ -52,7 +54,9 @@
       }
     }
     @keyframes loginLogoSlideUp {
-      100% { transform: translate(-50%, -120%); }
+      100% {
+        transform: translate(-50%, -120%);
+      }
     }
     @keyframes loginLogoDisappear {
       100% {
@@ -110,13 +114,15 @@
       background: transparent;
       padding: 10px 0;
     }
-    &.provider-google, &.provider-apple {
+    &.provider-google,
+    &.provider-apple {
       button {
         background: rgba(255, 255, 255, 0.95);
         color: rgb(0, 0, 0);
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05), 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05),
+          0px 4px 15px 0px rgba(0, 0, 0, 0.1);
         &:before {
-          content: '';
+          content: "";
           display: inline-block;
           width: 18px;
           height: 18px;
@@ -127,8 +133,12 @@
         }
       }
     }
-    &.provider-google button:before { background-image: url('../../../public/img/logo-google.svg'); }
-    &.provider-apple button:before { background-image: url('../../../public/img/logo-apple.svg'); }
+    &.provider-google button:before {
+      background-image: url("../../../public/img/logo-google.svg");
+    }
+    &.provider-apple button:before {
+      background-image: url("../../../public/img/logo-apple.svg");
+    }
 
     span {
       display: block;
@@ -165,27 +175,43 @@
     --animation-settings: 500ms var(--easing-spring) 1600ms both;
 
     animation: var(--animation-settings) loginBackgroundAppear;
-    &:after { animation: var(--animation-settings) loginBlurAppear; }
-    .login-page-content { animation: var(--animation-settings) loginContentAppear; }
-    .login-fine-print { animation: var(--animation-settings) fadein; }
+    &:after {
+      animation: var(--animation-settings) loginBlurAppear;
+    }
+    .login-page-content {
+      animation: var(--animation-settings) loginContentAppear;
+    }
+    .login-fine-print {
+      animation: var(--animation-settings) fadein;
+    }
 
     .texts-logo {
-      animation:
-        300ms var(--easing-spring) 750ms both loginLogoAppear, // First phase, logo appears
-        var(--animation-settings) loginLogoSlideUp; // Second phase, logo slides up while everything else appears
+      animation: 300ms var(--easing-spring) 750ms both loginLogoAppear,
+        // First phase, logo appears
+        var(
+            --animation-settings
+          ) loginLogoSlideUp; // Second phase, logo slides up while everything else appears
     }
   }
 
   &.animate-out {
     // Most elements animate out together with a reverse of their appear animations, using these base settings:
     --animation-settings: 500ms var(--easing-spring) both reverse;
-    animation:
-      var(--animation-settings) loginBackgroundAppear, // First fade the background to intial color
+    animation: var(--animation-settings) loginBackgroundAppear,
+      // First fade the background to intial color
       300ms var(--easing-spring) 500ms both reverse fadein; // Then disappear the login page once everything else has animated out
 
-    &:after { animation: var(--animation-settings) loginBlurAppear; }
-    .login-page-content { animation: var(--animation-settings)  loginContentAppear; }
-    .login-fine-print { animation: var(--animation-settings) fadein; }
-    .texts-logo { animation: 600ms var(--easing-spring-reverse) both loginLogoDisappear; }
+    &:after {
+      animation: var(--animation-settings) loginBlurAppear;
+    }
+    .login-page-content {
+      animation: var(--animation-settings) loginContentAppear;
+    }
+    .login-fine-print {
+      animation: var(--animation-settings) fadein;
+    }
+    .texts-logo {
+      animation: 600ms var(--easing-spring-reverse) both loginLogoDisappear;
+    }
   }
 }

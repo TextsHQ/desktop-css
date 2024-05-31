@@ -174,7 +174,8 @@ kbd.big {
 }
 .app-region-drag {
   -webkit-app-region: drag;
-  button, a {
+  button,
+  a {
     -webkit-app-region: no-drag;
   }
 }
@@ -419,7 +420,7 @@ img.errored {
   .is-monochrome {
     filter: invert(1);
   }
-  
+
   .brand-icon {
     position: absolute;
     top: 0;

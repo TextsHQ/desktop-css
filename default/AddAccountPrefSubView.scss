@@ -189,7 +189,7 @@
     padding-bottom: 32px;
     box-sizing: content-box;
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 0;
       left: -64px;
@@ -198,8 +198,7 @@
       background: linear-gradient(
         180deg,
         rgba(var(--color-background-grouped), 0) 0%,
-        rgba(var(--color-background-grouped), 1) 80%,
-
+        rgba(var(--color-background-grouped), 1) 80%
       );
     }
   }
