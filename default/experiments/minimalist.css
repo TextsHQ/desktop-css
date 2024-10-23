@@ -1,0 +1,257 @@
+/*
+# Custom Texts.app style
+This file will be injected as a <style> tag
+Find original styles at https://github.com/TextsHQ/desktop-css
+After making your changes, type "Reload custom CSS" in the command bar
+To open dev tools, open the command bar and type "open console"
+*/
+
+:root {
+  --font-family: 'Roboto Mono', monospace;
+  --filters-pane-width: 180px;
+  --min-sidebar-width: 180px;
+  --max-sidebar-width: 180px;
+  --threads-list-item-height: 34px;
+  --color-primary: black;
+  --color-primary-rgb: 0, 0, 0;
+  --color-secondary: black;
+  --left-pane-bg: var(--color-bg);
+  --color-background-app: var(--color-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: rgb(100, 255, 100);
+    --color-primary-rgb: 100, 255, 100;
+    --color-secondary: rgb(100, 255, 100);
+    --color-bg: black;
+    --color-bg-rgb: 0, 0, 0;
+  }
+
+  .compose-message textarea {
+    color: var(--color-secondary);
+  }
+}
+
+/* hide elements */
+div.messages-list-scrolling-container::-webkit-scrollbar,
+button.btn-icon.btn-icon-tertiary.send-button-right,
+button.btn-icon.send-button.btn-icon-primary.btn-icon-rounded.send-button-left,
+button.message-show-replies-button,
+div > div.sidebar-thread.loading,
+div.date.negate-redacted-region,
+div.left-buttons,
+div.left-pane-footer,
+div.linked-sender-name,
+/* CHAT_HIDE_REELS_OR_SIMILAR */
+div.message-container:has(> div > div > div > main > div.message-attachments-container):has(> div > div > div > main > div.message-footer),
+div.message-container:not(.hasSenderHash) div.message img.participant-img,
+div.message-container.type-action:not(.hasSenderHash),
+div.message-icons,
+div.message-link,
+div.message-seen-by,
+div.message-spacer.is-gapped-1:not(.is-diff-sender),
+div.message-spacer.is-next-message-linked:not(.is-diff-sender),
+div.messages-list svg.texts-icon,
+div.right-pane-header.app-region-drag,
+div.tab-bar,
+div.textarea-inner-buttons,
+div.thread-children .timestamp,
+div.threads.redacted-region div::-webkit-scrollbar,
+div.typing-participants,
+div.unread-divider,
+/* SIDEBAR_PLATFORM_ICON */
+div.threads img.platform-icon,
+span.tooltip-wrapper {
+  display: none;
+}
+
+/* hide elements (only worked with !important) */
+div.sender-name {
+  display: none !important;
+}
+
+/* hide border in message input */
+textarea#message-input {
+  border: 0px;
+  padding-left: 4px;
+}
+
+/* hide placeholder text in message input */
+textarea#message-input::placeholder {
+  color: transparent;
+}
+
+/* annoying footer had a margin even though everything inside it was hidden */
+.message-container footer {
+  margin-top: 0px !important;
+}
+
+div.tab-bar-container {
+  margin-top: 40px;
+}
+
+div.threads-list-container {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+div.thread-children {
+  grid-template-columns: 30px 1fr auto auto !important;
+}
+
+div.thread-children div.img {
+  height: 20px;
+  width: 20px;
+  min-width: 20px;
+}
+
+div.thread-children div.middle div.title {
+  font-weight: 200 !important;
+}
+
+div.sidebar-thread.selected div.thread-children div.middle div.title {
+  color: var(--color-bg);
+}
+
+div.pane-container {
+  padding-top: 0;
+}
+
+.message-container.is-sender .message {
+  width: 80%;
+  align-self: flex-end;
+}
+
+/* put a gap between message reactions */
+div.message-reactions {
+  font-size: 10px;
+  gap: 4px;
+}
+
+/* decrease overall size of message reaction */
+div.message-reaction {
+  margin: 0px;
+  padding: 0px 0px;
+  height: 20px;
+  font-size: 10px;
+}
+
+/* multi reaction bubbles have a wider width than single reaction bubbles */
+div.message-reaction:has(> span) {
+  min-width: 34px;
+}
+
+/* single reaction bubbles have smaller width than multi reaction bubbles */
+div.message-reaction:not(:has(> span)) {
+  min-width: 24px;
+}
+
+/* decrease size of number next to multiple reactions in groups */
+div.message-reaction span.count {
+  font-size: 10px;
+}
+
+/* decrease space between senders by half */
+div.message-spacer {
+  height: 10px !important;
+}
+
+/* decrease horizontal padding for message replies */
+div.linked-message-content {
+  padding: 0;
+}
+
+div.linked-message {
+  margin-bottom: 4px !important;
+  border-left: 2px solid var(--color-secondary);
+}
+
+/* align sender's avatar to the right */
+div.message-container.is-sender div.message img.sender-img {
+  align-self: flex-end;
+  right: 0;
+  left: auto;
+  margin-right: 0px;
+  margin-left: 8px;
+}
+
+/* align sender's messages to the right */
+div.message-container.is-sender div.message div.message-main div.message-children {
+  justify-content: flex-end;
+}
+
+div.message-children main {
+  align-items: center;
+  gap: 8px;
+}
+
+/* mainly for placing reactions on the right side of messages instead of under */
+div.message-container.is-sender div.message div.message-main div.message-children main {
+  flex-direction: row-reverse;
+}
+
+/* mainly for placing reactions on the right side of messages instead of under */
+div.message-container:not(.is-sender) div.message div.message-main div.message-children main {
+  flex-direction: row;
+}
+
+/* better align linked-message text to the right if is-sender */
+div.message-container.is-sender .linked-message {
+  border-left: 0;
+  border-right: 2px solid var(--color-secondary);
+  padding: 0 16px 0 8px;
+  justify-content: flex-end;
+}
+
+div.message-container.is-sender .linked-message,
+div.message-container.is-sender .message-text-container {
+  width: 100%;
+}
+
+div.message-container.is-sender .msg-text,
+div.message-container.is-sender .message-text-container {
+  text-align: right;
+}
+
+/* adjust scroll to bottom button position */
+.scroll-to-bottom {
+  right: 3px;
+}
+
+/* tune style of message input area */
+div.compose-message {
+  border-top: 1px solid var(--color-border-translucent);
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+div.message-container.is-sender .message-text-container {
+  color: var(--color-secondary);
+}
+
+/* style for avatar of receiver in groups */
+div.message-container.hasSenderHash div.message img.participant-img {
+  height: 20px !important;
+  width: 20px !important;
+}
+
+/* remove padding for messages that had their avatars removed */
+div.message-container:not(.hasSenderHash) div.message div.message-main {
+  padding-left: 0px;
+}
+
+/* add padding for messages that have an avatar */
+div.message-container.hasSenderHash div.message div.message-main {
+  padding-left: 30px;
+}
+
+/* remove left and right borders on message hover or select */
+div.message-container {
+  border-left: 0px;
+  border-right: 0px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
